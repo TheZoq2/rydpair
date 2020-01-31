@@ -16,7 +16,7 @@ public static class TraitExtensions {
 
         switch (trait) {
             case PartTrait.RED: return "Red: Disables blue parts";
-            case PartTrait.BLUE: return "Blue: Won't work if the car has Red parts.";
+            case PartTrait.BLUE: return "Blue: Part is more durable, but won't work if the car has Red parts.";
             case PartTrait.ELECTRIC: return "Electric: Works just fine, so long as you don't have too many.";
             case PartTrait.CONFUSED: return "Confused: Gives people Lego Racers flashbacks";
             default: return $"{trait}: NO_DESCRIPTION_FOR_TRAIT: ";
@@ -72,6 +72,20 @@ public static class TraitExtensions {
             case PartTrait.ELECTRIC:
                 return true;
             default: return false;
+        }
+    }
+
+    public static int PartHealthImpact(this PartTrait trait) {
+        switch {
+            case PartTrait.BLUE: return 20;
+            default: return 0;
+        }
+    }
+
+    public static float MaxSpeedMult(this PartTrait trait) {
+        switch (trait) {
+            case PartTrait.BLUE: return 1.2;
+            default: return 1;
         }
     }
 }
