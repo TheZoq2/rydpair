@@ -1,2 +1,2 @@
 all:
-	echo manual.tex | entr tectonic manual.tex
+	echo src/manual.tex | entr tectonic src/manual.tex -o .
