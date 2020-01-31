@@ -76,7 +76,7 @@ public static class TraitExtensions {
     }
 
     public static int PartHealthImpact(this PartTrait trait) {
-        switch {
+        switch (trait) {
             case PartTrait.BLUE: return 20;
             default: return 0;
         }
@@ -84,7 +84,7 @@ public static class TraitExtensions {
 
     public static float MaxSpeedMult(this PartTrait trait) {
         switch (trait) {
-            case PartTrait.BLUE: return 1.2;
+            case PartTrait.BLUE: return 1.2F;
             default: return 1;
         }
     }
