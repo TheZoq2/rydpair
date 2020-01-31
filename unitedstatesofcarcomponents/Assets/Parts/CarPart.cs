@@ -14,7 +14,10 @@ public abstract class CarPart : MonoBehaviour
 
     public int healthDecay;
 
+    bool isEquipped = false;
+
     private void Update() {
+        if (!isEquipped) return;
         currentHealth -= (int) (Time.deltaTime * healthDecay);
 
         if (currentHealth <= 0) {
@@ -24,8 +27,22 @@ public abstract class CarPart : MonoBehaviour
 
     }
 
-    void OnEquip() {
-        // Default implementation
+    public List<PartTrait> traits { get; } = new List<PartTrait>();
+
+    void OnEquip(List<CarPart> otherParts) {
+        
+    }
+
+    bool IsEnabled(List<CarPart> otherParts) {
+        foreach (PartTrait trait in traits) {
+            if (trait.DisablesOwnPart() && trait.IsEnabled(traits, otherParts)) {
+                return false;
+            }
+
+            return true;
+        }
+
+        return true;
     }
 
 }
