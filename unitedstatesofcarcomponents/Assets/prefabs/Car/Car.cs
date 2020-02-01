@@ -140,6 +140,10 @@ public class Car : MonoBehaviour {
         );
 
         velocity *= velocityDecay;
+
+        steeringWheel.transform.localRotation = Quaternion.Euler(
+            0, wheelAngle * steeringWheelMultiplier, 0
+        );
     }
 
     private void UpdateInput() {
@@ -155,4 +159,6 @@ public class Car : MonoBehaviour {
     }
 
     public float maxVelocity;
+    public GameObject steeringWheel;
+    public float steeringWheelMultiplier;
 }

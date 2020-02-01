@@ -332,6 +332,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 2223376079955101380, guid: d76cfe1bafa56ac41aa3ab8856346c8b,
+        type: 3}
+      propertyPath: wheelDistance
+      value: 2.12
+      objectReference: {fileID: 0}
     - target: {fileID: 2223376079955101381, guid: d76cfe1bafa56ac41aa3ab8856346c8b,
         type: 3}
       propertyPath: m_LocalPosition.x
