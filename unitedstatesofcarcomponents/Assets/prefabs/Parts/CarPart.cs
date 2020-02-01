@@ -3,27 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarPart : MonoBehaviour
-{
-    public CarPart Create(PartTypes type, Action<Car> setPartsDelegate, Transform parent = null) {
-        CarPart newPart = Instantiate(this, parent);
-
-        newPart.type = type;
-        newPart.onSetPartsDelegate = setPartsDelegate ?? (_ => throw new System.NotImplementedException($"The part equipped in slot {type} is not implemented"));
-
-        return newPart;
-    }
-
+public class CarPart : MonoBehaviour {
     public PartTypes type;
+    public Manufacturers manufacturer;
 
     private void Start() {
         currentHealth = maxHealth = defaultMaxHealth;
     }
 
-    private Action<Car> onSetPartsDelegate;
-    public void OnSetParts(Car car) {
-        onSetPartsDelegate(car);
-    }
+    public Action<Car> UpdateEffect;
 
 #pragma warning disable IDE0044 // Add readonly modifier
 #pragma warning disable CS0649 // Add readonly modifier Unity
@@ -50,19 +38,4 @@ public class CarPart : MonoBehaviour
             // Destroy this part
         }
     }
-
-    public List<PartTrait> traits { get; } = new List<PartTrait>();
-
-    bool IsEnabled(List<CarPart> otherParts) {
-        foreach (PartTrait trait in traits) {
-            if (trait.DisablesOwnPart() && trait.IsEnabled(traits, otherParts)) {
-                return false;
-            }
-
-            return true;
-        }
-
-        return true;
-    }
-
 }

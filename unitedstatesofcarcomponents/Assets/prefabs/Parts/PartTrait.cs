@@ -24,36 +24,6 @@ public static class TraitExtensions {
     }
 
     /**
-     * Returns whether or not a trait is enabled, given that it's attached to a part with certain other traits, as well as some set of other parts.
-     */
-    public static bool IsEnabled(this PartTrait trait, List<PartTrait> allOwnPartTraits, List<CarPart> otherParts) {
-        switch (trait) {
-            case PartTrait.RED:
-                return true; // Does nothing on its own, but might as well show it as enabled if we're providing visual feedback for this stuff (I assume we aren't, but could be neat for debugging?).
-            case PartTrait.BLUE:
-                foreach (CarPart part in otherParts) {
-                    if (part.traits.Contains(PartTrait.RED)) return true;
-                }
-
-                return false;
-            case PartTrait.ELECTRIC:
-                int electricCounter = 1;
-
-                foreach (CarPart part in otherParts) {
-                    if (part.traits.Contains(PartTrait.ELECTRIC)) {
-                        electricCounter++;
-                        if (electricCounter >= 3) return true;
-                    }
-                }
-
-                return false;
-            case PartTrait.CONFUSED:
-                return true;
-            default: return false;
-        }
-    }
-
-    /**
      * Returns whether or not a trait inverts the car's steering (if the trait is enabled)
      */
     public static bool InvertsSteering(this PartTrait trait) {

@@ -3,32 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : MonoBehaviour {
-    public float acceleration;
     public ParticleSystem engineSmoke;
     public CarPart carPartFactory;
+    public GameObject steeringWheel;
+    public float steeringWheelMultiplier;
 
-    [SerializeField]
-    private float defaultMaxFuel;
+    public float defaultAcceleration;
+    public float acceleration;
+    public float defaultMaxFuel;
     public float maxFuel;
-    [SerializeField]
-    private float defaultFuelDrain;
+    public float defaultFuelDrain;
     public float fuelDrain;
-    [SerializeField]
-    private float defaultMaxSpeed;
-    public float maxSpeed;
+    public float defaultMaxVelocity;
+    public float maxVelocity;
+    public float defaultVelocityDecay;
+    public float velocityDecay;
+
+    public float wheelDistance;
+    public float steeringSpeed;
 
     private string destinationAddress = "";
     public int score = 0;
 
     //Equipped car parts
     public Dictionary<PartTypes, CarPart> equippedParts = new Dictionary<PartTypes, CarPart>();
-    private readonly Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
 
     private float velocity;
     private float wheelAngle = 0;
-    public float wheelDistance;
-    public float steeringSpeed;
-    public float velocityDecay;
 
     private float fuel;
 
@@ -37,31 +38,6 @@ public class Car : MonoBehaviour {
     private void Start() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
-        fuel = maxFuel;
-
-        // defaultParts[PartTypes.BRAKES] = carPartFactory.Create(PartTypes.BRAKES, c => {
-        //     /* TODO */
-        // });
-        // defaultParts[PartTypes.ENGINE] = carPartFactory.Create(PartTypes.ENGINE, c => {
-        //     c.defaultFuelDrain *= 3.0f;
-        //     c.defaultMaxSpeed *= 0.5f;
-        //     c.engineSmoke.Play();
-        // });
-        // defaultParts[PartTypes.EXHAUST_SYSTEM] = carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, c => {
-        //     /* TODO */
-        // });
-        // defaultParts[PartTypes.GEAR_BOX] = carPartFactory.Create(PartTypes.GEAR_BOX, c => {
-        //     /* TODO */
-        // });
-        // defaultParts[PartTypes.STEERING_WHEEL] = carPartFactory.Create(PartTypes.STEERING_WHEEL, c => {
-        // });
-        // defaultParts[PartTypes.WHEELS] = carPartFactory.Create(PartTypes.WHEELS, c => {
-        //     c.defaultMaxSpeed *= 0.9f;
-        // });
-
-        // foreach (PartTypes type in Enum.GetValues((typeof(PartTypes)))) {
-        //     equippedParts[type] = defaultParts[type];
-        // }
     }
 
     // Update is called once per frame
@@ -89,7 +65,7 @@ public class Car : MonoBehaviour {
 
     public CarPart RemovePart(PartTypes type) {
         CarPart removedPart = equippedParts[type];
-        equippedParts[type] = defaultParts[type]; // TODO: Not null?
+        equippedParts[type] = null;
         return removedPart;
     }
 
@@ -103,14 +79,14 @@ public class Car : MonoBehaviour {
     public void UpdateComponentEffects() {
         ResetStats();
         foreach (CarPart part in equippedParts.Values) {
-            part.OnSetParts(this);
+            part.UpdateEffect(this);
         }
     }
 
     private void ResetStats() {
         maxFuel = defaultMaxFuel;
         fuelDrain = defaultFuelDrain;
-        maxSpeed = defaultMaxSpeed;
+        maxVelocity = defaultMaxVelocity;
         engineSmoke.Stop();
     }
 
@@ -157,8 +133,4 @@ public class Car : MonoBehaviour {
             velocity = -maxVelocity;
         }
     }
-
-    public float maxVelocity;
-    public GameObject steeringWheel;
-    public float steeringWheelMultiplier;
 }

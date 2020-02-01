@@ -19,12 +19,14 @@ public class Inventory : MonoBehaviour
 #pragma warning restore IDE0044 // Add readonly modifier
 #pragma warning restore CS0649 // Add readonly modifier Unity
 
-	public GameObject carPartPrefab;
+	private CarPartFactory carPartFactory;
 
 	List<InteractiveSlot> slots = new List<InteractiveSlot>();
 
 	void Start()
     {
+        carPartFactory = FindObjectOfType<CarPartFactory>();
+
         for (int c = 0; c < cols; ++c)
 		{
 			for (int r = 0; r < rows; ++r)
@@ -37,11 +39,11 @@ public class Inventory : MonoBehaviour
 			}
 		}
 
-		CarPart dummyPart = carPartPrefab.GetComponent<CarPart>().Create(PartTypes.BRAKES, DummyFunc);
-		slots[2].TrySet(dummyPart, null);
-		TryAddItem(dummyPart);
-		TryAddItem(dummyPart);
-	}
+        CarPart dummyPart = carPartFactory.Create(PartTypes.BRAKES, Manufacturers.VOLVIMUS, DummyFunc);
+        slots[2].TrySet(dummyPart, null);
+        TryAddItem(dummyPart);
+        TryAddItem(dummyPart);
+    }
 
 	public void DummyFunc(Car car)
 	{
