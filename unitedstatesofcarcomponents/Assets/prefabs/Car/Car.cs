@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : MonoBehaviour {
@@ -55,6 +56,10 @@ public class Car : MonoBehaviour {
         defaultParts[PartTypes.WHEELS] = carPartPrefab.Create(PartTypes.WHEELS, c => {
             c.defaultMaxSpeed *= 0.9f;
         });
+
+        foreach (PartTypes type in Enum.GetValues((typeof(PartTypes)))) {
+            equippedParts[type] = defaultParts[type];
+        }
     }
 
     // Update is called once per frame
