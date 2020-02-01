@@ -25,11 +25,14 @@ public class Car : MonoBehaviour {
     private Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
 
     private Vector3 velocity;
-    
+
     private float fuel;
+
+    private Inventory inventory;
 
     private void Start() {
         particleSystem = gameObject.GetComponent<ParticleSystem>();
+        inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
 
         defaultParts[PartTypes.BRAKES] = new CarPart(PartTypes.BRAKES, c => {
@@ -58,13 +61,25 @@ public class Car : MonoBehaviour {
         UpdateInput();
         UpdateMovement();
     }
-    
+
+    private void OnTriggerEnter(Collider other) {
+        Pickup pickup = other.gameObject.GetComponent<Pickup>();
+        if (pickup != null) {
+            if (pickup.part != null) {
+                //TODO: Fix inventory integration when inventory feels like integrating.
+                //inventory
+            }
+        }
+
+        Destroy(other.gameObject);
+    }
+
     public CarPart RemovePart(PartTypes type) {
         CarPart removedPart = equippedParts[type];
         equippedParts[type] = defaultParts[type]; // TODO: Not null?
-        UpdateComponentEffects();
         return removedPart;
     }
+
 
     public void AddPart(PartTypes type, CarPart newPart) {
         if (newPart.type != type) Debug.Log($"Equipped {newPart.type}-slot part in {type} slot (probably shouldn't happen).");
@@ -79,21 +94,21 @@ public class Car : MonoBehaviour {
         }
     }
 
-    public void ResetStats() {
+    private void ResetStats() {
         maxFuel = defaultMaxFuel;
         fuelDrain = defaultFuelDrain;
         maxSpeed = defaultMaxSpeed;
     }
 
     private void UpdateMovement() {
-        if(fuel > 0) {
+        if (fuel > 0) {
             if (velocity.magnitude > maxSpeed) {
                 velocity = velocity.normalized * maxSpeed;
             }
             transform.position += velocity * Time.deltaTime;
 
             velocity *= velocityDecay;
-            if(Input.GetAxis("Accelerate") == 0 && Input.GetAxis("Reverse") == 0 && velocity.magnitude < minimumSpeed) {
+            if (Input.GetAxis("Accelerate") == 0 && Input.GetAxis("Reverse") == 0 && velocity.magnitude < minimumSpeed) {
                 velocity = Vector3.zero;
             }
 
