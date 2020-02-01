@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarPart : ScriptableObject
+public class CarPart : MonoBehaviour
 {
+    
+    public static CarPart Create(PartTypes type, Action<Car> setPartsDelegate, Transform parent = null) {
+        CarPart newPart = CarPart.Instantiate<CarPart>(null, parent);
 
-    public CarPart(PartTypes type, Action<Car> setPartsDelegate) {
-        this.type = type;
-        this.onSetPartsDelegate = setPartsDelegate ?? (_ => throw new System.NotImplementedException($"The part equipped in slot {type} is not implemented"));
+        newPart.type = type;
+        newPart.onSetPartsDelegate = setPartsDelegate ?? (_ => throw new System.NotImplementedException($"The part equipped in slot {type} is not implemented"));
+
+        return newPart;
     }
 
     public PartTypes type;

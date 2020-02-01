@@ -21,8 +21,7 @@ public class Car : MonoBehaviour {
 
     //Equipped car parts
     public Dictionary<PartTypes, CarPart> equippedParts;
-
-    private Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
+    private readonly Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
 
     private Vector3 velocity;
 
@@ -35,23 +34,23 @@ public class Car : MonoBehaviour {
         inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
 
-        defaultParts[PartTypes.BRAKES] = new CarPart(PartTypes.BRAKES, c => {
+        defaultParts[PartTypes.BRAKES] = CarPart.Create(PartTypes.BRAKES, c => {
             /* TODO */
         });
-        defaultParts[PartTypes.ENGINE] = new CarPart(PartTypes.ENGINE, c => {
+        defaultParts[PartTypes.ENGINE] = CarPart.Create(PartTypes.ENGINE, c => {
             c.defaultFuelDrain *= 3.0f;
             c.defaultMaxSpeed *= 0.5f;
         });
-        defaultParts[PartTypes.EXHAUST_SYSTEM] = new CarPart(PartTypes.EXHAUST_SYSTEM, c => {
+        defaultParts[PartTypes.EXHAUST_SYSTEM] = CarPart.Create(PartTypes.EXHAUST_SYSTEM, c => {
             /* TODO */
         });
-        defaultParts[PartTypes.GEAR_BOX] = new CarPart(PartTypes.GEAR_BOX, c => {
+        defaultParts[PartTypes.GEAR_BOX] = CarPart.Create(PartTypes.GEAR_BOX, c => {
             /* TODO */
         });
-        defaultParts[PartTypes.STEERING_WHEEL] = new CarPart(PartTypes.STEERING_WHEEL, c => {
+        defaultParts[PartTypes.STEERING_WHEEL] = CarPart.Create(PartTypes.STEERING_WHEEL, c => {
             c.turnMultiplier *= -1.0f;
         });
-        defaultParts[PartTypes.WHEELS] = new CarPart(PartTypes.WHEELS, c => {
+        defaultParts[PartTypes.WHEELS] = CarPart.Create(PartTypes.WHEELS, c => {
             c.defaultMaxSpeed *= 0.9f;
         });
     }
