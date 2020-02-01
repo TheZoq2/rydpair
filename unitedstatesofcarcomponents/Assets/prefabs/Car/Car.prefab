@@ -50,19 +50,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 10
-  velocityDecay: 0.99
-  minimumSpeed: 0.01
-  rotationSpeed: 70
-  turnMultiplier: 0.1
-  particleSystem: {fileID: 0}
+  engineSmoke: {fileID: 0}
   carPartPrefabContainer: {fileID: 2137910526749299179, guid: dccc906aaad5a1b47862f4b069b7b42f,
     type: 3}
-  defaultMaxFuel: 0
-  maxFuel: 1000
-  defaultFuelDrain: 0
+  defaultMaxFuel: 1000
+  maxFuel: 0
+  defaultFuelDrain: 1
   fuelDrain: 0
   defaultMaxSpeed: 0
   maxSpeed: 1.88
+  wheelDistance: 1.4
+  steeringSpeed: 4.34
 --- !u!198 &-2853446074473756791
 ParticleSystem:
   m_ObjectHideFlags: 0

@@ -3,11 +3,7 @@ using UnityEngine;
 
 public class Car : MonoBehaviour {
     public float acceleration;
-    public float velocityDecay;
-    public float minimumSpeed;
-    public float rotationSpeed;
-    public float turnMultiplier;
-    public ParticleSystem particleSystem;
+    public ParticleSystem engineSmoke;
     private CarPart carPartPrefab;
     public GameObject carPartPrefabContainer;
 
@@ -35,7 +31,7 @@ public class Car : MonoBehaviour {
     private Inventory inventory;
 
     private void Start() {
-        particleSystem = gameObject.GetComponent<ParticleSystem>();
+        engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
 
@@ -55,7 +51,6 @@ public class Car : MonoBehaviour {
             /* TODO */
         });
         defaultParts[PartTypes.STEERING_WHEEL] = carPartPrefab.Create(PartTypes.STEERING_WHEEL, c => {
-            c.turnMultiplier *= -1.0f;
         });
         defaultParts[PartTypes.WHEELS] = carPartPrefab.Create(PartTypes.WHEELS, c => {
             c.defaultMaxSpeed *= 0.9f;
@@ -130,15 +125,6 @@ public class Car : MonoBehaviour {
             (velocity * Mathf.Tan(wheelAngleRad) / wheelDistance) * 180 / Mathf.PI
                 * Time.deltaTime
         );
-
-        if(fuel > 0) {
-            velocity *= velocityDecay;
-            if(Input.GetAxis("Accelerate") != 0 && Input.GetAxis("Reverse") != 0 && velocity < minimumSpeed) {
-                velocity = 0;
-            }
-
-            fuel -= fuelDrain;
-        }
     }
 
     private void UpdateInput() {
