@@ -9,12 +9,14 @@ public class InteractiveSlot : PartSlot
 {
 	private Image sprite;
 	private Image partSprite;
+	private Image emptySprite;
 	private PartSlot hand;
 
 	private void Awake()
 	{
 		sprite = GetComponent<Image>();
 		partSprite = transform.Find("PartSprite").GetComponent<Image>();
+		emptySprite = transform.Find("EmptySprite").GetComponent<Image>();
 		hand = FindObjectOfType<Hand>();
 
 		onPartSet = OnPartSet;
@@ -29,21 +31,25 @@ public class InteractiveSlot : PartSlot
 			if (nextSlot == null)
 			{
 				partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+				emptySprite.enabled = true;
 			}
 			else
 			{
 				partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+				emptySprite.enabled = true;
 			}
 		}
 		else
 		{
 			partSprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+			emptySprite.enabled = false;
 		}
 	}
 
 	public void RemoveAfterImage()
 	{
 		partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+		emptySprite.enabled = true;
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
