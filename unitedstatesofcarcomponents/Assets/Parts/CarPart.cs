@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarPart : MonoBehaviour
+public class CarPart : ScriptableObject
 {
 
     public CarPart(PartTypes type, Action<Car> setPartsDelegate) {

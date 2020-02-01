@@ -7,6 +7,7 @@ public class Car : MonoBehaviour {
     public float minimumSpeed;
     public float rotationSpeed;
     public float turnMultiplier;
+    public ParticleSystem particleSystem;
 
     [SerializeField]
     private float defaultMaxFuel;
@@ -28,14 +29,28 @@ public class Car : MonoBehaviour {
     private float fuel;
 
     private void Start() {
+        particleSystem = gameObject.GetComponent<ParticleSystem>();
         fuel = maxFuel;
 
-        defaultParts[PartTypes.BRAKES] = new CarPart(PartTypes.BRAKES, null);
-        defaultParts[PartTypes.ENGINE] = new CarPart(PartTypes.ENGINE, c => { c.defaultFuelDrain *= 3.0f; c.defaultMaxSpeed *= 0.5f; });
-        defaultParts[PartTypes.EXHAUST_SYSTEM] = new CarPart(PartTypes.EXHAUST_SYSTEM, null);
-        defaultParts[PartTypes.GEAR_BOX] = new CarPart(PartTypes.GEAR_BOX, null);
-        defaultParts[PartTypes.STEERING_WHEEL] = new CarPart(PartTypes.STEERING_WHEEL, c => c.turnMultiplier *= -1.0f);
-        defaultParts[PartTypes.WHEELS] = new CarPart(PartTypes.WHEELS, c => { c.defaultMaxSpeed *= 0.9f; });
+        defaultParts[PartTypes.BRAKES] = new CarPart(PartTypes.BRAKES, c => {
+            /* TODO */
+        });
+        defaultParts[PartTypes.ENGINE] = new CarPart(PartTypes.ENGINE, c => {
+            c.defaultFuelDrain *= 3.0f;
+            c.defaultMaxSpeed *= 0.5f;
+        });
+        defaultParts[PartTypes.EXHAUST_SYSTEM] = new CarPart(PartTypes.EXHAUST_SYSTEM, c => {
+            /* TODO */
+        });
+        defaultParts[PartTypes.GEAR_BOX] = new CarPart(PartTypes.GEAR_BOX, c => {
+            /* TODO */
+        });
+        defaultParts[PartTypes.STEERING_WHEEL] = new CarPart(PartTypes.STEERING_WHEEL, c => {
+            c.turnMultiplier *= -1.0f;
+        });
+        defaultParts[PartTypes.WHEELS] = new CarPart(PartTypes.WHEELS, c => {
+            c.defaultMaxSpeed *= 0.9f;
+        });
     }
 
     // Update is called once per frame
