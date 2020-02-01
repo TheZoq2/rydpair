@@ -19,7 +19,7 @@ public class Car : MonoBehaviour {
     public float maxSpeed;
 
     //Equipped car parts
-    public Dictionary<PartTypes, CarPart> equippedParts;
+    public Dictionary<PartTypes, CarPart> equippedParts = new Dictionary<PartTypes, CarPart>();
     private readonly Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
 
     private float velocity;
