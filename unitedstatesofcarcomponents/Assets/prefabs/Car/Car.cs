@@ -3,11 +3,9 @@
 public class Car : MonoBehaviour {
     public float acceleration;
     public float velocityDecay;
-    public float rotationAcceleration;
-    public float rotationVelocityDecay;
+    public float rotationSpeed;
 
     private Vector3 velocity;
-    private float rotationVelocity = 0; //Negative right, positive right.
 
     // Start is called before the first frame update
     void Start() {
@@ -21,17 +19,15 @@ public class Car : MonoBehaviour {
     }
 
     private void UpdateMovement() {
-        transform.Rotate(0, rotationVelocity, 0);
-        transform.position += velocity;
+        transform.position += velocity * Time.deltaTime;
 
         velocity *= velocityDecay;
-        rotationVelocity *= rotationVelocityDecay;
     }
 
     private void UpdateInput() {
-        velocity += transform.forward * acceleration * Input.GetAxis("Accelerate");
-        velocity -= transform.forward * acceleration * Input.GetAxis("Reverse");
-        
-        rotationVelocity += Input.GetAxis("Horizontal") * rotationAcceleration * Vector3.Project(velocity, transform.forward).normalized.magnitude;
+        velocity += transform.forward * acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
+        velocity -= transform.forward * acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
+
+        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * (Vector3.Project(velocity, transform.forward).magnitude != 0 ? 1 : 0) * Time.deltaTime, 0);
     }
 }
