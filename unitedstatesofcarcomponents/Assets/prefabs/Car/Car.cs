@@ -34,6 +34,7 @@ public class Car : MonoBehaviour {
     private float fuel;
 
     private Inventory inventory;
+    private GameState gState;
 
     private void Start() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
@@ -48,7 +49,22 @@ public class Car : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         Pickup pickup = other.gameObject.GetComponent<Pickup>();
-        House house = other.gameObject.GetComponent<House>();
+        House house = other.gameObject.GetComponentInParent<House>();
+
+        if(other.tag == "Delivery")
+        {
+            if (gState.targetAdress != "")
+            {
+                if(house.adress == gState.targetAdress)
+                {
+                    // Sucessfull delivery!
+                }
+            }
+        }
+        else
+        {
+
+        }
         
         if (pickup != null) {
             if (string.IsNullOrEmpty(destinationAddress)) {
@@ -60,6 +76,17 @@ public class Car : MonoBehaviour {
             // A successful delivery
             score++;
             destinationAddress = "";
+        }
+
+        if(other.tag != "Delivery")
+        {
+            if (pickup != null)
+            {
+                //if (pickup.part != null && inventory.TryAddItem(pickup.part) {
+                //}
+            }
+
+            Destroy(other.gameObject);
         }
     }
 
