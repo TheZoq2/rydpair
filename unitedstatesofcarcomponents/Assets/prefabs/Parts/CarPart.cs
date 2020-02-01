@@ -6,7 +6,7 @@ using UnityEngine;
 public class CarPart : MonoBehaviour
 {
     public CarPart Create(PartTypes type, Action<Car> setPartsDelegate, Transform parent = null) {
-        CarPart newPart = CarPart.Instantiate<CarPart>(this, parent);
+        CarPart newPart = Instantiate(this, parent);
 
         newPart.type = type;
         newPart.onSetPartsDelegate = setPartsDelegate ?? (_ => throw new System.NotImplementedException($"The part equipped in slot {type} is not implemented"));
