@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3412666914988670332}
   - component: {fileID: 1071552830138358509}
   m_Layer: 5
-  m_Name: ItemSprite
+  m_Name: PartSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5078430448697865704}
   - component: {fileID: 7590225562019913386}
   m_Layer: 5
-  m_Name: InventorySlot
+  m_Name: InteractiveSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

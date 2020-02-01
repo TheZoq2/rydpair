@@ -5,8 +5,8 @@ using UnityEngine;
 public class Car : MonoBehaviour {
     public float acceleration;
     public ParticleSystem engineSmoke;
-    private CarPart carPartPrefab;
-    public GameObject carPartPrefabContainer;
+    private CarPart carPartFactory;
+    public GameObject carPartPrefab;
 
     [SerializeField]
     private float defaultMaxFuel;
@@ -37,24 +37,24 @@ public class Car : MonoBehaviour {
         inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
 
-        carPartPrefab = carPartPrefabContainer.GetComponent<CarPart>();
+		carPartFactory = carPartPrefab.GetComponent<CarPart>();
 
-        defaultParts[PartTypes.BRAKES] = carPartPrefab.Create(PartTypes.BRAKES, c => {
+        defaultParts[PartTypes.BRAKES] = carPartFactory.Create(PartTypes.BRAKES, c => {
             /* TODO */
         });
-        defaultParts[PartTypes.ENGINE] = carPartPrefab.Create(PartTypes.ENGINE, c => {
+        defaultParts[PartTypes.ENGINE] = carPartFactory.Create(PartTypes.ENGINE, c => {
             c.defaultFuelDrain *= 3.0f;
             c.defaultMaxSpeed *= 0.5f;
         });
-        defaultParts[PartTypes.EXHAUST_SYSTEM] = carPartPrefab.Create(PartTypes.EXHAUST_SYSTEM, c => {
+        defaultParts[PartTypes.EXHAUST_SYSTEM] = carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, c => {
             /* TODO */
         });
-        defaultParts[PartTypes.GEAR_BOX] = carPartPrefab.Create(PartTypes.GEAR_BOX, c => {
+        defaultParts[PartTypes.GEAR_BOX] = carPartFactory.Create(PartTypes.GEAR_BOX, c => {
             /* TODO */
         });
-        defaultParts[PartTypes.STEERING_WHEEL] = carPartPrefab.Create(PartTypes.STEERING_WHEEL, c => {
+        defaultParts[PartTypes.STEERING_WHEEL] = carPartFactory.Create(PartTypes.STEERING_WHEEL, c => {
         });
-        defaultParts[PartTypes.WHEELS] = carPartPrefab.Create(PartTypes.WHEELS, c => {
+        defaultParts[PartTypes.WHEELS] = carPartFactory.Create(PartTypes.WHEELS, c => {
             c.defaultMaxSpeed *= 0.9f;
         });
 

@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 
-public class Hand : ItemSlot
+public class Hand : PartSlot
 {
 	private InteractiveSlot previousSlot = null;
 
 	private void Awake()
 	{
-		onItemSet = OnItemSet;
+		onPartSet = OnPartSet;
 	}
 
-	private void OnItemSet(GameObject newItem, ItemSlot previousSlot, ItemSlot nextSlot)
+	private void OnPartSet(CarPart newPart, PartSlot previousSlot, PartSlot nextSlot)
 	{
 		// On drop
-		if (newItem == null)
+		if (newPart == null)
 		{
 			if (this.previousSlot != null && this.previousSlot != nextSlot)
 			{

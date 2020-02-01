@@ -139,6 +139,8 @@ MonoBehaviour:
   slotSize: 135
   cols: 3
   rows: 4
+  carPartPrefab: {fileID: 2137910526749299179, guid: dccc906aaad5a1b47862f4b069b7b42f,
+    type: 3}
 --- !u!1 &2916491677342221383
 GameObject:
   m_ObjectHideFlags: 0

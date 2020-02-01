@@ -2,48 +2,48 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InteractiveSlot : ItemSlot
+public class InteractiveSlot : PartSlot
 	 , IPointerClickHandler
 	 , IPointerEnterHandler
 	 , IPointerExitHandler
 {
 	private Image sprite;
-	private Image itemSprite;
-	private ItemSlot hand;
+	private Image partSprite;
+	private PartSlot hand;
 
 	private void Awake()
 	{
 		sprite = GetComponent<Image>();
-		itemSprite = transform.Find("ItemSprite").GetComponent<Image>();
+		partSprite = transform.Find("PartSprite").GetComponent<Image>();
 		hand = FindObjectOfType<Hand>();
 
-		onItemSet = OnItemSet;
+		onPartSet = OnPartSet;
 		ForceSet(null, null, null);
 		sprite.color = Color.grey;
 	}
 
-	private void OnItemSet(GameObject newItem, ItemSlot previousSlot, ItemSlot nextSlot)
+	private void OnPartSet(CarPart newPart, PartSlot previousSlot, PartSlot nextSlot)
 	{
-		if (newItem == null)
+		if (newPart == null)
 		{
 			if (nextSlot == null)
 			{
-				itemSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+				partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 			}
 			else
 			{
-				itemSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+				partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
 			}
 		}
 		else
 		{
-			itemSprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+			partSprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 	}
 
 	public void RemoveAfterImage()
 	{
-		itemSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+		partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
@@ -51,7 +51,7 @@ public class InteractiveSlot : ItemSlot
 		// Add item to inventory
 		if (hand.IsSet())
 		{
-			if (this.TrySet(hand.GetItem(), hand))
+			if (this.TrySet(hand.GetPart(), hand))
 			{
 				hand.TryClear(this);
 			}
@@ -59,7 +59,7 @@ public class InteractiveSlot : ItemSlot
 		// Take item from inventory
 		else
 		{
-			if (hand.TrySet(this.GetItem(), this))
+			if (hand.TrySet(this.GetPart(), this))
 			{
 				this.TryClear(hand);
 			}
