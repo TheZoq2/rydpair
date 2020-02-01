@@ -23,7 +23,10 @@ public class Car : MonoBehaviour {
     public Dictionary<PartTypes, CarPart> equippedParts;
     private readonly Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
 
-    private Vector3 velocity;
+    private float velocity;
+    private float wheelAngle = 0;
+    public float wheelDistance;
+    public float steeringSpeed;
 
     private float fuel;
 
@@ -34,18 +37,19 @@ public class Car : MonoBehaviour {
         inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
 
+        /*
         defaultParts[PartTypes.BRAKES] = CarPart.Create(PartTypes.BRAKES, c => {
-            /* TODO */
+            // TODO
         });
         defaultParts[PartTypes.ENGINE] = CarPart.Create(PartTypes.ENGINE, c => {
             c.defaultFuelDrain *= 3.0f;
             c.defaultMaxSpeed *= 0.5f;
         });
         defaultParts[PartTypes.EXHAUST_SYSTEM] = CarPart.Create(PartTypes.EXHAUST_SYSTEM, c => {
-            /* TODO */
+            // TODO
         });
         defaultParts[PartTypes.GEAR_BOX] = CarPart.Create(PartTypes.GEAR_BOX, c => {
-            /* TODO */
+            // TODO
         });
         defaultParts[PartTypes.STEERING_WHEEL] = CarPart.Create(PartTypes.STEERING_WHEEL, c => {
             c.turnMultiplier *= -1.0f;
@@ -53,6 +57,7 @@ public class Car : MonoBehaviour {
         defaultParts[PartTypes.WHEELS] = CarPart.Create(PartTypes.WHEELS, c => {
             c.defaultMaxSpeed *= 0.9f;
         });
+        */
     }
 
     // Update is called once per frame
@@ -100,15 +105,34 @@ public class Car : MonoBehaviour {
     }
 
     private void UpdateMovement() {
-        if (fuel > 0) {
-            if (velocity.magnitude > maxSpeed) {
-                velocity = velocity.normalized * maxSpeed;
-            }
-            transform.position += velocity * Time.deltaTime;
+        wheelAngle -= (wheelAngle - Input.GetAxis("Horizontal") * steeringSpeed) * Time.deltaTime;
+        if(wheelAngle > 1) {
+            wheelAngle = 1;
+        }
+        else if (wheelAngle < -1) {
+            wheelAngle = -1;
+        }
+        float wheelAngleRad = wheelAngle * Mathf.PI / 4.0F;
 
+        Vector3 currentVelocity = new Vector3(
+                velocity * Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.PI / 180),
+                0.0f,
+                velocity * Mathf.Cos(transform.rotation.eulerAngles.y * Mathf.PI / 180)
+            );
+
+        transform.position += currentVelocity * Time.deltaTime;
+
+        transform.RotateAround(
+            transform.position,
+            transform.up,
+            (velocity * Mathf.Tan(wheelAngleRad) / wheelDistance) * 180 / Mathf.PI
+                * Time.deltaTime
+        );
+
+        if(fuel > 0) {
             velocity *= velocityDecay;
-            if (Input.GetAxis("Accelerate") == 0 && Input.GetAxis("Reverse") == 0 && velocity.magnitude < minimumSpeed) {
-                velocity = Vector3.zero;
+            if(Input.GetAxis("Accelerate") != 0 && Input.GetAxis("Reverse") != 0 && velocity < minimumSpeed) {
+                velocity = 0;
             }
 
             fuel -= fuelDrain;
@@ -116,9 +140,8 @@ public class Car : MonoBehaviour {
     }
 
     private void UpdateInput() {
-        velocity += transform.forward * acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
-        velocity -= transform.forward * acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
-
-        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * (Vector3.Project(velocity, transform.forward).magnitude * turnMultiplier) * Time.deltaTime, 0);
+        velocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
+        velocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
     }
+
 }
