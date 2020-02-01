@@ -5,6 +5,7 @@ public class Car : MonoBehaviour {
     public float velocityDecay;
     public float minimumSpeed;
     public float rotationSpeed;
+    public float turnMultiplier;
 
     private Vector3 velocity;
 
@@ -27,7 +28,7 @@ public class Car : MonoBehaviour {
         transform.position += velocity * Time.deltaTime;
 
         velocity *= velocityDecay;
-        if(velocity.magnitude < minimumSpeed) {
+        if(Input.GetAxis("Accelerate") != 0 && Input.GetAxis("Reverse") != 0 && velocity.magnitude < minimumSpeed) {
             velocity = Vector3.zero;
         }
     }
@@ -36,6 +37,6 @@ public class Car : MonoBehaviour {
         velocity += transform.forward * acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
         velocity -= transform.forward * acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
 
-        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * (Vector3.Project(velocity, transform.forward).magnitude != 0 ? 1 : 0) * Time.deltaTime, 0);
+        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * (Vector3.Project(velocity, transform.forward).magnitude * turnMultiplier) * Time.deltaTime, 0);
     }
 }
