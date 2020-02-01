@@ -45,27 +45,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPartPrefab: {fileID: 482364372096662713, guid: dccc906aaad5a1b47862f4b069b7b42f,
     type: 3}
-  imageNiiSanEngine: {fileID: 21300000, guid: 70480d08802da924399273f1adc1572b, type: 3}
-  imageVolvimusEngine: {fileID: 21300000, guid: 07f427d7a2a765842811ca956c9dd628,
+  imageBrakesNiiSan: {fileID: 21300000, guid: 5efc71aa546a59748b5383d771cc3bd0, type: 3}
+  imageBrakesSM: {fileID: 21300000, guid: e582b8c053d619447996c178ac33f738, type: 3}
+  imageBrakesVolvimus: {fileID: 21300000, guid: d3b579109e5705a4ea43f28adf770793,
     type: 3}
-  imageSMEngine: {fileID: 0}
-  imageNiiSanWheel: {fileID: 21300000, guid: b5ed532ac0b1dd54b8524a7bc372aae3, type: 3}
-  imageVolvimusWheels: {fileID: 21300000, guid: 19580a32151432c43a7943e4461c4bce,
+  imageEngineNiiSan: {fileID: 21300000, guid: 60ca5dc6c10c5fe40b337368d7abbdc2, type: 3}
+  imageEngineSM: {fileID: 21300000, guid: 70480d08802da924399273f1adc1572b, type: 3}
+  imageEngineVolvimus: {fileID: 21300000, guid: 07f427d7a2a765842811ca956c9dd628,
     type: 3}
-  imageSMWheels: {fileID: 21300000, guid: 6729bc9ee51b47746809db2bee6ef211, type: 3}
-  imageNiiSanGearBox: {fileID: 0}
-  imageVolvimusGearBox: {fileID: 0}
-  imageSMGearBox: {fileID: 0}
-  imageNiiSanExhaust: {fileID: 21300000, guid: 7cbb4dd66a418434e9d1d069bc2dee88, type: 3}
-  imageVolvimusExhaust: {fileID: 21300000, guid: 80fe9ebb11bf27349b203e8b20fb100e,
+  imageExhaustNiiSan: {fileID: 21300000, guid: dfd860b0246c4fc4abb8f0a4ed3a97ef, type: 3}
+  imageExhaustSM: {fileID: 21300000, guid: 7cbb4dd66a418434e9d1d069bc2dee88, type: 3}
+  imageExhaustVolvimus: {fileID: 21300000, guid: 80fe9ebb11bf27349b203e8b20fb100e,
     type: 3}
-  imageSMExhaust: {fileID: 21300000, guid: dfd860b0246c4fc4abb8f0a4ed3a97ef, type: 3}
-  imageNiiSanBrakes: {fileID: 0}
-  imageVolvimusBrakes: {fileID: 0}
-  imageSMBrakes: {fileID: 0}
-  imageiiSanSteeringWheel: {fileID: 21300000, guid: 362c60a3a86bf714cb4653a7fffd8d2c,
+  imageGearNiiSan: {fileID: 0}
+  imageGearSM: {fileID: 0}
+  imageGearVolvimus: {fileID: 0}
+  imageSteeringNiiSan: {fileID: 21300000, guid: 362c60a3a86bf714cb4653a7fffd8d2c,
     type: 3}
-  imageVolvimusSteeringWheel: {fileID: 21300000, guid: 0f8eb3f79443dd843ad0aec1371246bc,
+  imageSteeringSM: {fileID: 21300000, guid: 6729bc9ee51b47746809db2bee6ef211, type: 3}
+  imageSteeringVolvimus: {fileID: 21300000, guid: c073abe027741c740bbce51ab101501d,
     type: 3}
-  imageSMSteeringWheel: {fileID: 21300000, guid: c073abe027741c740bbce51ab101501d,
+  imageWheelsNiiSan: {fileID: 21300000, guid: a570782f69c5d1042b4342dded7a9390, type: 3}
+  imageWheelsSM: {fileID: 21300000, guid: b5ed532ac0b1dd54b8524a7bc372aae3, type: 3}
+  imageWheelsVolvimus: {fileID: 21300000, guid: 19580a32151432c43a7943e4461c4bce,
     type: 3}

@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CarPartFactory : MonoBehaviour {
-    public CarPart carPartPrefab;
 
-	public Sprite imageNiiSanEngine;
-	public Sprite imageVolvimusEngine;
-	public Sprite imageSMEngine;
-	public Sprite imageNiiSanWheel;
-	public Sprite imageVolvimusWheels;
-	public Sprite imageSMWheels;
-	public Sprite imageNiiSanGearBox;
-	public Sprite imageVolvimusGearBox;
-	public Sprite imageSMGearBox;
-	public Sprite imageNiiSanExhaust;
-	public Sprite imageVolvimusExhaust;
-	public Sprite imageSMExhaust;
-	public Sprite imageNiiSanBrakes;
-	public Sprite imageVolvimusBrakes;
-	public Sprite imageSMBrakes;
-	public Sprite imageNiiSanSteeringWheel;
-	public Sprite imageVolvimusSteeringWheel;
-	public Sprite imageSMSteeringWheel;
+	public CarPart carPartPrefab;
+
+	public Sprite imageBrakesNiiSan;
+	public Sprite imageBrakesSM;
+	public Sprite imageBrakesVolvimus;
+	public Sprite imageEngineNiiSan;
+	public Sprite imageEngineSM;
+	public Sprite imageEngineVolvimus;
+	public Sprite imageExhaustNiiSan;
+	public Sprite imageExhaustSM;
+	public Sprite imageExhaustVolvimus;
+	public Sprite imageGearNiiSan;
+	public Sprite imageGearSM;
+	public Sprite imageGearVolvimus;
+	public Sprite imageSteeringNiiSan;
+	public Sprite imageSteeringSM;
+	public Sprite imageSteeringVolvimus;
+	public Sprite imageWheelsNiiSan;
+	public Sprite imageWheelsSM;
+	public Sprite imageWheelsVolvimus;
 
 	Dictionary<PartTypes, Dictionary<Manufacturers, Action<Car>>> callbacks = new Dictionary<PartTypes, Dictionary<Manufacturers, Action<Car>>>();
 	Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>> sprites = new Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>>();
@@ -34,7 +35,7 @@ public class CarPartFactory : MonoBehaviour {
 			callbacks[partType] = new Dictionary<Manufacturers, Action<Car>>();
 			sprites[partType] = new Dictionary<Manufacturers, Sprite>();
 		}
-		sprites[PartTypes.ENGINE][Manufacturers.NII_SAN] = imageNiiSanEngine;
+		sprites[PartTypes.ENGINE][Manufacturers.NII_SAN] = imageEngineNiiSan;
 		callbacks[PartTypes.ENGINE][Manufacturers.NII_SAN] =
 			c => {
 				if (c.equippedParts[PartTypes.GEAR_BOX] != null && c.equippedParts[PartTypes.GEAR_BOX].manufacturer != Manufacturers.NII_SAN)
@@ -47,7 +48,7 @@ public class CarPartFactory : MonoBehaviour {
 					c.acceleration /= 3;
 				}
 			};
-		sprites[PartTypes.ENGINE][Manufacturers.VOLVIMUS] = imageVolvimusEngine;
+		sprites[PartTypes.ENGINE][Manufacturers.VOLVIMUS] = imageEngineVolvimus;
 		callbacks[PartTypes.ENGINE][Manufacturers.VOLVIMUS] =
 			c => {
 				if (c.equippedParts[PartTypes.EXHAUST_SYSTEM] != null && c.equippedParts[PartTypes.EXHAUST_SYSTEM].manufacturer == Manufacturers.SM)
@@ -55,84 +56,84 @@ public class CarPartFactory : MonoBehaviour {
 					c.engineSmoke.Play();
 				}
 			};
-		sprites[PartTypes.ENGINE][Manufacturers.SM] = imageSMEngine;
+		sprites[PartTypes.ENGINE][Manufacturers.SM] = imageEngineSM;
 		callbacks[PartTypes.ENGINE][Manufacturers.SM] =
 			c => {
                 if (c.equippedParts[PartTypes.GEAR_BOX] != null && c.equippedParts[PartTypes.GEAR_BOX].currentHealth <= c.equippedParts[PartTypes.GEAR_BOX].maxHealth / 2) {
                     c.acceleration *= -1;
                 }
             };
-		sprites[PartTypes.WHEELS][Manufacturers.NII_SAN] = imageNiiSanWheel;
+		sprites[PartTypes.WHEELS][Manufacturers.NII_SAN] = imageWheelsNiiSan;
 		callbacks[PartTypes.WHEELS][Manufacturers.NII_SAN] =
 			c => {
                 if (c.equippedParts[PartTypes.ENGINE] != null && c.equippedParts[PartTypes.ENGINE].currentHealth <= c.equippedParts[PartTypes.ENGINE].maxHealth * 0.3) {
                     c.acceleration *= 0.3f;
                 }
             };
-		sprites[PartTypes.WHEELS][Manufacturers.VOLVIMUS] = imageVolvimusWheels;
+		sprites[PartTypes.WHEELS][Manufacturers.VOLVIMUS] = imageWheelsVolvimus;
 		callbacks[PartTypes.WHEELS][Manufacturers.VOLVIMUS] =
 			c => {
                 //if() {
                 //TODO: Implement weight?
                 //}
             };
-		sprites[PartTypes.WHEELS][Manufacturers.SM] = imageSMWheels;
+		sprites[PartTypes.WHEELS][Manufacturers.SM] = imageWheelsSM;
 		callbacks[PartTypes.WHEELS][Manufacturers.SM] =
 			c => {
                 if (c.equippedParts[PartTypes.BRAKES] != null && c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.SM) {
                     c.velocityDecay = 1;
                 }
             };
-		sprites[PartTypes.GEAR_BOX][Manufacturers.NII_SAN] = imageNiiSanGearBox;
+		sprites[PartTypes.GEAR_BOX][Manufacturers.NII_SAN] = imageGearNiiSan;
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.NII_SAN] =
 			c => {
                 if (c.equippedParts[PartTypes.STEERING_WHEEL] != null && c.equippedParts[PartTypes.STEERING_WHEEL].manufacturer == Manufacturers.NII_SAN) {
                     c.maxVelocity /= 2;
                 }
             };
-		sprites[PartTypes.GEAR_BOX][Manufacturers.VOLVIMUS] = imageVolvimusGearBox;
+		sprites[PartTypes.GEAR_BOX][Manufacturers.VOLVIMUS] = imageGearVolvimus;
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.VOLVIMUS] =
 			c => {
                 if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.NII_SAN) {
                     //TODO: implement sinus steering.
                 }
             };
-		sprites[PartTypes.GEAR_BOX][Manufacturers.SM] = imageSMGearBox;
+		sprites[PartTypes.GEAR_BOX][Manufacturers.SM] = imageGearSM;
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.SM] =
 			c => {
                 if (c.equippedParts[PartTypes.BRAKES] != null && c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.VOLVIMUS) {
                     //TODO: Implement random braking.
                 }
             };
-		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.NII_SAN] = imageNiiSanExhaust;
+		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.NII_SAN] = imageExhaustNiiSan;
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.NII_SAN] =
 			c => {
                 if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
                     //Pink smoke or sumthing (combination of exhaust + particles from tires)
                 }
             };
-		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.VOLVIMUS] = imageVolvimusExhaust;
+		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.VOLVIMUS] = imageExhaustVolvimus;
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.VOLVIMUS] =
 			c => {
                 if (c.equippedParts[PartTypes.STEERING_WHEEL] != null && c.equippedParts[PartTypes.STEERING_WHEEL].manufacturer == Manufacturers.SM) {
                     //randomly accelerate, not listen to accelerate
                 }
             };
-		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] = imageSMExhaust;
+		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] = imageExhaustSM;
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] =
 			c => {
                 if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.SM) {
                     //change turning
                 }
             };
-		sprites[PartTypes.BRAKES][Manufacturers.NII_SAN] = imageNiiSanBrakes;
+		sprites[PartTypes.BRAKES][Manufacturers.NII_SAN] = imageBrakesNiiSan;
 		callbacks[PartTypes.BRAKES][Manufacturers.NII_SAN] =
 			c => {
                 if (c.equippedParts[PartTypes.EXHAUST_SYSTEM] != null && c.equippedParts[PartTypes.EXHAUST_SYSTEM].manufacturer == Manufacturers.VOLVIMUS) {
                     //TODO
                 }
             };
-		sprites[PartTypes.BRAKES][Manufacturers.VOLVIMUS] = imageVolvimusBrakes;
+		sprites[PartTypes.BRAKES][Manufacturers.VOLVIMUS] = imageBrakesVolvimus;
 		callbacks[PartTypes.BRAKES][Manufacturers.VOLVIMUS] =
 			c => {
                 //Exhaust health low
@@ -140,7 +141,7 @@ public class CarPartFactory : MonoBehaviour {
                     //TODO
                 }
             };
-		sprites[PartTypes.BRAKES][Manufacturers.SM] = imageSMBrakes;
+		sprites[PartTypes.BRAKES][Manufacturers.SM] = imageBrakesSM;
 		callbacks[PartTypes.BRAKES][Manufacturers.SM] =
 			c => {
                 //Steering wheel is healthy, do negative thing
@@ -148,21 +149,21 @@ public class CarPartFactory : MonoBehaviour {
                     //TODO
                 }
             };
-		sprites[PartTypes.STEERING_WHEEL][Manufacturers.NII_SAN] = imageNiiSanWheel;
+		sprites[PartTypes.STEERING_WHEEL][Manufacturers.NII_SAN] = imageSteeringNiiSan;
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.NII_SAN] =
 			c => {
                 if (c.equippedParts[PartTypes.GEAR_BOX] != null && c.equippedParts[PartTypes.GEAR_BOX].manufacturer == Manufacturers.NII_SAN) {
                     c.acceleration *= 100;
                 }
             };
-		sprites[PartTypes.STEERING_WHEEL][Manufacturers.VOLVIMUS] = imageVolvimusWheels;
+		sprites[PartTypes.STEERING_WHEEL][Manufacturers.VOLVIMUS] = imageSteeringVolvimus;
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.VOLVIMUS] =
 			c => {
                 if (c.equippedParts[PartTypes.BRAKES] != null && c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.NII_SAN) {
                     //TODO
                 }
             };
-		sprites[PartTypes.STEERING_WHEEL][Manufacturers.SM] = imageSMWheels;
+		sprites[PartTypes.STEERING_WHEEL][Manufacturers.SM] = imageSteeringSM;
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.SM] =
 			c => {
                 if (c.equippedParts[PartTypes.ENGINE] != null && c.equippedParts[PartTypes.ENGINE].manufacturer == Manufacturers.VOLVIMUS) {

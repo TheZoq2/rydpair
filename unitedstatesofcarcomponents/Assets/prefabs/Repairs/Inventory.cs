@@ -39,11 +39,22 @@ public class Inventory : MonoBehaviour
 			}
 		}
 		
-
-        slots[7].TrySet(carPartFactory.Create(PartTypes.ENGINE, Manufacturers.NII_SAN), null);
-        TryAddItem(carPartFactory.Create(PartTypes.WHEELS, Manufacturers.NII_SAN));
-        TryAddItem(carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, Manufacturers.NII_SAN));
+		
+		TryAddItem(carPartFactory.Create(PartTypes.ENGINE, Manufacturers.NII_SAN));
+		TryAddItem(carPartFactory.Create(PartTypes.ENGINE, Manufacturers.VOLVIMUS));
+		TryAddItem(carPartFactory.Create(PartTypes.ENGINE, Manufacturers.SM));
+		TryAddItem(carPartFactory.Create(PartTypes.WHEELS, Manufacturers.NII_SAN));
+		TryAddItem(carPartFactory.Create(PartTypes.WHEELS, Manufacturers.VOLVIMUS));
+		TryAddItem(carPartFactory.Create(PartTypes.WHEELS, Manufacturers.SM));
+		TryAddItem(carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, Manufacturers.NII_SAN));
+		TryAddItem(carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, Manufacturers.VOLVIMUS));
+		TryAddItem(carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, Manufacturers.SM));
+		TryAddItem(carPartFactory.Create(PartTypes.BRAKES, Manufacturers.NII_SAN));
+		TryAddItem(carPartFactory.Create(PartTypes.BRAKES, Manufacturers.VOLVIMUS));
+		TryAddItem(carPartFactory.Create(PartTypes.BRAKES, Manufacturers.SM));
 		TryAddItem(carPartFactory.Create(PartTypes.STEERING_WHEEL, Manufacturers.NII_SAN));
+		TryAddItem(carPartFactory.Create(PartTypes.STEERING_WHEEL, Manufacturers.VOLVIMUS));
+		TryAddItem(carPartFactory.Create(PartTypes.STEERING_WHEEL, Manufacturers.SM));
 	}
 
 	public void DummyFunc(Car car)
