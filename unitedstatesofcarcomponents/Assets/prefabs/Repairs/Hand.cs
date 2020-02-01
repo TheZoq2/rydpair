@@ -14,7 +14,7 @@ public class Hand : ItemSlot
 		// On drop
 		if (newItem == null)
 		{
-			if (this.previousSlot != null)
+			if (this.previousSlot != null && this.previousSlot != nextSlot)
 			{
 				this.previousSlot.RemoveAfterImage();
 			}
