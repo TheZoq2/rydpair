@@ -3,6 +3,7 @@
 public class Car : MonoBehaviour {
     public float acceleration;
     public float velocityDecay;
+    public float minimumSpeed;
     public float rotationSpeed;
 
     private Vector3 velocity;
@@ -18,10 +19,17 @@ public class Car : MonoBehaviour {
         UpdateMovement();
     }
 
+    public void UpdateComponentEffects() {
+
+    }
+
     private void UpdateMovement() {
         transform.position += velocity * Time.deltaTime;
 
         velocity *= velocityDecay;
+        if(velocity.magnitude < minimumSpeed) {
+            velocity = Vector3.zero;
+        }
     }
 
     private void UpdateInput() {
