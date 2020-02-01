@@ -47,6 +47,7 @@ public class Car : MonoBehaviour {
             equippedParts[slot] = carPartFactory.Create(slot, randomManufacturer);
         }
         gState = FindObjectOfType<GameState>();
+        engineSmoke.Play();
     }
 
     // Update is called once per frame
@@ -92,7 +93,7 @@ public class Car : MonoBehaviour {
     public void UpdateComponentEffects() {
         ResetStats();
         foreach (CarPart part in equippedParts.Values) {
-            part.UpdateEffect(this);
+            part?.UpdateEffect(this);
         }
     }
 
@@ -100,7 +101,13 @@ public class Car : MonoBehaviour {
         maxFuel = defaultMaxFuel;
         fuelDrain = defaultFuelDrain;
         maxVelocity = defaultMaxVelocity;
-        engineSmoke.Stop();
+
+        // Clear smoke colour
+        ParticleSystem.Particle[] particleArray = new ParticleSystem.Particle[1];
+        if (engineSmoke.GetParticles(particleArray) > 0) {
+            particleArray[0].startColor = new Color(0, 0, 0);
+        }
+        engineSmoke.Pause();
     }
 
     private void UpdateMovement() {

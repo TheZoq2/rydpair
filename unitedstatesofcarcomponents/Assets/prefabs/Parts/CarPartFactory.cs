@@ -110,6 +110,12 @@ public class CarPartFactory : MonoBehaviour {
 			c => {
                 if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
                     //Pink smoke or sumthing (combination of exhaust + particles from tires)
+                    // TODO: This should work, but I'm getting to particles *at all*, so ¯\_(ツ)_/¯
+                    Debug.Log("Pinkifying smoke o(≧▽≦)o");
+                    ParticleSystem.Particle[] particleArray = new ParticleSystem.Particle[1];
+                    c.engineSmoke.GetParticles(particleArray);
+                    particleArray[0].startColor = new Color(1.0f, 0.6f, 0.3f);
+                    c.engineSmoke.Play();
                 }
             };
 		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.VOLVIMUS] = imageExhaustVolvimus;
