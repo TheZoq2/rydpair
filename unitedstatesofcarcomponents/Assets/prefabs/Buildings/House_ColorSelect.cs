@@ -7,10 +7,11 @@ public class House_ColorSelect : MonoBehaviour
     [Header("ColorParent")]
     public List<Sprite> sprites;
 
-    [Header("Material")]
-    public Material houseMat;
-
+    [Header("MeshRenderer")]
     public MeshRenderer meshRenderer;
+    
+    [Header("Adress")]
+    public string adress = "unknown";
 
     int randomIndex;
     
@@ -19,7 +20,7 @@ public class House_ColorSelect : MonoBehaviour
         ChangeTexture();
     }
 
-    void ChangeTexture()
+    public void ChangeTexture()
     {
         randomIndex = Random.Range(0, sprites.Count);
 
