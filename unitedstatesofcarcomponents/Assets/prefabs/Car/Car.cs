@@ -6,6 +6,7 @@ public class Car : MonoBehaviour {
     public ParticleSystem engineSmoke;
     public CarPartFactory carPartFactory;
     public GameObject steeringWheel;
+    public GameObject camera;
     public float steeringWheelMultiplier;
 
     public float defaultAcceleration;
@@ -166,5 +167,15 @@ public class Car : MonoBehaviour {
         else if(velocity < -maxVelocity) {
             velocity = -maxVelocity;
         }
+
+        float lookAngleMax = 80;
+
+        float cameraRX = Input.GetAxis("RotationX") * lookAngleMax;
+        float cameraRY = Input.GetAxis("RotationY") * lookAngleMax;
+
+        camera.transform.localRotation = Quaternion.Euler(
+            cameraRX, cameraRY, 0
+        );
+
     }
 }

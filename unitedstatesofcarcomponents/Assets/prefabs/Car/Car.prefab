@@ -51,22 +51,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd5b531d52d08f4aae81e771b8566a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 3.41
   engineSmoke: {fileID: 0}
   carPartFactory: {fileID: 0}
+  steeringWheel: {fileID: 4162928810105201236}
+  camera: {fileID: 2223376080043253930}
+  steeringWheelMultiplier: 80
+  defaultAcceleration: 0
+  acceleration: 3.41
   defaultMaxFuel: 1000
   maxFuel: 0
   defaultFuelDrain: 1
   fuelDrain: 0
-  defaultMaxSpeed: 0
-  maxSpeed: 1.88
-  score: 0
-  wheelDistance: 1.4
-  steeringSpeed: 4.34
-  velocityDecay: 0.99
+  defaultMaxVelocity: 0
   maxVelocity: 3.96
-  steeringWheel: {fileID: 4162928810105201236}
-  steeringWheelMultiplier: 80
+  defaultVelocityDecay: 0
+  velocityDecay: 0.99
+  wheelDistance: 1.18
+  steeringSpeed: 4.34
+  score: 0
 --- !u!198 &-2853446074473756791
 ParticleSystem:
   m_ObjectHideFlags: 0
