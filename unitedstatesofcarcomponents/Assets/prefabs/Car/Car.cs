@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Car : MonoBehaviour {
     public ParticleSystem engineSmoke;
-    public CarPartFactory carPartFactory;
+    private CarPartFactory carPartFactory;
     public GameObject steeringWheel;
     public GameObject camera;
     public float steeringWheelMultiplier;
@@ -41,7 +41,8 @@ public class Car : MonoBehaviour {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
 
-        Manufacturers[] allManufacturers = (Manufacturers[]) Enum.GetValues(typeof(Manufacturers));
+		carPartFactory = FindObjectOfType<CarPartFactory>();
+		Manufacturers[] allManufacturers = (Manufacturers[]) Enum.GetValues(typeof(Manufacturers));
         foreach (PartTypes slot in Enum.GetValues(typeof(PartTypes))) {
             Manufacturers randomManufacturer = allManufacturers[(int)UnityEngine.Random.Range(0, allManufacturers.Length - 1)];
             CarPart randomPart = carPartFactory.Create(slot, randomManufacturer);
@@ -101,7 +102,8 @@ public class Car : MonoBehaviour {
     public CarPart RemovePart(PartTypes type) {
         CarPart removedPart = equippedParts[type];
         equippedParts[type] = null;
-        return removedPart;
+		Debug.Log("Remove " + type);
+		return removedPart;
     }
 
 
@@ -109,7 +111,8 @@ public class Car : MonoBehaviour {
         if (newPart?.type != type) Debug.Log($"Equipped {newPart?.type}-slot part in {type} slot (probably shouldn't happen).");
         equippedParts[type] = newPart;
         UpdateComponentEffects();
-    }
+		Debug.Log("Add " + type);
+	}
 
     public void UpdateComponentEffects() {
         ResetStats();

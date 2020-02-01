@@ -12,7 +12,7 @@ public class InteractiveSlot : PartSlot
 	private Image emptySprite;
 	private PartSlot hand;
 
-	private void Awake()
+	protected void Awake()
 	{
 		sprite = GetComponent<Image>();
 		partSprite = transform.Find("PartSprite").GetComponent<Image>();
@@ -24,7 +24,7 @@ public class InteractiveSlot : PartSlot
 		sprite.color = Color.grey;
 	}
 
-	private void OnPartSet(CarPart newPart, PartSlot previousSlot, PartSlot nextSlot)
+	protected void OnPartSet(CarPart newPart, PartSlot previousSlot, PartSlot nextSlot)
 	{
 		if (newPart == null)
 		{
