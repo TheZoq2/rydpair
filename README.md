@@ -43,29 +43,26 @@ HIGH FUEL DRAIN!
 
 Manufacturer: Specific Motors  
 Product Name: Vehicle engine of size 20x45x30cm with 150 HP output made by Specific Motors  
-Physical properties:
-Technical properties:
 Sales pitch: This motor solves a very specific problem where you have enough room to use a motor of the aforementioned size and require the provided HP output.
 
 WHEELS  
 
 Manufacturer: Nii-San  
 Product Name: R04D-R0LL3R  
-Physical properties: Diameter 60 cm  
+Physical properties: Diameter 200 cm  
 Technical properties: ???  
 Sales pitch: When you need to roll over the opposition with an unstoppable force!
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Volvimus  
+Product Name:  Circulus  
+Physical properties: Diameter 40cm  
+Technical properties: ???  
+Sales pitch: Wheels are round, and what is more round than a circle?  
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Specific Motors  
+Product Name: Car wheels with a diameter of 40cm with extremely good traction for wintery conditions  
+Sales pitch: Car wheels made for use during wintery conditions when weather or local laws require them.  
+Snow chains  
 
 GEAR_BOX
 
@@ -77,17 +74,17 @@ Sales pitch: An automatic gear box that will take care of all your shifting need
 Breaks really easily?  
 Can not reverse  
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Volvimus  
+Product Name: Växellordi
+Physical properties: ?  
+Technical properties: 6 gears  
+Sales pitch: A robust gear box useable with every car!  
+*Can not be used with every car  
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Specific Motors  
+Product Name: Standard purpose gearbox for ordinary cars with 6 gears  
+Sales pitch: Blablabla  
+*This one actually works
 
 EXHAUST_SYSTEM  
 
@@ -97,17 +94,15 @@ Physical properties: Tri-exit exhaust pipe
 Technical properties: ?  
 Sales pitch: This exhaust system can handle even the most despicable of exhausts.
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Volvimus  
+Product Name: Cloaca  
+Physical properties: Circular exhaust pipe with grate  
+Technical properties:  
+Sales pitch: This exhaustpipe will handle all the waste from the car!  
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Specific Motors  
+Product Name: I don't even know man it is an exhaust pipe  
+Sales pitch: Buy this it works    
 
 BRAKES  
 
@@ -117,37 +112,33 @@ Physical properties: 4kg
 Technical properties: Break Force applied: 200N  
 Sales pitch: WWhen you experience an immense power pushing you forward and you need to fight it, GDR1-BR3KR are the brakes for you!
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Volvimus  
+Product Name: Finio  
+Physical properties: 3kg  
+Technical properties:  Break Force applied: 250N  
+Sales pitch: A journey has several phases, and one of the most important ones is when it is over and you need to stop. The Finio breaks do just that for you!  
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Specific Motors  
+Product Name: 2kg breaks that apply a break force of 300N  
+Sales pitch: Lightweight and powerful brakes that will break any forward momentum!  
 
 STEERING_WHEEL  
 
 Manufacturer: Nii-San  
 Product Name: PR0-T4G  
-Physical properties: Very generic looking
+Physical properties: Very generic looking  
 Technical properties: Can turn if outside forces are applied  
 Sales pitch: A steering wheel that completely reacts to your every move and has no will on its own!  
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Volvimus  
+Product Name: Ducere  
+Physical properties: Sleek, elegant modern design  
+Technical properties: One rotation = 20 degree turn  
+Sales pitch: A way to lead the car forward, to victory!  
 
-Manufacturer:
-Product Name:
-Physical properties:
-Technical properties:
-Sales pitch:
+Manufacturer: Specific Motors  
+Product Name: Black steering wheel with airbag  
+Sales pitch: This steering wheel is equipped with the latest safety features    
 
 Dumma tal att jämnföra med:  
 Registreringsnummer  
