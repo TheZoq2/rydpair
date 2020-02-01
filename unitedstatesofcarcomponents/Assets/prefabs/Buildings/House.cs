@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class House_ColorSelect : MonoBehaviour
+public class House : MonoBehaviour
 {
     [Header("ColorParent")]
     public List<Sprite> sprites;
 
     [Header("MeshRenderer")]
     public MeshRenderer meshRenderer;
-    
+
     [Header("Adress")]
-    public string adress = "unknown";
+    public string adress = "";
 
     int randomIndex;
     
