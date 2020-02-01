@@ -26,6 +26,7 @@ public class Car : MonoBehaviour {
     private float wheelAngle = 0;
     public float wheelDistance;
     public float steeringSpeed;
+    public float velocityDecay;
 
     private float fuel;
 
@@ -130,6 +131,8 @@ public class Car : MonoBehaviour {
             (velocity * Mathf.Tan(wheelAngleRad) / wheelDistance) * 180 / Mathf.PI
                 * Time.deltaTime
         );
+
+        velocity *= velocityDecay;
     }
 
     private void UpdateInput() {
