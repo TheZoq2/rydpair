@@ -32,6 +32,7 @@ Transform:
   - {fileID: 8526497081538906531}
   - {fileID: 8504479017138142561}
   - {fileID: 5270525504365929049}
+  - {fileID: 467405941171866080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,6 +57,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eafc80b0b7951e44394d90d51a61e791, type: 3}
   meshRenderer: {fileID: 1329793801232407315}
   adress: 
+  pickupPoint: {fileID: 467405941171866080}
 --- !u!1 &5218124358981146127
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +270,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6905662009333337907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467405941171866080}
+  m_Layer: 0
+  m_Name: Pickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &467405941171866080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905662009333337907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2834596448867009129}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7831166842789898837
 GameObject:
   m_ObjectHideFlags: 0
