@@ -45,6 +45,7 @@ public class Car : MonoBehaviour {
         defaultParts[PartTypes.ENGINE] = carPartFactory.Create(PartTypes.ENGINE, c => {
             c.defaultFuelDrain *= 3.0f;
             c.defaultMaxSpeed *= 0.5f;
+            c.engineSmoke.Play();
         });
         defaultParts[PartTypes.EXHAUST_SYSTEM] = carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, c => {
             /* TODO */
@@ -105,6 +106,7 @@ public class Car : MonoBehaviour {
         maxFuel = defaultMaxFuel;
         fuelDrain = defaultFuelDrain;
         maxSpeed = defaultMaxSpeed;
+        engineSmoke.Stop();
     }
 
     private void UpdateMovement() {
