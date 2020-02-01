@@ -17,6 +17,9 @@ public class Car : MonoBehaviour {
     private float defaultMaxSpeed;
     public float maxSpeed;
 
+    private string destinationAddress = "";
+    public int score = 0;
+
     //Equipped car parts
     public Dictionary<PartTypes, CarPart> equippedParts = new Dictionary<PartTypes, CarPart>();
     private readonly Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
@@ -69,12 +72,19 @@ public class Car : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         Pickup pickup = other.gameObject.GetComponent<Pickup>();
+        House house = other.gameObject.GetComponent<House>();
+        
         if (pickup != null) {
-            //if (pickup.part != null && inventory.TryAddItem(pickup.part) {
-            //}
+            if (string.IsNullOrEmpty(destinationAddress)) {
+                // Successful pickup
+                destinationAddress = pickup.destination;
+                Destroy(other.gameObject);
+            }
+        } else if (!string.IsNullOrEmpty(destinationAddress) && destinationAddress == house?.adress) {
+            // A successful delivery
+            score++;
+            destinationAddress = "";
         }
-
-        Destroy(other.gameObject);
     }
 
     public CarPart RemovePart(PartTypes type) {
