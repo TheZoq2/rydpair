@@ -8,16 +8,10 @@ public class InventorySlot : MonoBehaviour
 	private GameObject item;
 	private Image itemSprite;
 
-	private void Start()
+	private void Awake()
 	{
 		itemSprite = transform.Find("ItemSprite").GetComponent<Image>();
 		ForceSet(null);
-
-		// Dummy test
-		if (gameObject.name == "InventorySlot (1)" || gameObject.name == "InventorySlot (5)")
-		{
-			ForceSet(gameObject);
-		}
 	}
 
 	private void ForceSet(GameObject new_item)

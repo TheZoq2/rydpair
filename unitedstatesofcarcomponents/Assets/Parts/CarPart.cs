@@ -34,10 +34,14 @@ public abstract class CarPart : MonoBehaviour
         }
     }
 
-    [SerializeField]
+#pragma warning disable IDE0044 // Add readonly modifier
+#pragma warning disable CS0649 // Add readonly modifier Unity
+	[SerializeField]
     private int defaultMaxHealth;
+#pragma warning restore IDE0044 // Add readonly modifier
+#pragma warning restore CS0649 // Add readonly modifier Unity
 
-    private int maxHealth;
+	private int maxHealth;
 
     public int currentHealth;
 
