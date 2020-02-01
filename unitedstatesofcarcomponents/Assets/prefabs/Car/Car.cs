@@ -73,10 +73,8 @@ public class Car : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         Pickup pickup = other.gameObject.GetComponent<Pickup>();
         if (pickup != null) {
-            if (pickup.part != null) {
-                //TODO: Fix inventory integration when inventory feels like integrating.
-                //inventory
-            }
+            //if (pickup.part != null && inventory.TryAddItem(pickup.part) {
+            //}
         }
 
         Destroy(other.gameObject);
