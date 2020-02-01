@@ -62,6 +62,7 @@ MonoBehaviour:
   wheelDistance: 1.4
   steeringSpeed: 4.34
   velocityDecay: 0.99
+  maxVelocity: 3.96
 --- !u!198 &-2853446074473756791
 ParticleSystem:
   m_ObjectHideFlags: 0
