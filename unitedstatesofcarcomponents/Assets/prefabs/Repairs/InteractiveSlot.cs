@@ -41,6 +41,7 @@ public class InteractiveSlot : PartSlot
 		}
 		else
 		{
+			partSprite.sprite = newPart.sprite;
 			partSprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 			emptySprite.enabled = false;
 		}

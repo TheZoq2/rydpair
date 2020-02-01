@@ -45,6 +45,7 @@ public class Car : MonoBehaviour {
             Manufacturers randomManufacturer = allManufacturers[UnityEngine.Random.Range(0, allManufacturers.Length - 1)];
             equippedParts[slot] = carPartFactory.Create(slot, randomManufacturer);
         }
+        gState = FindObjectOfType<GameState>();
     }
 
     // Update is called once per frame
@@ -111,6 +112,8 @@ public class Car : MonoBehaviour {
         }
         float wheelAngleRad = wheelAngle * Mathf.PI / 4.0F;
 
+       // Debug.Log(velocity);
+
         Vector3 currentVelocity = new Vector3(
                 velocity * Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.PI / 180),
                 0.0f,
@@ -137,7 +140,7 @@ public class Car : MonoBehaviour {
         velocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
         velocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
 
-        if(velocity > maxVelocity) {
+        if (velocity > maxVelocity) {
             velocity = maxVelocity;
         }
         else if(velocity < -maxVelocity) {

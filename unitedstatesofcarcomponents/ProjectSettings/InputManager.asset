@@ -323,7 +323,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 5
+    axis: 2
     joyNum: 0
   - serializedVersion: 3
     m_Name: Reverse
@@ -355,7 +355,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 2
+    axis: 5
     joyNum: 0
   - serializedVersion: 3
     m_Name: RotationY

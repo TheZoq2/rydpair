@@ -12,6 +12,7 @@ public class CarPart : MonoBehaviour {
     }
 
     public Action<Car> UpdateEffect;
+	public Sprite sprite;
 
 #pragma warning disable IDE0044 // Add readonly modifier
 #pragma warning disable CS0649 // Add readonly modifier Unity
@@ -20,7 +21,7 @@ public class CarPart : MonoBehaviour {
 #pragma warning restore IDE0044 // Add readonly modifier
 #pragma warning restore CS0649 // Add readonly modifier Unity
 
-	private int maxHealth;
+	public int maxHealth;
 
     public int currentHealth;
 

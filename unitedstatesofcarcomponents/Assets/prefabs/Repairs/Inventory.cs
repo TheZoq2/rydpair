@@ -38,12 +38,13 @@ public class Inventory : MonoBehaviour
 				slots.Add(slot);
 			}
 		}
+		
 
-        CarPart dummyPart = carPartFactory.Create(PartTypes.BRAKES, Manufacturers.VOLVIMUS, DummyFunc);
-        slots[2].TrySet(dummyPart, null);
-        TryAddItem(dummyPart);
-        TryAddItem(dummyPart);
-    }
+        slots[7].TrySet(carPartFactory.Create(PartTypes.ENGINE, Manufacturers.NII_SAN), null);
+        TryAddItem(carPartFactory.Create(PartTypes.WHEELS, Manufacturers.NII_SAN));
+        TryAddItem(carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, Manufacturers.NII_SAN));
+		TryAddItem(carPartFactory.Create(PartTypes.STEERING_WHEEL, Manufacturers.NII_SAN));
+	}
 
 	public void DummyFunc(Car car)
 	{
