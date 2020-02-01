@@ -6,6 +6,7 @@ public class Car : MonoBehaviour {
     public ParticleSystem engineSmoke;
     private CarPartFactory carPartFactory;
     public GameObject steeringWheel;
+    public GameObject spedometerNeedle;
     public float steeringWheelMultiplier;
 
     public float defaultAcceleration;
@@ -120,8 +121,6 @@ public class Car : MonoBehaviour {
         }
         float wheelAngleRad = wheelAngle * Mathf.PI / 4.0F;
 
-       // Debug.Log(velocity);
-
         Vector3 currentVelocity = new Vector3(
                 velocity * Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.PI / 180),
                 0.0f,
@@ -141,6 +140,9 @@ public class Car : MonoBehaviour {
 
         steeringWheel.transform.localRotation = Quaternion.Euler(
             0, wheelAngle * steeringWheelMultiplier, 0
+        );
+        spedometerNeedle.transform.localRotation = Quaternion.Euler(
+            0, 0, - Mathf.Abs(velocity / maxVelocity) * 160 + 80
         );
     }
 
