@@ -41,12 +41,6 @@ public class Car : MonoBehaviour {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
 
-		carPartFactory = FindObjectOfType<CarPartFactory>();
-		Manufacturers[] allManufacturers = (Manufacturers[])Enum.GetValues(typeof(Manufacturers));
-        foreach (PartTypes slot in Enum.GetValues(typeof(PartTypes))) {
-            Manufacturers randomManufacturer = allManufacturers[UnityEngine.Random.Range(0, allManufacturers.Length - 1)];
-            equippedParts[slot] = carPartFactory.Create(slot, randomManufacturer);
-        }
         gState = FindObjectOfType<GameState>();
         engineSmoke.Play();
     }

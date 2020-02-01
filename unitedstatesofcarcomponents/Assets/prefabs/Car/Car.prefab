@@ -86,7 +86,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engineSmoke: {fileID: 0}
-  carPartFactory: {fileID: 0}
   steeringWheel: {fileID: 4162928810105201236}
   spedometerNeedle: {fileID: 915776825520824088}
   steeringWheelMultiplier: 80
@@ -96,7 +95,7 @@ MonoBehaviour:
   maxFuel: 0
   defaultFuelDrain: 1
   fuelDrain: 0
-  defaultMaxVelocity: 0
+  defaultMaxVelocity: 3.94
   maxVelocity: 3.96
   defaultVelocityDecay: 0
   velocityDecay: 0.99
@@ -4906,9 +4905,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.375
     width: 1
-    height: 1
+    height: 0.625
   near clip plane: 0.05
   far clip plane: 1000
   field of view: 51.96451
@@ -5309,15 +5308,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f5947e7dd369136b88432386e29a5d, type: 3}
---- !u!4 &1125592501942063175 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 84f5947e7dd369136b88432386e29a5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5396540113905793885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4162928810105201236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 84f5947e7dd369136b88432386e29a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5396540113905793885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1125592501942063175 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 84f5947e7dd369136b88432386e29a5d,
     type: 3}
   m_PrefabInstance: {fileID: 5396540113905793885}
   m_PrefabAsset: {fileID: 0}

@@ -201,7 +201,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 540}
+  m_SizeDelta: {x: 0, y: 405}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1001 &4873253980193635517
 PrefabInstance:
@@ -213,7 +213,12 @@ PrefabInstance:
     - target: {fileID: 233967999086604183, guid: a803228935b513246b90753b7a88e655,
         type: 3}
       propertyPath: m_Size
-      value: 0.99999994
+      value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 233967999086604183, guid: a803228935b513246b90753b7a88e655,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3240491372648129532, guid: a803228935b513246b90753b7a88e655,
         type: 3}
@@ -453,7 +458,7 @@ PrefabInstance:
     - target: {fileID: 6614491788246300170, guid: a803228935b513246b90753b7a88e655,
         type: 3}
       propertyPath: m_Size
-      value: 0.27
+      value: 0.2025
       objectReference: {fileID: 0}
     - target: {fileID: 6917966475673738193, guid: a803228935b513246b90753b7a88e655,
         type: 3}
@@ -609,6 +614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Repairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062519671747376251, guid: f3c762f4d3c92a34eb1ae48bbfa5116c,
+        type: 3}
+      propertyPath: rows
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c762f4d3c92a34eb1ae48bbfa5116c, type: 3}

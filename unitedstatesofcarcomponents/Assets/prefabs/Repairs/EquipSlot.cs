@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,17 @@ public class EquipSlot : InteractiveSlot
 		base.Awake();
 		onPartSet = OnPartSet;
 	}
+
+	private void Start()
+	{
+
+		CarPartFactory carPartFactory = FindObjectOfType<CarPartFactory>();
+		Manufacturers[] allManufacturers = (Manufacturers[])Enum.GetValues(typeof(Manufacturers));
+
+		Manufacturers randomManufacturer = allManufacturers[UnityEngine.Random.Range(0, allManufacturers.Length - 1)];
+		TrySet(carPartFactory.Create(partType, randomManufacturer), null);
+	}
+
 
 	public override bool TrySet(CarPart newPart, PartSlot previousSlot)
 	{
