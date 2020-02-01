@@ -1,2 +1,2 @@
 all:
-	echo src/manual.tex | entr tectonic src/manual.tex -o .
+	find src -name "*.tex" | entr tectonic src/manual.tex -o .

@@ -1,0 +1,48 @@
+\begin{tikzpicture}[
+    auto,
+    node distance=0.5cm,
+    every label/.style={align=left},
+    every node/.style={align=left}
+]
+    \node[process] (start) {Start};
+    \node[process, below = of start] (isAc) {AC or DC generator};
+
+    \node[process, below left = of isAc] (hasFluxCapacitor) {Generator has flux capacitor};
+    \node[process, below = of hasFluxCapacitor] (yes1) {\textbf{compatible}};
+    \node[process, below right = 1.5cm of isAc] (outputVoltage) {OutputVoltage};
+
+    \node[process, below = 3.5cm of isAc] (5V) {Component\\ serial number\\ divisble by 5};
+
+    \path[arrow] (start) -- (isAc);
+
+    \path[arrow] (isAc)
+        -- node [
+            midway,
+            yshift=0.3cm,
+            label=left:{DC}
+        ] {}
+        (hasFluxCapacitor);
+    \path[arrow] (isAc)
+        -- node [
+            midway,
+            yshift=0.2cm,
+            xshift=0.9cm,
+            label=left:{AC}
+        ] {}
+        (outputVoltage);
+
+    \path[arrow] (hasFluxCapacitor)
+        -- node [
+            midway,
+            label=left:{Yes}
+        ] {}
+        (yes1);
+
+    \path[arrow] (hasFluxCapacitor)
+        -- node [
+            midway,
+            yshift=0.2cm,
+            label=left:{No}
+        ] {}
+        (outputVoltage);
+\end{tikzpicture}
