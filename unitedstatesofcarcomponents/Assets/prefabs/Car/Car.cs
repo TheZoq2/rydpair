@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Car : MonoBehaviour {
     public float acceleration;
@@ -7,16 +8,20 @@ public class Car : MonoBehaviour {
     public float rotationSpeed;
     public float turnMultiplier;
 
+    [SerializeField]
+    private float defaultMaxFuel;
     public float maxFuel;
+    [SerializeField]
+    private float defaultFuelDrain;
     public float fuelDrain;
+    [SerializeField]
+    private float defaultMaxSpeed;
+    public float maxSpeed;
 
     //Equipped car parts
-    public CarPart engine;
-    public CarPart wheels;
-    public CarPart gearBox;
-    public CarPart steeringWheel;
-    public CarPart brakes;
-    public CarPart exhaustSystem;
+    public Dictionary<PartTypes, CarPart> equippedParts;
+
+    private Dictionary<PartTypes, CarPart> defaultParts = new Dictionary<PartTypes, CarPart>();
 
     private Vector3 velocity;
     
@@ -24,6 +29,13 @@ public class Car : MonoBehaviour {
 
     private void Start() {
         fuel = maxFuel;
+
+        defaultParts[PartTypes.BRAKES] = new CarPart(PartTypes.BRAKES, null);
+        defaultParts[PartTypes.ENGINE] = new CarPart(PartTypes.ENGINE, c => { c.defaultFuelDrain *= 3.0f; c.defaultMaxSpeed *= 0.5f; });
+        defaultParts[PartTypes.EXHAUST_SYSTEM] = new CarPart(PartTypes.EXHAUST_SYSTEM, null);
+        defaultParts[PartTypes.GEAR_BOX] = new CarPart(PartTypes.GEAR_BOX, null);
+        defaultParts[PartTypes.STEERING_WHEEL] = new CarPart(PartTypes.STEERING_WHEEL, c => c.turnMultiplier *= -1.0f);
+        defaultParts[PartTypes.WHEELS] = new CarPart(PartTypes.WHEELS, c => { c.defaultMaxSpeed *= 0.9f; });
     }
 
     // Update is called once per frame
@@ -31,72 +43,38 @@ public class Car : MonoBehaviour {
         UpdateInput();
         UpdateMovement();
     }
-
-    public void RemovePart(PartTypes type) {
-        switch (type) {
-            //TODO: Instead of null, have default broken part?
-            case PartTypes.ENGINE:
-                engine = null;
-                    break;
-            case PartTypes.WHEELS:
-                wheels = null;
-                break;
-            case PartTypes.GEAR_BOX:
-                wheels = null;
-                break;
-            case PartTypes.STEERING_WHEEL:
-                steeringWheel = null;
-                break;
-            case PartTypes.BRAKES:
-                brakes = null;
-                break;
-            case PartTypes.EXHAUST_SYSTEM:
-                exhaustSystem = null;
-                break;
-            default:
-                break;
-        }
+    
+    public CarPart RemovePart(PartTypes type) {
+        CarPart removedPart = equippedParts[type];
+        equippedParts[type] = defaultParts[type]; // TODO: Not null?
         UpdateComponentEffects();
+        return removedPart;
     }
 
     public void AddPart(PartTypes type, CarPart newPart) {
-        switch (type) {
-            case PartTypes.ENGINE:
-                engine = newPart;
-                break;
-            case PartTypes.WHEELS:
-                wheels = newPart;
-                break;
-            case PartTypes.GEAR_BOX:
-                wheels = newPart;
-                break;
-            case PartTypes.STEERING_WHEEL:
-                steeringWheel = newPart;
-                break;
-            case PartTypes.BRAKES:
-                brakes = newPart;
-                break;
-            case PartTypes.EXHAUST_SYSTEM:
-                exhaustSystem = newPart;
-                break;
-            default:
-                break;
-        }
+        if (newPart.type != type) Debug.Log($"Equipped {newPart.type}-slot part in {type} slot (probably shouldn't happen).");
+        equippedParts[type] = newPart;
         UpdateComponentEffects();
     }
 
     public void UpdateComponentEffects() {
-        //TODO: Implement CarPart method for affecting car
-        //engine.
-        //wheels.
-        //gearbox.
-        //steeringWheel.
-        //brakes.
-        //exhaustSystem.
+        ResetStats();
+        foreach (CarPart part in equippedParts.Values) {
+            part.OnSetParts(this);
+        }
+    }
+
+    public void ResetStats() {
+        maxFuel = defaultMaxFuel;
+        fuelDrain = defaultFuelDrain;
+        maxSpeed = defaultMaxSpeed;
     }
 
     private void UpdateMovement() {
         if(fuel > 0) {
+            if (velocity.magnitude > maxSpeed) {
+                velocity = velocity.normalized * maxSpeed;
+            }
             transform.position += velocity * Time.deltaTime;
 
             velocity *= velocityDecay;

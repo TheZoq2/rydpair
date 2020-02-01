@@ -1,37 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CarPart : MonoBehaviour
+public class CarPart : MonoBehaviour
 {
+
+    public CarPart(PartTypes type, Action<Car> setPartsDelegate) {
+        this.type = type;
+        this.onSetPartsDelegate = setPartsDelegate ?? (_ => throw new System.NotImplementedException($"The part equipped in slot {type} is not implemented"));
+    }
+
+    public PartTypes type;
+
     private void Start() {
         currentHealth = maxHealth = defaultMaxHealth;
     }
 
-    private void OnSetParts() {
-        if (false) { // TODO: Figure out whether our parent is the car or the inventory.
-            // If parent is the inventory, not the car
-            isEquipped = false;
-        } else {
-            // If parent is the car, not the inventory
-            isEquipped = true;
-            List<CarPart> otherParts = new List<CarPart>();
-            foreach (CarPart part in gameObject.GetComponentsInParent<CarPart>()) {
-                if (part == gameObject) otherParts.Add(part);
-            }
-            
-            maxHealth = defaultMaxHealth;
-            maxSpeedMult = 1;
-            foreach (PartTrait trait in traits) {
-                int partHealthMod = 0;
-                if (trait.IsEnabled(traits, otherParts)) {
-                    // Part's impact, derived from traits
-                    partHealthMod += trait.PartHealthImpact();
-                    maxSpeedMult *= trait.MaxSpeedMult();
-                }
-                maxHealth += partHealthMod;
-            }
-        }
+    private Action<Car> onSetPartsDelegate;
+    public void OnSetParts(Car car) {
+        onSetPartsDelegate(car);
     }
 
 #pragma warning disable IDE0044 // Add readonly modifier
@@ -47,14 +35,12 @@ public abstract class CarPart : MonoBehaviour
 
     public int healthDecay;
 
-    bool isEquipped = false;
-
     bool isInvertingSteering = false;
 
     public float maxSpeedMult = 1;
 
     private void Update() {
-        if (!isEquipped) return;
+        // if (!isEquipped) return; // Is knowing this the component's job, or the car's?
         currentHealth -= (int) (Time.deltaTime * healthDecay);
 
         if (currentHealth <= 0) {
