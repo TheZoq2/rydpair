@@ -1,5 +1,22 @@
 \documentclass{article}
 
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}      % include this line if your document contains figures
+\usepackage{natbib}        % required for bibliography
+\usepackage[colorinlistoftodos,prependcaption,textsize=small]{todonotes}
+\usepackage[nolist,nohyperlinks]{acronym}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usetikzlibrary{shapes,arrows, positioning}
+
+\input{tikzsetup}
+
+\pgfplotsset{compat=1.16}
+
 \title{Rydpair car manual}
 
 \newcommand{\carbrand}{Rydpair}
@@ -75,6 +92,9 @@
         \item{Understeering}
         \item{Replacement of components with non-manufacturer-approved components}
         \item{Other things which may hamper the performance of the vehicle}
+        \item{Reading the rest of the manual before reading Section~\ref{sec:reading_the_manual}
+            after reading this
+        }
     \end{itemize}
 
     \twocolumn
@@ -95,8 +115,15 @@
 
     \onecolumn
 
+    \subsection{Electrical system}
 
+    Not all components are electrically compatible with each other, in particular,
+    make sure that your generator does not feed the wrong voltage to the component.
+    For details, consult Figure~\ref{fig:generator_flowchart}.
 
-
-
+    \begin{figure}
+        \input{fig/flowchart}
+        \caption{Determining if a component is compatible with a
+        generator}\label{fig:generator_flowchart}
+    \end{figure}
 \end{document}

@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 #pragma warning disable IDE0044 // Add readonly modifier
 #pragma warning disable CS0649 // Add readonly modifier Unity
 	[SerializeField]
-	private InventorySlot slotPrefab;
+	private InteractiveSlot slotPrefab;
 
 	[SerializeField]
 	private int slotSize;
@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
 #pragma warning restore IDE0044 // Add readonly modifier
 #pragma warning restore CS0649 // Add readonly modifier Unity
 
-	List<InventorySlot> slots = new List<InventorySlot>();
+	List<InteractiveSlot> slots = new List<InteractiveSlot>();
 
 	void Start()
     {
@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
 		{
 			for (int r = 0; r < rows; ++r)
 			{
-				InventorySlot slot = Instantiate(slotPrefab) as InventorySlot;
+				InteractiveSlot slot = Instantiate(slotPrefab) as InteractiveSlot;
 				RectTransform slotTransform = slot.GetComponent<RectTransform>();
 				slotTransform.SetParent(GetComponent<RectTransform>(), false);
 				slotTransform.anchoredPosition = new Vector2(slotTransform.rect.width * c, -slotTransform.rect.height * r);
@@ -35,7 +35,6 @@ public class Inventory : MonoBehaviour
 			}
 		}
 
-		slots[5].TrySet(gameObject);
-
+		slots[5].TrySet(gameObject, null);
 	}
 }
