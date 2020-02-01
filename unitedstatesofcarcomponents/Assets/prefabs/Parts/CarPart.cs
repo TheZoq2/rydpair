@@ -12,6 +12,7 @@ public class CarPart : MonoBehaviour {
     }
 
     public Action<Car> UpdateEffect;
+	public Sprite sprite;
 
 #pragma warning disable IDE0044 // Add readonly modifier
 #pragma warning disable CS0649 // Add readonly modifier Unity
