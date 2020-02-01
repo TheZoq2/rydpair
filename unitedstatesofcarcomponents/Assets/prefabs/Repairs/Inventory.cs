@@ -36,5 +36,19 @@ public class Inventory : MonoBehaviour
 		}
 
 		slots[5].TrySet(gameObject, null);
+		TryAddItem(gameObject);
+		TryAddItem(gameObject);
+	}
+
+	public bool TryAddItem(GameObject item)
+	{
+		foreach (InteractiveSlot slot in slots)
+		{
+			if (slot.TrySet(item, null)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }
