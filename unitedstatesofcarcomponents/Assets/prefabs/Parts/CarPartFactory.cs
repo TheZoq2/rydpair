@@ -58,14 +58,14 @@ public class CarPartFactory : MonoBehaviour {
 		sprites[PartTypes.ENGINE][Manufacturers.SM] = imageSMEngine;
 		callbacks[PartTypes.ENGINE][Manufacturers.SM] =
 			c => {
-                if (c.equippedParts[PartTypes.GEAR_BOX].currentHealth <= c.equippedParts[PartTypes.GEAR_BOX].maxHealth / 2) {
+                if (c.equippedParts[PartTypes.GEAR_BOX] != null && c.equippedParts[PartTypes.GEAR_BOX].currentHealth <= c.equippedParts[PartTypes.GEAR_BOX].maxHealth / 2) {
                     c.acceleration *= -1;
                 }
             };
 		sprites[PartTypes.WHEELS][Manufacturers.NII_SAN] = imageNiiSanWheel;
 		callbacks[PartTypes.WHEELS][Manufacturers.NII_SAN] =
 			c => {
-                if (c.equippedParts[PartTypes.ENGINE].currentHealth <= c.equippedParts[PartTypes.GEAR_BOX].maxHealth * 0.3) {
+                if (c.equippedParts[PartTypes.ENGINE] != null && c.equippedParts[PartTypes.ENGINE].currentHealth <= c.equippedParts[PartTypes.ENGINE].maxHealth * 0.3) {
                     c.acceleration *= 0.3f;
                 }
             };
@@ -79,56 +79,56 @@ public class CarPartFactory : MonoBehaviour {
 		sprites[PartTypes.WHEELS][Manufacturers.SM] = imageSMWheels;
 		callbacks[PartTypes.WHEELS][Manufacturers.SM] =
 			c => {
-                if (c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.SM) {
+                if (c.equippedParts[PartTypes.BRAKES] != null && c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.SM) {
                     c.velocityDecay = 1;
                 }
             };
 		sprites[PartTypes.GEAR_BOX][Manufacturers.NII_SAN] = imageNiiSanGearBox;
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.NII_SAN] =
 			c => {
-                if (c.equippedParts[PartTypes.STEERING_WHEEL].manufacturer == Manufacturers.NII_SAN) {
+                if (c.equippedParts[PartTypes.STEERING_WHEEL] != null && c.equippedParts[PartTypes.STEERING_WHEEL].manufacturer == Manufacturers.NII_SAN) {
                     c.maxVelocity /= 2;
                 }
             };
 		sprites[PartTypes.GEAR_BOX][Manufacturers.VOLVIMUS] = imageVolvimusGearBox;
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.VOLVIMUS] =
 			c => {
-                if (c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.NII_SAN) {
+                if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.NII_SAN) {
                     //TODO: implement sinus steering.
                 }
             };
 		sprites[PartTypes.GEAR_BOX][Manufacturers.SM] = imageSMGearBox;
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.SM] =
 			c => {
-                if (c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.VOLVIMUS) {
+                if (c.equippedParts[PartTypes.BRAKES] != null && c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.VOLVIMUS) {
                     //TODO: Implement random braking.
                 }
             };
 		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.NII_SAN] = imageNiiSanExhaust;
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.NII_SAN] =
 			c => {
-                if (c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
+                if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
                     //Pink smoke or sumthing (combination of exhaust + particles from tires)
                 }
             };
 		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.VOLVIMUS] = imageVolvimusExhaust;
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.VOLVIMUS] =
 			c => {
-                if (c.equippedParts[PartTypes.STEERING_WHEEL].manufacturer == Manufacturers.SM) {
+                if (c.equippedParts[PartTypes.STEERING_WHEEL] != null && c.equippedParts[PartTypes.STEERING_WHEEL].manufacturer == Manufacturers.SM) {
                     //randomly accelerate, not listen to accelerate
                 }
             };
 		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] = imageSMExhaust;
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] =
 			c => {
-                if (c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.SM) {
+                if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.SM) {
                     //change turning
                 }
             };
 		sprites[PartTypes.BRAKES][Manufacturers.NII_SAN] = imageNiiSanBrakes;
 		callbacks[PartTypes.BRAKES][Manufacturers.NII_SAN] =
 			c => {
-                if (c.equippedParts[PartTypes.EXHAUST_SYSTEM].manufacturer == Manufacturers.VOLVIMUS) {
+                if (c.equippedParts[PartTypes.EXHAUST_SYSTEM] != null && c.equippedParts[PartTypes.EXHAUST_SYSTEM].manufacturer == Manufacturers.VOLVIMUS) {
                     //TODO
                 }
             };
@@ -136,7 +136,7 @@ public class CarPartFactory : MonoBehaviour {
 		callbacks[PartTypes.BRAKES][Manufacturers.VOLVIMUS] =
 			c => {
                 //Exhaust health low
-                if (c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
+                if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
                     //TODO
                 }
             };
@@ -144,28 +144,28 @@ public class CarPartFactory : MonoBehaviour {
 		callbacks[PartTypes.BRAKES][Manufacturers.SM] =
 			c => {
                 //Steering wheel is healthy, do negative thing
-                if (c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
+                if (c.equippedParts[PartTypes.WHEELS] != null && c.equippedParts[PartTypes.WHEELS].manufacturer == Manufacturers.VOLVIMUS) {
                     //TODO
                 }
             };
 		sprites[PartTypes.STEERING_WHEEL][Manufacturers.NII_SAN] = imageNiiSanWheel;
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.NII_SAN] =
 			c => {
-                if (c.equippedParts[PartTypes.GEAR_BOX].manufacturer == Manufacturers.NII_SAN) {
+                if (c.equippedParts[PartTypes.GEAR_BOX] != null && c.equippedParts[PartTypes.GEAR_BOX].manufacturer == Manufacturers.NII_SAN) {
                     c.acceleration *= 100;
                 }
             };
 		sprites[PartTypes.STEERING_WHEEL][Manufacturers.VOLVIMUS] = imageVolvimusWheels;
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.VOLVIMUS] =
 			c => {
-                if (c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.NII_SAN) {
+                if (c.equippedParts[PartTypes.BRAKES] != null && c.equippedParts[PartTypes.BRAKES].manufacturer == Manufacturers.NII_SAN) {
                     //TODO
                 }
             };
 		sprites[PartTypes.STEERING_WHEEL][Manufacturers.SM] = imageSMWheels;
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.SM] =
 			c => {
-                if (c.equippedParts[PartTypes.ENGINE].manufacturer == Manufacturers.VOLVIMUS) {
+                if (c.equippedParts[PartTypes.ENGINE] != null && c.equippedParts[PartTypes.ENGINE].manufacturer == Manufacturers.VOLVIMUS) {
                     //TODO
                 }
             };

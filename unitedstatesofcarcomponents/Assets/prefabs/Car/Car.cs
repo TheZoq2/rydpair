@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Car : MonoBehaviour {
     public ParticleSystem engineSmoke;
-    public CarPartFactory carPartFactory;
+    private CarPartFactory carPartFactory;
     public GameObject steeringWheel;
     public float steeringWheelMultiplier;
 
@@ -40,7 +40,8 @@ public class Car : MonoBehaviour {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
 
-        Manufacturers[] allManufacturers = (Manufacturers[])Enum.GetValues(typeof(Manufacturers));
+		carPartFactory = FindObjectOfType<CarPartFactory>();
+		Manufacturers[] allManufacturers = (Manufacturers[])Enum.GetValues(typeof(Manufacturers));
         foreach (PartTypes slot in Enum.GetValues(typeof(PartTypes))) {
             Manufacturers randomManufacturer = allManufacturers[UnityEngine.Random.Range(0, allManufacturers.Length - 1)];
             equippedParts[slot] = carPartFactory.Create(slot, randomManufacturer);
