@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Car : MonoBehaviour {
     public ParticleSystem engineSmoke;
-    public CarPart carPartFactory;
+    public CarPartFactory carPartFactory;
     public GameObject steeringWheel;
     public float steeringWheelMultiplier;
 
@@ -38,6 +38,13 @@ public class Car : MonoBehaviour {
     private void Start() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
+
+        Manufacturers[] allManufacturers = (Manufacturers[]) Enum.GetValues(typeof(Manufacturers));
+        foreach (PartTypes slot in Enum.GetValues(typeof(PartTypes))) {
+            Manufacturers randomManufacturer = allManufacturers[(int)UnityEngine.Random.Range(0, allManufacturers.Length - 1)];
+            CarPart randomPart = carPartFactory.Create(slot, randomManufacturer);
+            equippedParts[slot] = randomPart;
+        }
     }
 
     // Update is called once per frame

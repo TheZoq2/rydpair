@@ -16,6 +16,85 @@ public class CarPartFactory : MonoBehaviour {
         return newPart;
     }
 
+    // YOU MADE ME TO THIS!
+    public CarPart Create(PartTypes type, Manufacturers manufacturer) {
+        switch (type) {
+            case PartTypes.BRAKES:
+                switch (manufacturer) {
+                    case Manufacturers.NII_SAN:
+                        return CreateNiiSanBrakes();
+                    case Manufacturers.SM:
+                        return CreateSMBrakes();
+                    case Manufacturers.VOLVIMUS:
+                        return CreateVolvimusBrakes();
+                    default:
+                        Application.Quit(-1);
+                        return null;
+                }
+            case PartTypes.ENGINE:
+                switch (manufacturer) {
+                    case Manufacturers.NII_SAN:
+                        return CreateNiiSanEngine();
+                    case Manufacturers.SM:
+                        return CreateSMEngine();
+                    case Manufacturers.VOLVIMUS:
+                        return CreateVolvimusEngine();
+                    default:
+                        Application.Quit(-1);
+                        return null;
+                }
+            case PartTypes.EXHAUST_SYSTEM:
+                switch (manufacturer) {
+                    case Manufacturers.NII_SAN:
+                        return CreateNiiSanExhaust();
+                    case Manufacturers.SM:
+                        return CreateSMExhaust();
+                    case Manufacturers.VOLVIMUS:
+                        return CreateVolvimusExhaust();
+                    default:
+                        Application.Quit(-1);
+                        return null;
+                }
+            case PartTypes.GEAR_BOX:
+                switch (manufacturer) {
+                    case Manufacturers.NII_SAN:
+                        return CreateNiiSanGearBox();
+                    case Manufacturers.SM:
+                        return CreateSMGearBox();
+                    case Manufacturers.VOLVIMUS:
+                        return CreateVolvimusGearBox();
+                    default:
+                        Application.Quit(-1);
+                        return null;
+                }
+            case PartTypes.STEERING_WHEEL:
+                switch (manufacturer) {
+                    case Manufacturers.NII_SAN:
+                        return CreateNiiSanSteeringWheel();
+                    case Manufacturers.SM:
+                        return CreateSMSteeringWheel();
+                    case Manufacturers.VOLVIMUS:
+                        return CreateVolvimusSteeringWheel();
+                    default:
+                        Application.Quit(-1);
+                        return null;
+                }
+            case PartTypes.WHEELS:
+                switch (manufacturer) {
+                    case Manufacturers.NII_SAN:
+                        return CreateNiiSanWheels();
+                    case Manufacturers.SM:
+                        return CreateSMWheels();
+                    case Manufacturers.VOLVIMUS:
+                        return CreateVolvimusWheels();
+                    default:
+                        Application.Quit(-1);
+                        return null;
+                }
+        }
+        return null;
+    }
+
     /// <summary>
     /// Engine that has terrible fuel drain if not using a NII_SAN Gearbox and/or terrible acceleration if not using a NII_SAN Steering wheel.
     /// </summary>
