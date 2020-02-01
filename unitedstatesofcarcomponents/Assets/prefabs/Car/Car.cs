@@ -39,29 +39,29 @@ public class Car : MonoBehaviour {
         inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
 
-        defaultParts[PartTypes.BRAKES] = carPartFactory.Create(PartTypes.BRAKES, c => {
-            /* TODO */
-        });
-        defaultParts[PartTypes.ENGINE] = carPartFactory.Create(PartTypes.ENGINE, c => {
-            c.defaultFuelDrain *= 3.0f;
-            c.defaultMaxSpeed *= 0.5f;
-            c.engineSmoke.Play();
-        });
-        defaultParts[PartTypes.EXHAUST_SYSTEM] = carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, c => {
-            /* TODO */
-        });
-        defaultParts[PartTypes.GEAR_BOX] = carPartFactory.Create(PartTypes.GEAR_BOX, c => {
-            /* TODO */
-        });
-        defaultParts[PartTypes.STEERING_WHEEL] = carPartFactory.Create(PartTypes.STEERING_WHEEL, c => {
-        });
-        defaultParts[PartTypes.WHEELS] = carPartFactory.Create(PartTypes.WHEELS, c => {
-            c.defaultMaxSpeed *= 0.9f;
-        });
+        // defaultParts[PartTypes.BRAKES] = carPartFactory.Create(PartTypes.BRAKES, c => {
+        //     /* TODO */
+        // });
+        // defaultParts[PartTypes.ENGINE] = carPartFactory.Create(PartTypes.ENGINE, c => {
+        //     c.defaultFuelDrain *= 3.0f;
+        //     c.defaultMaxSpeed *= 0.5f;
+        //     c.engineSmoke.Play();
+        // });
+        // defaultParts[PartTypes.EXHAUST_SYSTEM] = carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, c => {
+        //     /* TODO */
+        // });
+        // defaultParts[PartTypes.GEAR_BOX] = carPartFactory.Create(PartTypes.GEAR_BOX, c => {
+        //     /* TODO */
+        // });
+        // defaultParts[PartTypes.STEERING_WHEEL] = carPartFactory.Create(PartTypes.STEERING_WHEEL, c => {
+        // });
+        // defaultParts[PartTypes.WHEELS] = carPartFactory.Create(PartTypes.WHEELS, c => {
+        //     c.defaultMaxSpeed *= 0.9f;
+        // });
 
-        foreach (PartTypes type in Enum.GetValues((typeof(PartTypes)))) {
-            equippedParts[type] = defaultParts[type];
-        }
+        // foreach (PartTypes type in Enum.GetValues((typeof(PartTypes)))) {
+        //     equippedParts[type] = defaultParts[type];
+        // }
     }
 
     // Update is called once per frame
