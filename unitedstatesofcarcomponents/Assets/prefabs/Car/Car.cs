@@ -8,6 +8,8 @@ public class Car : MonoBehaviour {
     public float rotationSpeed;
     public float turnMultiplier;
     public ParticleSystem particleSystem;
+    private CarPart carPartPrefab;
+    public GameObject carPartPrefabContainer;
 
     [SerializeField]
     private float defaultMaxFuel;
@@ -37,27 +39,27 @@ public class Car : MonoBehaviour {
         inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
 
-        /*
-        defaultParts[PartTypes.BRAKES] = CarPart.Create(PartTypes.BRAKES, c => {
-            // TODO
+        carPartPrefab = carPartPrefabContainer.GetComponent<CarPart>();
+
+        defaultParts[PartTypes.BRAKES] = carPartPrefab.Create(PartTypes.BRAKES, c => {
+            /* TODO */
         });
-        defaultParts[PartTypes.ENGINE] = CarPart.Create(PartTypes.ENGINE, c => {
+        defaultParts[PartTypes.ENGINE] = carPartPrefab.Create(PartTypes.ENGINE, c => {
             c.defaultFuelDrain *= 3.0f;
             c.defaultMaxSpeed *= 0.5f;
         });
-        defaultParts[PartTypes.EXHAUST_SYSTEM] = CarPart.Create(PartTypes.EXHAUST_SYSTEM, c => {
-            // TODO
+        defaultParts[PartTypes.EXHAUST_SYSTEM] = carPartPrefab.Create(PartTypes.EXHAUST_SYSTEM, c => {
+            /* TODO */
         });
-        defaultParts[PartTypes.GEAR_BOX] = CarPart.Create(PartTypes.GEAR_BOX, c => {
-            // TODO
+        defaultParts[PartTypes.GEAR_BOX] = carPartPrefab.Create(PartTypes.GEAR_BOX, c => {
+            /* TODO */
         });
-        defaultParts[PartTypes.STEERING_WHEEL] = CarPart.Create(PartTypes.STEERING_WHEEL, c => {
+        defaultParts[PartTypes.STEERING_WHEEL] = carPartPrefab.Create(PartTypes.STEERING_WHEEL, c => {
             c.turnMultiplier *= -1.0f;
         });
-        defaultParts[PartTypes.WHEELS] = CarPart.Create(PartTypes.WHEELS, c => {
+        defaultParts[PartTypes.WHEELS] = carPartPrefab.Create(PartTypes.WHEELS, c => {
             c.defaultMaxSpeed *= 0.9f;
         });
-        */
     }
 
     // Update is called once per frame
