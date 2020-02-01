@@ -12,6 +12,7 @@ public class House : MonoBehaviour
 
     [Header("Adress")]
     public string adress = "";
+    public Transform pickupPoint;
 
     int randomIndex;
     
