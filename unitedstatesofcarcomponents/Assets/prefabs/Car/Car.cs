@@ -106,15 +106,44 @@ public class Car : MonoBehaviour {
 
 
     public void AddPart(PartTypes type, CarPart newPart) {
-        if (newPart.type != type) Debug.Log($"Equipped {newPart.type}-slot part in {type} slot (probably shouldn't happen).");
+        if (newPart?.type != type) Debug.Log($"Equipped {newPart?.type}-slot part in {type} slot (probably shouldn't happen).");
         equippedParts[type] = newPart;
         UpdateComponentEffects();
     }
 
     public void UpdateComponentEffects() {
         ResetStats();
-        foreach (CarPart part in equippedParts.Values) {
-            part.UpdateEffect(this);
+        foreach (PartTypes slot in equippedParts.Keys) {
+            if (equippedParts[slot] == null) {
+                switch (slot) {
+                    case PartTypes.BRAKES:
+                        maxVelocity /= 4;
+                        break;
+                    case PartTypes.ENGINE:
+                        acceleration /= 2;
+                        maxVelocity /= 2;
+                        break;
+                    case PartTypes.EXHAUST_SYSTEM:
+                        engineSmoke.Play();
+                        fuelDrain *= 2;
+                        break;
+                    case PartTypes.GEAR_BOX:
+                        acceleration /= 4;
+                        break;
+                    case PartTypes.STEERING_WHEEL:
+                        steeringSpeed /= 2;
+                        break;
+                    case PartTypes.WHEELS:
+                        velocityDecay = 1;
+                        break;
+                    default:
+                        Debug.Log($"No penanty implemented for null part in slot {slot}");
+                        break;
+                }
+                Debug.Log($"Null part equipped in slot {slot}");
+            } else {
+                equippedParts[slot].UpdateEffect(this);
+            }
         }
     }
 
