@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Car : MonoBehaviour {
     public ParticleSystem engineSmoke;
-    private CarPartFactory carPartFactory;
+    public CarPart carPartFactory;
     public GameObject steeringWheel;
-    public GameObject camera;
     public float steeringWheelMultiplier;
 
     public float defaultAcceleration;
@@ -40,14 +39,6 @@ public class Car : MonoBehaviour {
     private void Start() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
-
-		carPartFactory = FindObjectOfType<CarPartFactory>();
-		Manufacturers[] allManufacturers = (Manufacturers[]) Enum.GetValues(typeof(Manufacturers));
-        foreach (PartTypes slot in Enum.GetValues(typeof(PartTypes))) {
-            Manufacturers randomManufacturer = allManufacturers[(int)UnityEngine.Random.Range(0, allManufacturers.Length - 1)];
-            CarPart randomPart = carPartFactory.Create(slot, randomManufacturer);
-            equippedParts[slot] = randomPart;
-        }
     }
 
     // Update is called once per frame
@@ -66,35 +57,13 @@ public class Car : MonoBehaviour {
             {
                 if(house.adress == gState.targetAdress)
                 {
-                    // Sucessfull delivery!
+                    gState.DeliverPackage();
                 }
             }
         }
-        else
+        else if(pickup != null)
         {
-
-        }
-        
-        if (pickup != null) {
-            if (string.IsNullOrEmpty(destinationAddress)) {
-                // Successful pickup
-                destinationAddress = pickup.destination;
-                Destroy(other.gameObject);
-            }
-        } else if (!string.IsNullOrEmpty(destinationAddress) && destinationAddress == house?.adress) {
-            // A successful delivery
-            score++;
-            destinationAddress = "";
-        }
-
-        if(other.tag != "Delivery")
-        {
-            if (pickup != null)
-            {
-                //if (pickup.part != null && inventory.TryAddItem(pickup.part) {
-                //}
-            }
-
+            gState.PickUpPackage();
             Destroy(other.gameObject);
         }
     }
@@ -102,51 +71,20 @@ public class Car : MonoBehaviour {
     public CarPart RemovePart(PartTypes type) {
         CarPart removedPart = equippedParts[type];
         equippedParts[type] = null;
-		Debug.Log("Remove " + type);
-		return removedPart;
+        return removedPart;
     }
 
 
     public void AddPart(PartTypes type, CarPart newPart) {
-        if (newPart?.type != type) Debug.Log($"Equipped {newPart?.type}-slot part in {type} slot (probably shouldn't happen).");
+        if (newPart.type != type) Debug.Log($"Equipped {newPart.type}-slot part in {type} slot (probably shouldn't happen).");
         equippedParts[type] = newPart;
         UpdateComponentEffects();
-		Debug.Log("Add " + type);
-	}
+    }
 
     public void UpdateComponentEffects() {
         ResetStats();
-        foreach (PartTypes slot in equippedParts.Keys) {
-            if (equippedParts[slot] == null) {
-                switch (slot) {
-                    case PartTypes.BRAKES:
-                        maxVelocity /= 4;
-                        break;
-                    case PartTypes.ENGINE:
-                        acceleration /= 2;
-                        maxVelocity /= 2;
-                        break;
-                    case PartTypes.EXHAUST_SYSTEM:
-                        engineSmoke.Play();
-                        fuelDrain *= 2;
-                        break;
-                    case PartTypes.GEAR_BOX:
-                        acceleration /= 4;
-                        break;
-                    case PartTypes.STEERING_WHEEL:
-                        steeringSpeed /= 2;
-                        break;
-                    case PartTypes.WHEELS:
-                        velocityDecay = 1;
-                        break;
-                    default:
-                        Debug.Log($"No penanty implemented for null part in slot {slot}");
-                        break;
-                }
-                Debug.Log($"Null part equipped in slot {slot}");
-            } else {
-                equippedParts[slot].UpdateEffect(this);
-            }
+        foreach (CarPart part in equippedParts.Values) {
+            part.UpdateEffect(this);
         }
     }
 
@@ -199,15 +137,5 @@ public class Car : MonoBehaviour {
         else if(velocity < -maxVelocity) {
             velocity = -maxVelocity;
         }
-
-        float lookAngleMax = 80;
-
-        float cameraRX = Input.GetAxis("RotationX") * lookAngleMax;
-        float cameraRY = Input.GetAxis("RotationY") * lookAngleMax;
-
-        camera.transform.localRotation = Quaternion.Euler(
-            cameraRX, cameraRY, 0
-        );
-
     }
 }

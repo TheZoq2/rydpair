@@ -18,11 +18,40 @@ public class GameState : MonoBehaviour
     [Header("Pickup House")] // The package spawns at this adress
     public House pickupHouse;
     public string pickupAdress;
+
+    [Header("Variables")]
+    public int playerScore;
+    public float maxTime = 300f;
     
     int randomIndex;
+    bool hasPackage;
+    float timer;
     #endregion Declarations
 
+    private void FixedUpdate()
+    {
+        if (hasPackage)
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+
     #region packages
+    public void PickUpPackage()
+    {
+        hasPackage = true;
+        timer = maxTime;
+    }
+
+    public void DeliverPackage()
+    {
+        hasPackage = false;
+
+        GiveScore();
+
+        SpawnPackage();
+    }
+
     public void SpawnPackage()
     {
         ResetAdresses();
@@ -66,6 +95,30 @@ public class GameState : MonoBehaviour
         GetHouses();
 
         SpawnPackage();
+    }
+
+    void GiveScore()
+    {
+        if (timer >= 0.8 * maxTime)
+        {
+            playerScore += 5;
+        }
+        else if (timer >= 0.6 * maxTime)
+        {
+            playerScore += 4;
+        }
+        else if (timer >= 0.4 * maxTime)
+        {
+            playerScore += 3;
+        }
+        else if (timer >= 0.2 * maxTime)
+        {
+            playerScore += 2;
+        }
+        else
+        {
+            playerScore += 1;
+        }
     }
 
     void GetHouses()
