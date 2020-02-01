@@ -138,6 +138,14 @@ public class Car : MonoBehaviour {
     private void UpdateInput() {
         velocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
         velocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
+
+        if(velocity > maxVelocity) {
+            velocity = maxVelocity;
+        }
+        else if(velocity < -maxVelocity) {
+            velocity = -maxVelocity;
+        }
     }
 
+    public float maxVelocity;
 }
