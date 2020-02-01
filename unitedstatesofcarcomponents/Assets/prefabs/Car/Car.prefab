@@ -45,10 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd5b531d52d08f4aae81e771b8566a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 0.001
-  velocityDecay: 0.95
-  rotationAcceleration: 0.05
-  rotationVelocityDecay: 0.95
+  acceleration: 50
+  velocityDecay: 0.99
+  minimumSpeed: 0.01
+  rotationSpeed: 70
+  turnMultiplier: 0.25
+  maxFuel: 1000
+  fuelDrain: 0
+  engine: {fileID: 0}
+  wheels: {fileID: 0}
+  gearBox: {fileID: 0}
+  steeringWheel: {fileID: 0}
+  brakes: {fileID: 0}
+  exhaustSystem: {fileID: 0}
 --- !u!1 &2223376080043253930
 GameObject:
   m_ObjectHideFlags: 0
