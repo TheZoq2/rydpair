@@ -10,6 +10,8 @@ public class House_ColorSelect : MonoBehaviour
     [Header("Material")]
     public Material houseMat;
 
+    public MeshRenderer meshRenderer;
+
     int randomIndex;
     
     private void OnEnable()
@@ -21,6 +23,6 @@ public class House_ColorSelect : MonoBehaviour
     {
         randomIndex = Random.Range(0, sprites.Count);
 
-        houseMat.SetTexture("_MainTex", sprites[randomIndex].texture);
+        meshRenderer.material.SetTexture("_MainTex", sprites[randomIndex].texture);
     }
 }
