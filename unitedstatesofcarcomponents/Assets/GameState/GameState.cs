@@ -22,10 +22,10 @@ public class GameState : MonoBehaviour
     [Header("Variables")]
     public int playerScore;
     public float maxTime = 300f;
-    
+    public float timer;
+
     int randomIndex;
     bool hasPackage;
-    float timer;
     #endregion Declarations
 
     private void FixedUpdate()
@@ -71,7 +71,7 @@ public class GameState : MonoBehaviour
 
     void AssignTargetAdress()
     {
-        while(targetHouse != pickupHouse)
+        while(targetHouse == null || targetHouse == pickupHouse)
         {
             randomIndex = Random.Range(0, houses.Count);
             targetHouse = houses[randomIndex];

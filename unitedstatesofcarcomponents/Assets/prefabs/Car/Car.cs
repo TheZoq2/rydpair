@@ -39,6 +39,7 @@ public class Car : MonoBehaviour {
     private void Start() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
+        gState = FindObjectOfType<GameState>();
     }
 
     // Update is called once per frame
@@ -105,6 +106,8 @@ public class Car : MonoBehaviour {
         }
         float wheelAngleRad = wheelAngle * Mathf.PI / 4.0F;
 
+       // Debug.Log(velocity);
+
         Vector3 currentVelocity = new Vector3(
                 velocity * Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.PI / 180),
                 0.0f,
@@ -131,7 +134,7 @@ public class Car : MonoBehaviour {
         velocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
         velocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
 
-        if(velocity > maxVelocity) {
+        if (velocity > maxVelocity) {
             velocity = maxVelocity;
         }
         else if(velocity < -maxVelocity) {
