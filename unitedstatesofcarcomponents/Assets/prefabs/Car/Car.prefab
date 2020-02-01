@@ -52,8 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 50
   engineSmoke: {fileID: 0}
-  carPartPrefabContainer: {fileID: 2137910526749299179, guid: dccc906aaad5a1b47862f4b069b7b42f,
-    type: 3}
+  carPartFactory: {fileID: 6695029420422914104}
   defaultMaxFuel: 1000
   maxFuel: 1000
   defaultFuelDrain: 1
@@ -4811,7 +4810,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -4987,7 +4986,7 @@ PrefabInstance:
     - target: {fileID: 2137910526749299179, guid: dccc906aaad5a1b47862f4b069b7b42f,
         type: 3}
       propertyPath: m_Name
-      value: GameObject
+      value: CarPartFactory
       objectReference: {fileID: 0}
     - target: {fileID: 8912026492260419497, guid: dccc906aaad5a1b47862f4b069b7b42f,
         type: 3}
@@ -5052,3 +5051,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6510012763945360513}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6695029420422914104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 482364372096662713, guid: dccc906aaad5a1b47862f4b069b7b42f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6510012763945360513}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefd866dc9049f64b92b7377a23e2b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

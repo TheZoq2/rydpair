@@ -5,8 +5,7 @@ using UnityEngine;
 public class Car : MonoBehaviour {
     public float acceleration;
     public ParticleSystem engineSmoke;
-    private CarPart carPartFactory;
-    public GameObject carPartPrefab;
+    public CarPart carPartFactory;
 
     [SerializeField]
     private float defaultMaxFuel;
@@ -36,8 +35,6 @@ public class Car : MonoBehaviour {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
         fuel = maxFuel;
-
-		carPartFactory = carPartPrefab.GetComponent<CarPart>();
 
         defaultParts[PartTypes.BRAKES] = carPartFactory.Create(PartTypes.BRAKES, c => {
             /* TODO */
