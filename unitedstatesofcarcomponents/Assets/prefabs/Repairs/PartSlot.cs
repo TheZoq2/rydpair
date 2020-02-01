@@ -31,7 +31,7 @@ public class PartSlot : MonoBehaviour
 	 * Returns false if already occupied.
 	 * Otherwise sets item at posiiton and returns true.
 	 */
-	public bool TrySet(CarPart newPart, PartSlot previousSlot)
+	public virtual bool TrySet(CarPart newPart, PartSlot previousSlot)
 	{
 		if (!IsSet())
 		{
