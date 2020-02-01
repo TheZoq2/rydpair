@@ -100,7 +100,7 @@ public class Car : MonoBehaviour {
             transform.position += velocity * Time.deltaTime;
 
             velocity *= velocityDecay;
-            if(Input.GetAxis("Accelerate") != 0 && Input.GetAxis("Reverse") != 0 && velocity.magnitude < minimumSpeed) {
+            if(Input.GetAxis("Accelerate") == 0 && Input.GetAxis("Reverse") == 0 && velocity.magnitude < minimumSpeed) {
                 velocity = Vector3.zero;
             }
 

@@ -49,7 +49,7 @@ MonoBehaviour:
   velocityDecay: 0.99
   minimumSpeed: 0.01
   rotationSpeed: 70
-  turnMultiplier: 0.25
+  turnMultiplier: 0.1
   maxFuel: 1000
   fuelDrain: 0
   engine: {fileID: 0}

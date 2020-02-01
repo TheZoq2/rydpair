@@ -618,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 2223376079955101380, guid: d76cfe1bafa56ac41aa3ab8856346c8b,
         type: 3}
       propertyPath: turnMultiplier
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2223376079955101380, guid: d76cfe1bafa56ac41aa3ab8856346c8b,
         type: 3}
