@@ -25,7 +25,7 @@ public class ShopController : MonoBehaviour
     };
 
     private void updateMoneyUI(){
-        this.moneyText.text = "Money: "+this.money.ToString()+"$";
+        this.moneyText.text = "Money: "+this.money.ToString()+" $";
     }
 
     public void changeMoney(int deltaMoney){
@@ -62,7 +62,7 @@ public class ShopController : MonoBehaviour
                 var itemSprite = manufacturerEntry.Value;
                 int cost = partCosts[partType];
 
-                string partName = manu.ToString() + "_" + partType.ToString() + "_("+cost.ToString()+"$)";
+                string partName = manu.ToString() + "_" + partType.ToString() + "_("+cost.ToString()+"_$)";
                 var newItem = Instantiate(shopItem) as RectTransform;
 
                 newItem.GetComponent<RectTransform>().position = new Vector3(0, itemI*(-1)*this.itemHeight, 0);
