@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : MonoBehaviour {
-    public ParticleSystem engineSmoke;
+	[HideInInspector]
+	public ParticleSystem engineSmoke;
     private CarPartFactory carPartFactory;
     public GameObject steeringWheel;
     public GameObject spedometerNeedle;
@@ -37,7 +38,7 @@ public class Car : MonoBehaviour {
     private Inventory inventory;
     private GameState gState;
 
-    private void Start() {
+    private void Awake() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
         inventory = FindObjectOfType<Inventory>();
 
