@@ -13,6 +13,8 @@ public class GameState : MonoBehaviour
     public TextMeshProUGUI missionTMP;
     public TextMeshProUGUI scoreTMP;
     public TextMeshProUGUI timerTMP;
+    [Header("Stars")]
+    public List<GameObject> stars;
 
     [Header("Sound")]
     public AudioClip pickupClip;
@@ -49,6 +51,26 @@ public class GameState : MonoBehaviour
         {
             timer -= Time.deltaTime;
             timerTMP.text = $"Time left = {(int)timer}";
+
+            if(timer < 0.8 * maxTime)
+            {
+                stars[4].gameObject.SetActive(false);
+            }
+
+            if (timer < 0.6 * maxTime)
+            {
+                stars[3].gameObject.SetActive(false);
+            }
+
+            if (timer < 0.4 * maxTime)
+            {
+                stars[2].gameObject.SetActive(false);
+            }
+
+            if (timer < 0.2 * maxTime)
+            {
+                stars[1].gameObject.SetActive(false);
+            }
         }
     }
 
@@ -57,6 +79,11 @@ public class GameState : MonoBehaviour
     {
         hasPackage = true;
         timer = maxTime;
+
+        foreach(GameObject g in stars)
+        {
+            g.gameObject.SetActive(true);
+        }
 
         aSource.clip = pickupClip;
         aSource.Play();
@@ -151,6 +178,7 @@ public class GameState : MonoBehaviour
         }
 
         scoreTMP.text = $"Score = {playerScore}";
+        // ADD MONEY
     }
 
     void GetHouses()
