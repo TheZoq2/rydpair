@@ -84,8 +84,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbd5b531d52d08f4aae81e771b8566a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   engineSmoke: {fileID: 0}
   steeringWheel: {fileID: 4162928810105201236}
   spedometerNeedle: {fileID: 915776825520824088}
@@ -93,6 +93,7 @@ MonoBehaviour:
   sinusAmp: 1
   freqModifier: 3
   randomAcceleration: 0
+  explosiveExhaust: 0
   steeringWheelMultiplier: 80
   acceleration: 3.41
   maxFuel: 0

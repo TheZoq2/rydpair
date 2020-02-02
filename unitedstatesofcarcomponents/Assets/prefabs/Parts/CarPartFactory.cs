@@ -147,7 +147,7 @@ public class CarPartFactory : MonoBehaviour {
 				if (TryGetEquipped(c, PartTypes.STEERING_WHEEL, out CarPart steering) && steering.manufacturer == Manufacturers.SM)
 				{
                     c.randomAcceleration = true;
-				}
+                }
             };
 		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] = imageExhaustSM;
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] =
@@ -171,15 +171,15 @@ public class CarPartFactory : MonoBehaviour {
 		sprites[PartTypes.BRAKES][Manufacturers.VOLVIMUS] = imageBrakesVolvimus;
 		callbacks[PartTypes.BRAKES][Manufacturers.VOLVIMUS] =
 			c => {
-                if (TryGetEquipped(c, PartTypes.EXHAUST_SYSTEM, out CarPart exhaust) && exhaust.currentHealth <= exhaust.maxHealth * 0.3) {
-                    //TODO
+                if (TryGetEquipped(c, PartTypes.EXHAUST_SYSTEM, out CarPart exhaust) && exhaust.currentHealth <= exhaust.maxHealth * 0.8) {
+                    c.acceleration *= -1;
                 }
             };
 		sprites[PartTypes.BRAKES][Manufacturers.SM] = imageBrakesSM;
 		callbacks[PartTypes.BRAKES][Manufacturers.SM] =
 			c => {
                 if (TryGetEquipped(c, PartTypes.WHEELS, out CarPart wheels) && wheels.currentHealth >= wheels.maxHealth * 0.8) {
-					//TODO
+                    c.maxVelocity *= 100;
 				}
             };
 		sprites[PartTypes.STEERING_WHEEL][Manufacturers.NII_SAN] = imageSteeringNiiSan;
@@ -201,7 +201,8 @@ public class CarPartFactory : MonoBehaviour {
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.SM] =
 			c => {
                 if (TryGetEquipped(c, PartTypes.ENGINE, out CarPart engine) && engine.manufacturer == Manufacturers.VOLVIMUS) {
-                    //TODO
+                    Debug.Log("FOund SM STEERING, V.ENGINE COMBO");
+                    c.explosiveExhaust = true;
                 }
             };
 	}

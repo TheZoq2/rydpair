@@ -15,6 +15,7 @@ public class Car : MonoBehaviour {
     public float sinusAmp = 1f;
     public float freqModifier = 3.0f;
     public bool randomAcceleration = false;
+    public bool explosiveExhaust = false;
 
 	[HideInInspector]
 	public float steeringWheelMultiplier;
@@ -61,6 +62,8 @@ public class Car : MonoBehaviour {
 
     private GameState gState;
 
+    private float explosionCooldown = 0;
+
     public void flipSteering(){
         this.flippedSteering = true;
     }
@@ -77,6 +80,13 @@ public class Car : MonoBehaviour {
 		deltaVelocity = 0.0f;
         UpdateInput();
         UpdateMovement();
+        if(explosiveExhaust == true) {
+            if(explosionCooldown < 0) {
+                GetComponent<Rigidbody>().AddExplosionForce(1000, transform.position - Vector3.down, 5);
+                explosionCooldown = UnityEngine.Random.Range(3, 9);
+            }
+            explosionCooldown -= Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -170,6 +180,7 @@ public class Car : MonoBehaviour {
         flippedSteering = false;
         sinusSteering = false;
         randomAcceleration = false;
+        explosiveExhaust = false;
 
         // Clear smoke colour
         engineSmoke.GetComponentInChildren<ParticleSystemRenderer>().material.color = defaultSmokeColour;
@@ -245,6 +256,11 @@ public class Car : MonoBehaviour {
         }
         else if(velocity < -maxVelocity) {
             velocity = -maxVelocity;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            transform.position = transform.position + Vector3.up * 5;
+            transform.rotation = Quaternion.identity;
         }
     }
 }
