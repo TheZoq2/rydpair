@@ -9,6 +9,8 @@ public class Car : MonoBehaviour {
     public GameObject steeringWheel;
     public GameObject spedometerNeedle;
 
+    private bool flippedSteering = false;
+
 	[HideInInspector]
 	public float steeringWheelMultiplier;
 	[HideInInspector]
@@ -53,6 +55,10 @@ public class Car : MonoBehaviour {
 
     private Inventory inventory;
     private GameState gState;
+
+    public void flipSteering(){
+        this.flippedSteering = true;
+    }
 
     private void Awake() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
@@ -155,6 +161,8 @@ public class Car : MonoBehaviour {
 		steeringSpeed = defaultSteeringSpeed;
 		breakFactor = defaultBreakFactor;
 
+        flippedSteering = false;
+
 	// Clear smoke colour
 	ParticleSystem.Particle[] particleArray = new ParticleSystem.Particle[1];
         if (engineSmoke.GetParticles(particleArray) > 0) {
@@ -185,11 +193,16 @@ public class Car : MonoBehaviour {
 
         transform.position += currentVelocity * Time.deltaTime;
 
+        float turnFactor = 1f;
+        if(this.flippedSteering){
+            turnFactor = -1f;
+        }
+
         transform.RotateAround(
             transform.position,
             transform.up,
             (velocity * Mathf.Tan(wheelAngleRad) / wheelDistance) * 180 / Mathf.PI
-                * Time.deltaTime
+                * Time.deltaTime * turnFactor
         );
 
         steeringWheel.transform.localRotation = Quaternion.Euler(

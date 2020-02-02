@@ -139,7 +139,8 @@ public class CarPartFactory : MonoBehaviour {
 		callbacks[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] =
 			c => {
                 if (TryGetEquipped(c, PartTypes.WHEELS, out CarPart wheels) && wheels.manufacturer == Manufacturers.SM) {
-                    //change turning
+                    //flip turning
+					c.flipSteering();
                 }
             };
 		sprites[PartTypes.BRAKES][Manufacturers.NII_SAN] = imageBrakesNiiSan;
@@ -174,7 +175,8 @@ public class CarPartFactory : MonoBehaviour {
 		callbacks[PartTypes.STEERING_WHEEL][Manufacturers.VOLVIMUS] =
 			c => {
                 if (TryGetEquipped(c, PartTypes.BRAKES, out CarPart brakes) && brakes.manufacturer == Manufacturers.NII_SAN) {
-                    //TODO
+					//flip turning
+					c.flipSteering();
                 }
             };
 		sprites[PartTypes.STEERING_WHEEL][Manufacturers.SM] = imageSteeringSM;
