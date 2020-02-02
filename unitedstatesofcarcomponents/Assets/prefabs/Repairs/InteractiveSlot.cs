@@ -105,6 +105,8 @@ public class InteractiveSlot : PartSlot
 				this.TryClear(hand);
 			}
 		}
+
+		this.GetComponent<AudioSource>().Play();
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)

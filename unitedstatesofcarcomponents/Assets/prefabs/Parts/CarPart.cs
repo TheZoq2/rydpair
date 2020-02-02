@@ -27,6 +27,11 @@ public class CarPart : MonoBehaviour {
     public bool isEquipped = false;
 
     public InteractiveSlot slot;
+    private Car car;
+
+    void Start(){
+        car = FindObjectOfType<Car>();
+    }
 
     private void Update() {
         if (!isEquipped) return;
@@ -35,6 +40,7 @@ public class CarPart : MonoBehaviour {
 
         if (currentHealth <= 0) {
             slot.Remove();
+            car.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
     }
