@@ -262,7 +262,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3272631392707091429}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.265
+  m_Size: 0.37525
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e489ea8fa09734d97c7e6b4a8c420d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 4281365800505081099}
   itemHolder: {fileID: 6237708177671029939}
   shopItem: {fileID: 5106519757168262642, guid: 58e57ef446b1ccc8e8b04ba7a99cce46,
     type: 3}
@@ -636,6 +637,7 @@ GameObject:
   - component: {fileID: 3026913296206959228}
   - component: {fileID: 3192127805214144314}
   - component: {fileID: 4226422117957656377}
+  - component: {fileID: 4281365800505081099}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -697,7 +699,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282182788
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -780,6 +782,25 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &4281365800505081099
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690773524539228521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8cd1c18a3027ad044a2c0bc091169343, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8895951396008530729
 GameObject:
   m_ObjectHideFlags: 0

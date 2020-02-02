@@ -355,7 +355,7 @@ Material:
     m_Floats:
     - _Cutoff: 0.3
     - _ShadowOffsetScale: 1
-    - _ShadowStrength: 0.8
+    - _ShadowStrength: 0.487
     - _SquashAmount: 1
     - _TranslucencyViewDependency: 0.643
     m_Colors:
