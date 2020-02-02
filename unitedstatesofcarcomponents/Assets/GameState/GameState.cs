@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameState : MonoBehaviour
 {
@@ -8,20 +9,29 @@ public class GameState : MonoBehaviour
     [Header("Package")]
     public GameObject packagePrefab;
 
-    [Header("Buildings")]
+    [Header("User Interface")]
+    public TextMeshProUGUI missionTMP;
+    public TextMeshProUGUI scoreTMP;
+    public TextMeshProUGUI timerTMP;
+
+    [HideInInspector]
     public List<House> houses;
 
-    [Header("Target House")] // The package should be delivered to this adress
+    [HideInInspector] // The package should be delivered to this adress
     public House targetHouse;
+    [HideInInspector]
     public string targetAdress;
 
-    [Header("Pickup House")] // The package spawns at this adress
+    [HideInInspector] // The package spawns at this adress
     public House pickupHouse;
+    [HideInInspector]
     public string pickupAdress;
 
-    [Header("Variables")]
+    [HideInInspector]
     public int playerScore;
+    [HideInInspector]
     public float maxTime = 300f;
+    [HideInInspector]
     public float timer;
 
     int randomIndex;
@@ -33,6 +43,7 @@ public class GameState : MonoBehaviour
         if (hasPackage)
         {
             timer -= Time.deltaTime;
+            timerTMP.text = $"Time left = {timer}";
         }
     }
 
@@ -41,6 +52,8 @@ public class GameState : MonoBehaviour
     {
         hasPackage = true;
         timer = maxTime;
+
+        missionTMP.text = $"Deliver the package to {targetAdress}!";
     }
 
     public void DeliverPackage()
@@ -50,6 +63,8 @@ public class GameState : MonoBehaviour
         GiveScore();
 
         SpawnPackage();
+
+        timerTMP.text = "";
     }
 
     public void SpawnPackage()
@@ -60,6 +75,8 @@ public class GameState : MonoBehaviour
         Instantiate(packagePrefab, pickupHouse.pickupPoint);
 
         AssignTargetAdress();
+
+        missionTMP.text = $"Pick up package at {pickupAdress}!";
     }
 
     void AssignPickupAdress()
@@ -119,6 +136,8 @@ public class GameState : MonoBehaviour
         {
             playerScore += 1;
         }
+
+        scoreTMP.text = $"Score = {playerScore}";
     }
 
     void GetHouses()
