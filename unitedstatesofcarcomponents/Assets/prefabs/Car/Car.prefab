@@ -92,6 +92,7 @@ MonoBehaviour:
   sinusSteering: 0
   sinusAmp: 1
   freqModifier: 3
+  randomAcceleration: 0
   steeringWheelMultiplier: 80
   acceleration: 3.41
   maxFuel: 0
@@ -195,7 +196,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
