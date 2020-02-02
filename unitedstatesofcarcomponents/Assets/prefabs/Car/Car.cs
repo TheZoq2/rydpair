@@ -12,6 +12,7 @@ public class Car : MonoBehaviour {
 
     private bool flippedSteering = false;
     public bool sinusSteering = false;
+    public bool psychadellic = false;
     public float sinusAmp = 1f;
     public float freqModifier = 3.0f;
     public bool randomAcceleration = false;
@@ -176,6 +177,7 @@ public class Car : MonoBehaviour {
 		wheelDistance = defaultWheelDistance;
 		steeringSpeed = defaultSteeringSpeed;
 		breakFactor = defaultBreakFactor;
+        psychadellic = false;
 
         flippedSteering = false;
         sinusSteering = false;
