@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
+    [Header("Fulhack")]
+    public bool ignoreColorChange;
+
     [Header("ColorParent")]
     public List<Sprite> sprites;
 
@@ -18,7 +21,10 @@ public class House : MonoBehaviour
     
     private void OnEnable()
     {
-        ChangeTexture();
+        if (!ignoreColorChange)
+        {
+            ChangeTexture();
+        }
     }
 
     public void ChangeTexture()

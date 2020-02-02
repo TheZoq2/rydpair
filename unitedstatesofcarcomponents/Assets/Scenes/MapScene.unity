@@ -4420,7 +4420,7 @@ PrefabInstance:
     - target: {fileID: 9092769950892478061, guid: c3c2da3f94ebe4d4d8da23fa34b412e4,
         type: 3}
       propertyPath: adress
-      value: Rydsstigen 2
+      value: "Alls\xE4ttersgatan 13"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c2da3f94ebe4d4d8da23fa34b412e4, type: 3}
@@ -4900,7 +4900,7 @@ PrefabInstance:
     - target: {fileID: 5515849769974744867, guid: c115661cf186ad240ba7f36f98ea9731,
         type: 3}
       propertyPath: adress
-      value: "Glyttingev\xE4gen 22"
+      value: "Glyttingev\xE4gen 42"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c115661cf186ad240ba7f36f98ea9731, type: 3}
@@ -5797,6 +5797,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 749458585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &751667223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751667224}
+  - component: {fileID: 751667226}
+  - component: {fileID: 751667225}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Delivery
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751667224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751667223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.59, z: 0}
+  m_LocalScale: {x: 1.64, y: 1.21, z: 2.49}
+  m_Children: []
+  m_Father: {fileID: 1055343485}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &751667225
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751667223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &751667226
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751667223}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &752572268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6585,7 +6639,7 @@ PrefabInstance:
     - target: {fileID: 5515849769974744867, guid: c115661cf186ad240ba7f36f98ea9731,
         type: 3}
       propertyPath: adress
-      value: "Glyttingev\xE4gen 25"
+      value: "Glyttingev\xE4gen 43"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c115661cf186ad240ba7f36f98ea9731, type: 3}
@@ -7644,7 +7698,7 @@ PrefabInstance:
     - target: {fileID: 7104359733404776177, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
       propertyPath: adress
-      value: "Alls\xE4ttersgatan 1"
+      value: "Rydsb\xE5gen 2"
       objectReference: {fileID: 0}
     - target: {fileID: 8958068456554494133, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
@@ -8498,6 +8552,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c50be96fba6c630794374afc75132db, type: 3}
+--- !u!4 &1055343485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6c50be96fba6c630794374afc75132db,
+    type: 3}
+  m_PrefabInstance: {fileID: 1055343484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1078131434
 GameObject:
   m_ObjectHideFlags: 0
@@ -8642,6 +8702,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.53, y: 1.47, z: 0.13}
   m_Center: {x: 0, y: 0.14, z: 0.52}
+--- !u!114 &1093710451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093710448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a822ee018059fbc46a4e9a92d65c8e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreColorChange: 1
+  sprites: []
+  meshRenderer: {fileID: 0}
+  adress: Macken
+  pickupPoint: {fileID: 1927130595}
 --- !u!1001 &1120444216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8667,7 +8744,7 @@ PrefabInstance:
     - target: {fileID: 8958068456554494133, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.102308504
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 8958068456554494133, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
@@ -9048,6 +9125,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1132819593}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1149322582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149322583}
+  - component: {fileID: 1149322585}
+  - component: {fileID: 1149322584}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Delivery
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1149322583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149322582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.27, y: 0, z: -3.6}
+  m_LocalScale: {x: 1, y: 1.42, z: 2.8}
+  m_Children: []
+  m_Father: {fileID: 1669336594}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1149322584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149322582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &1149322585
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149322582}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1158195408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9278,7 +9409,7 @@ PrefabInstance:
     - target: {fileID: 9092769950892478061, guid: c3c2da3f94ebe4d4d8da23fa34b412e4,
         type: 3}
       propertyPath: adress
-      value: Rydsstigen 1
+      value: "Alls\xE4ttersgatan 15"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c2da3f94ebe4d4d8da23fa34b412e4, type: 3}
@@ -10026,6 +10157,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1259979130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1265947617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265947618}
+  m_Layer: 0
+  m_Name: Pickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1265947618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265947617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.28, y: 0, z: -3.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1669336594}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1274375363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11053,7 +11214,7 @@ PrefabInstance:
     - target: {fileID: 5515849769974744867, guid: c115661cf186ad240ba7f36f98ea9731,
         type: 3}
       propertyPath: adress
-      value: "Rydsb\xF6lden 6"
+      value: "Rydsb\xF6lden 1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c115661cf186ad240ba7f36f98ea9731, type: 3}
@@ -11437,7 +11598,7 @@ PrefabInstance:
     - target: {fileID: 9092769950892478061, guid: c3c2da3f94ebe4d4d8da23fa34b412e4,
         type: 3}
       propertyPath: adress
-      value: Rydsstigen 3
+      value: "Alls\xE4ttersgatan 12"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c2da3f94ebe4d4d8da23fa34b412e4, type: 3}
@@ -13496,6 +13657,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8d590243b45ad22794590c125642f3b, type: 3}
+--- !u!1 &1669336593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a8d590243b45ad22794590c125642f3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1669336592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1669336594 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: a8d590243b45ad22794590c125642f3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1669336592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1669336595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669336593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a822ee018059fbc46a4e9a92d65c8e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreColorChange: 1
+  sprites: []
+  meshRenderer: {fileID: 0}
+  adress: Ryds Centrum
+  pickupPoint: {fileID: 1265947618}
 --- !u!1 &1680602601
 GameObject:
   m_ObjectHideFlags: 0
@@ -13559,7 +13749,7 @@ PrefabInstance:
     - target: {fileID: 8958068456554494133, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.102308504
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 8958068456554494133, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
@@ -16197,7 +16387,7 @@ PrefabInstance:
     - target: {fileID: 7104359733404776177, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
       propertyPath: adress
-      value: "Alls\xE4ttersgatan 12"
+      value: "Rydsb\xE5gen 1"
       objectReference: {fileID: 0}
     - target: {fileID: 8958068456554494133, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
@@ -16508,6 +16698,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 916166324}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1927130594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927130595}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1927130595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927130594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1055343485}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1927357063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18122,7 +18342,7 @@ PrefabInstance:
     - target: {fileID: 7104359733404776177, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
       propertyPath: adress
-      value: "Alls\xE4ttersgatan 2"
+      value: "Rydsb\xE5gen 3"
       objectReference: {fileID: 0}
     - target: {fileID: 8958068456554494133, guid: 06ba225efdadd2749aa796f1f658c74c,
         type: 3}
