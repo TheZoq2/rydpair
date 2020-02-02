@@ -101,7 +101,7 @@ MonoBehaviour:
   defaultMaxFuel: 1000
   defaultFuelDrain: 1
   defaultMaxVelocity: 3.94
-  defaultVelocityDecay: 0.99
+  defaultVelocityDecay: 0.98
   defaultWheelDistance: 1.18
   defaultSteeringSpeed: 4.34
   score: 0
