@@ -96,6 +96,7 @@ MonoBehaviour:
   velocityDecay: 0.99
   wheelDistance: 1.18
   steeringSpeed: 4.34
+  breakFactor: 0
   defaultSteeringWheelMultiplier: 80
   defaultAcceleration: 3.41
   defaultMaxFuel: 1000
@@ -104,6 +105,7 @@ MonoBehaviour:
   defaultVelocityDecay: 0.98
   defaultWheelDistance: 1.18
   defaultSteeringSpeed: 4.34
+  defaultBreakFactor: 0.95
   score: 0
 --- !u!198 &-2853446074473756791
 ParticleSystem:
@@ -5311,15 +5313,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f5947e7dd369136b88432386e29a5d, type: 3}
---- !u!4 &1125592501942063175 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 84f5947e7dd369136b88432386e29a5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5396540113905793885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4162928810105201236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 84f5947e7dd369136b88432386e29a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5396540113905793885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1125592501942063175 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 84f5947e7dd369136b88432386e29a5d,
     type: 3}
   m_PrefabInstance: {fileID: 5396540113905793885}
   m_PrefabAsset: {fileID: 0}

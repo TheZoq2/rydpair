@@ -25,6 +25,8 @@ public class Car : MonoBehaviour {
 	public float wheelDistance;
 	[HideInInspector]
 	public float steeringSpeed;
+	[HideInInspector]
+	public float breakFactor;
 
 	public float defaultSteeringWheelMultiplier;
 	public float defaultAcceleration;
@@ -34,10 +36,12 @@ public class Car : MonoBehaviour {
 	public float defaultVelocityDecay;
 	public float defaultWheelDistance;
 	public float defaultSteeringSpeed;
+	public float defaultBreakFactor;
 
 	private string destinationAddress = "";
 	[HideInInspector]
 	public int score = 0;
+	private float deltaVelocity = 0.0f;
 
     //Equipped car parts
     public Dictionary<PartTypes, CarPart> equippedParts = new Dictionary<PartTypes, CarPart>();
@@ -60,6 +64,7 @@ public class Car : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+		deltaVelocity = 0.0f;
         UpdateInput();
         UpdateMovement();
     }
@@ -110,7 +115,7 @@ public class Car : MonoBehaviour {
 				switch (type)
 				{
 					case PartTypes.BRAKES:
-						// TODO
+						breakFactor *= 0.0f;
 						break;
 					case PartTypes.ENGINE:
 						acceleration *= 0.1f;
@@ -148,6 +153,7 @@ public class Car : MonoBehaviour {
 		velocityDecay = defaultVelocityDecay;
 		wheelDistance = defaultWheelDistance;
 		steeringSpeed = defaultSteeringSpeed;
+		breakFactor = defaultBreakFactor;
 
 	// Clear smoke colour
 	ParticleSystem.Particle[] particleArray = new ParticleSystem.Particle[1];
@@ -167,7 +173,11 @@ public class Car : MonoBehaviour {
         }
         float wheelAngleRad = wheelAngle * Mathf.PI / 4.0F;
 
-        Vector3 currentVelocity = new Vector3(
+		deltaVelocity -= velocity * (1.0f - velocityDecay);
+		float currentBreakFactor = deltaVelocity * velocity < 0.0f ? breakFactor : 1.0f;
+		velocity += deltaVelocity * currentBreakFactor;
+
+		Vector3 currentVelocity = new Vector3(
                 velocity * Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.PI / 180),
                 0.0f,
                 velocity * Mathf.Cos(transform.rotation.eulerAngles.y * Mathf.PI / 180)
@@ -182,8 +192,6 @@ public class Car : MonoBehaviour {
                 * Time.deltaTime
         );
 
-        velocity *= velocityDecay;
-
         steeringWheel.transform.localRotation = Quaternion.Euler(
             0, wheelAngle * steeringWheelMultiplier, 0
         );
@@ -192,9 +200,10 @@ public class Car : MonoBehaviour {
         );
     }
 
-    private void UpdateInput() {
-        velocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
-        velocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
+    private void UpdateInput()
+	{
+		deltaVelocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
+		deltaVelocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
 
         if (velocity > maxVelocity) {
             velocity = maxVelocity;
