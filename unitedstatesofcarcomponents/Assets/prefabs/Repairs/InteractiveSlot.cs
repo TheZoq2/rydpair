@@ -28,7 +28,6 @@ public class InteractiveSlot : PartSlot
 
     void Update() {
         if(GetPart() != null) {
-            Debug.Log($"Current: {GetPart().currentHealth}, max: {GetPart().maxHealth}");
             hpBar.fillAmount = GetPart().currentHealth / GetPart().maxHealth;
         }
     }
@@ -89,8 +88,10 @@ public class InteractiveSlot : PartSlot
 			else if (this.IsCompatible(hand.GetPart().type) && hand.previousSlot.IsCompatible(this.GetPart().type))
 			{
 				CarPart newPart = hand.GetPart();
-				hand.previousSlot.ForceSet(this.GetPart(), this, this);
-				this.ForceSet(newPart, hand, hand);
+                hand.previousSlot.ForceSet(null, this, this);
+                hand.previousSlot.ForceSet(this.GetPart(), this, this);
+                this.ForceSet(null, hand, hand);
+                this.ForceSet(newPart, hand, hand);
 				hand.TryClear(this);
 			}
 		}
