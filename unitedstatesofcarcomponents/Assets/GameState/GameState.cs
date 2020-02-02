@@ -8,11 +8,13 @@ public class GameState : MonoBehaviour
     #region Declarations
     [Header("Package")]
     public GameObject packagePrefab;
+    public float maxTime = 120f;
 
     [Header("User Interface")]
     public TextMeshProUGUI missionTMP;
     public TextMeshProUGUI scoreTMP;
     public TextMeshProUGUI timerTMP;
+
     [Header("Stars")]
     public List<GameObject> stars;
 
@@ -37,11 +39,12 @@ public class GameState : MonoBehaviour
     [HideInInspector]
     public int playerScore;
     [HideInInspector]
-    public float maxTime = 120f;
-    [HideInInspector]
     public float timer;
 
+    ShopController sc;
+
     int randomIndex;
+    int maxMoney = 150;
     bool hasPackage;
     #endregion Declarations
 
@@ -149,6 +152,7 @@ public class GameState : MonoBehaviour
         SpawnPackage();
 
         aSource = GetComponent<AudioSource>();
+        sc = FindObjectOfType<ShopController>();
     }
 
     void GiveScore()
@@ -159,26 +163,30 @@ public class GameState : MonoBehaviour
         if (timer >= 0.8 * maxTime)
         {
             playerScore += 5;
+            sc.changeMoney((int)(maxMoney));
         }
         else if (timer >= 0.6 * maxTime)
         {
             playerScore += 4;
+            sc.changeMoney((int)(0.8 * maxMoney));
         }
         else if (timer >= 0.4 * maxTime)
         {
             playerScore += 3;
+            sc.changeMoney((int)(0.6 * maxMoney));
         }
         else if (timer >= 0.2 * maxTime)
         {
             playerScore += 2;
+            sc.changeMoney((int)(0.4 * maxMoney));
         }
         else
         {
             playerScore += 1;
+            sc.changeMoney((int)(0.2 * maxMoney));
         }
 
         scoreTMP.text = $"Score = {playerScore}";
-        // ADD MONEY
     }
 
     void GetHouses()
