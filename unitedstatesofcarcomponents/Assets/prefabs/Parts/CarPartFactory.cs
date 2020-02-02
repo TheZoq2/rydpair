@@ -82,9 +82,19 @@ public class CarPartFactory : MonoBehaviour {
 		sprites[PartTypes.WHEELS][Manufacturers.VOLVIMUS] = imageWheelsVolvimus;
 		callbacks[PartTypes.WHEELS][Manufacturers.VOLVIMUS] =
 			c => {
-                //if() {
-                //TODO: Implement weight?
-                //}
+                if (TryGetEquipped(c, PartTypes.BRAKES, out CarPart brakes)
+                && TryGetEquipped(c, PartTypes.ENGINE, out CarPart engine)
+                && TryGetEquipped(c, PartTypes.EXHAUST_SYSTEM, out CarPart exhaust)
+                && TryGetEquipped(c, PartTypes.GEAR_BOX, out CarPart gb)
+                && TryGetEquipped(c, PartTypes.STEERING_WHEEL, out CarPart sw)) {
+                    if (brakes.manufacturer == Manufacturers.VOLVIMUS
+                    && engine.manufacturer == Manufacturers.VOLVIMUS
+                    && exhaust.manufacturer == Manufacturers.VOLVIMUS
+                    && gb.manufacturer == Manufacturers.VOLVIMUS
+                    && sw.manufacturer == Manufacturers.VOLVIMUS) {
+                        c.velocityDecay = 2;
+                    }
+                }
             };
 		sprites[PartTypes.WHEELS][Manufacturers.SM] = imageWheelsSM;
 		callbacks[PartTypes.WHEELS][Manufacturers.SM] =
