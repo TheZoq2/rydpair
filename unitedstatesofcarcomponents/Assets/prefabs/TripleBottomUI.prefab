@@ -123,7 +123,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 233967999086604183, guid: a803228935b513246b90753b7a88e655,
         type: 3}
       propertyPath: m_Size
-      value: 0.9999998
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 233967999086604183, guid: a803228935b513246b90753b7a88e655,
         type: 3}
@@ -614,11 +614,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Repairs
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062519671747376251, guid: f3c762f4d3c92a34eb1ae48bbfa5116c,
-        type: 3}
-      propertyPath: rows
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c762f4d3c92a34eb1ae48bbfa5116c, type: 3}
