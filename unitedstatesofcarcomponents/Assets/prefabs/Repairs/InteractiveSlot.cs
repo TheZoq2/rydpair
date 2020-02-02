@@ -11,7 +11,7 @@ public class InteractiveSlot : PartSlot
 	private Image partSprite;
 	private Image emptySprite;
     private Image hpBar;
-	private PartSlot hand;
+	private Hand hand;
 
 	protected void Awake()
 	{
@@ -62,18 +62,35 @@ public class InteractiveSlot : PartSlot
 
 	public void RemoveAfterImage()
 	{
-		partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-		emptySprite.enabled = true;
-        hpBar.enabled = false;
+		if (!IsSet())
+		{
+			partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+			emptySprite.enabled = true;
+			hpBar.enabled = false;
+		}
+	}
+
+	public virtual bool IsCompatible(PartTypes type)
+	{
+		return true;
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		// Add item to inventory
 		if (hand.IsSet())
 		{
-			if (this.TrySet(hand.GetPart(), hand))
+			// Add item to inventory
+			if (!this.IsSet())
 			{
+				this.TrySet(hand.GetPart(), hand);
+				hand.TryClear(this);
+			}
+			// Swap items
+			else if (this.IsCompatible(hand.GetPart().type) && hand.previousSlot.IsCompatible(this.GetPart().type))
+			{
+				CarPart newPart = hand.GetPart();
+				hand.previousSlot.ForceSet(this.GetPart(), this, this);
+				this.ForceSet(newPart, hand, hand);
 				hand.TryClear(this);
 			}
 		}

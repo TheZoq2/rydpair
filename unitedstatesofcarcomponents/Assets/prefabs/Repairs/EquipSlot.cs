@@ -28,10 +28,14 @@ public class EquipSlot : InteractiveSlot
 		TrySet(carPartFactory.Create(partType, randomManufacturer), null);
 	}
 
+	public override bool IsCompatible(PartTypes type)
+	{
+		return type == partType;
+	}
 
 	public override bool TrySet(CarPart newPart, PartSlot previousSlot)
 	{
-		if (newPart.type == partType)
+		if (IsCompatible(newPart.type))
 		{
 			return base.TrySet(newPart, previousSlot);
 		}

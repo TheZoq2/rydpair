@@ -7,7 +7,7 @@ public class PartSlot : MonoBehaviour
 
 	protected Action<CarPart, PartSlot, PartSlot> onPartSet = null;
 
-	protected void ForceSet(CarPart newPart, PartSlot previousSlot, PartSlot nextSlot)
+	public void ForceSet(CarPart newPart, PartSlot previousSlot, PartSlot nextSlot)
 	{
 		part = newPart;
 

@@ -2,7 +2,7 @@
 
 public class Hand : PartSlot
 {
-	private InteractiveSlot previousSlot = null;
+	public InteractiveSlot previousSlot = null;
 
 	private void Awake()
 	{
