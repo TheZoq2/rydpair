@@ -160,7 +160,7 @@ public class Car : MonoBehaviour {
         if (engineSmoke.GetParticles(particleArray) > 0) {
             particleArray[0].startColor = new Color(0, 0, 0);
         }
-        engineSmoke.Pause();
+        engineSmoke.Stop();
     }
 
     private void UpdateMovement() {
