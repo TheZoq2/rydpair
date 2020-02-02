@@ -30,7 +30,7 @@ public class CarPartFactory : MonoBehaviour {
 
 	private bool TryGetEquipped(Car c, PartTypes type, out CarPart part)
 	{
-		if (c.equippedParts.TryGetValue(PartTypes.GEAR_BOX, out part))
+		if (c.equippedParts.TryGetValue(type, out part))
 		{
 			return part != null;
 		}
