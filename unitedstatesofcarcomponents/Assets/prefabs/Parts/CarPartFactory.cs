@@ -104,14 +104,15 @@ public class CarPartFactory : MonoBehaviour {
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.VOLVIMUS] =
 			c => {
                 if (TryGetEquipped(c, PartTypes.WHEELS, out CarPart wheels) && wheels.manufacturer == Manufacturers.NII_SAN) {
-                    //TODO: implement sinus steering.
+                    //sinus steering.
+					c.sinusSteering = true;
                 }
             };
 		sprites[PartTypes.GEAR_BOX][Manufacturers.SM] = imageGearSM;
 		callbacks[PartTypes.GEAR_BOX][Manufacturers.SM] =
 			c => {
                 if (TryGetEquipped(c, PartTypes.BRAKES, out CarPart brakes) && brakes.manufacturer == Manufacturers.VOLVIMUS) {
-                    //TODO: Implement random braking.
+					c.sinusSteering = true;
                 }
             };
 		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.NII_SAN] = imageExhaustNiiSan;

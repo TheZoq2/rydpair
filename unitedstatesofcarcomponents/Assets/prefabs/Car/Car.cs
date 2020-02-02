@@ -10,6 +10,9 @@ public class Car : MonoBehaviour {
     public GameObject spedometerNeedle;
 
     private bool flippedSteering = false;
+    public bool sinusSteering = false;
+    public float sinusAmp = 1f;
+    public float freqModifier = 3.0f;
 
 	[HideInInspector]
 	public float steeringWheelMultiplier;
@@ -162,6 +165,7 @@ public class Car : MonoBehaviour {
 		breakFactor = defaultBreakFactor;
 
         flippedSteering = false;
+        sinusSteering = false;
 
 	// Clear smoke colour
 	ParticleSystem.Particle[] particleArray = new ParticleSystem.Particle[1];
@@ -197,11 +201,15 @@ public class Car : MonoBehaviour {
         if(this.flippedSteering){
             turnFactor = -1f;
         }
+        float additionalTurn = 0f;
+        if(this.sinusSteering){
+            additionalTurn = this.sinusAmp*Mathf.Sin(Time.realtimeSinceStartup * this.freqModifier);
+        }
 
         transform.RotateAround(
             transform.position,
             transform.up,
-            (velocity * Mathf.Tan(wheelAngleRad) / wheelDistance) * 180 / Mathf.PI
+            (velocity * Mathf.Tan(wheelAngleRad) / wheelDistance + additionalTurn) * 180 / Mathf.PI
                 * Time.deltaTime * turnFactor
         );
 
