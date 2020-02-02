@@ -122,9 +122,9 @@ public class CarPartFactory : MonoBehaviour {
 					//Pink smoke or sumthing (combination of exhaust + particles from tires)
 					// TODO: This should work, but I'm getting to particles *at all*, so ¯\_(ツ)_/¯
 					Debug.Log("Pinkifying smoke o(≧▽≦)o");
-                    ParticleSystem.Particle[] particleArray = new ParticleSystem.Particle[1];
-                    c.engineSmoke.GetParticles(particleArray);
-                    particleArray[0].startColor = new Color(1.0f, 0.6f, 0.3f);
+                    ParticleSystemRenderer r = c.engineSmoke.GetComponentInChildren<ParticleSystemRenderer>();
+                    Debug.Log(r);
+                    r.material.color = new Color(1.0f, 0.0f, 0.6f, 0.15f);
                     c.engineSmoke.Play();
                 }
             };

@@ -42,6 +42,7 @@ public class Car : MonoBehaviour {
 	public float defaultWheelDistance;
 	public float defaultSteeringSpeed;
 	public float defaultBreakFactor;
+    public Color defaultSmokeColour;
 
 	private string destinationAddress = "";
 	[HideInInspector]
@@ -167,11 +168,8 @@ public class Car : MonoBehaviour {
         flippedSteering = false;
         sinusSteering = false;
 
-	// Clear smoke colour
-	ParticleSystem.Particle[] particleArray = new ParticleSystem.Particle[1];
-        if (engineSmoke.GetParticles(particleArray) > 0) {
-            particleArray[0].startColor = new Color(0, 0, 0);
-        }
+        // Clear smoke colour
+        engineSmoke.GetComponentInChildren<ParticleSystemRenderer>().material.color = defaultSmokeColour;
         engineSmoke.Stop();
     }
 
