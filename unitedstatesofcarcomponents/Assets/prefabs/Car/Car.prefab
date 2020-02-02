@@ -88,6 +88,9 @@ MonoBehaviour:
   engineSmoke: {fileID: 0}
   steeringWheel: {fileID: 4162928810105201236}
   spedometerNeedle: {fileID: 915776825520824088}
+  sinusSteering: 0
+  sinusAmp: 1
+  freqModifier: 3
   steeringWheelMultiplier: 80
   acceleration: 3.41
   maxFuel: 0
@@ -4807,7 +4810,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
@@ -4825,7 +4828,7 @@ ParticleSystemRenderer:
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
