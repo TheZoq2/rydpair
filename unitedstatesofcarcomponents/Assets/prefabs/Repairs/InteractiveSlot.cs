@@ -81,8 +81,10 @@ public class InteractiveSlot : PartSlot
 			// Add item to inventory
 			if (!this.IsSet())
 			{
-				this.TrySet(hand.GetPart(), hand);
-				hand.TryClear(this);
+				if(this.TrySet(hand.GetPart(), hand))
+				{
+					hand.TryClear(this);
+				}
 			}
 			// Swap items
 			else if (this.IsCompatible(hand.GetPart().type) && hand.previousSlot.IsCompatible(this.GetPart().type))
