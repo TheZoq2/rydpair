@@ -38,13 +38,6 @@ public class Inventory : MonoBehaviour
 				slots.Add(slot);
 			}
 		}
-		
-		
-		TryAddItem(carPartFactory.Create(PartTypes.ENGINE, Manufacturers.NII_SAN));
-		TryAddItem(carPartFactory.Create(PartTypes.WHEELS, Manufacturers.NII_SAN));
-		TryAddItem(carPartFactory.Create(PartTypes.EXHAUST_SYSTEM, Manufacturers.NII_SAN));
-		TryAddItem(carPartFactory.Create(PartTypes.BRAKES, Manufacturers.NII_SAN));
-		TryAddItem(carPartFactory.Create(PartTypes.STEERING_WHEEL, Manufacturers.NII_SAN));
 	}
 
 	public void DummyFunc(Car car)
