@@ -14,6 +14,11 @@ public class GameState : MonoBehaviour
     public TextMeshProUGUI scoreTMP;
     public TextMeshProUGUI timerTMP;
 
+    [Header("Sound")]
+    public AudioClip pickupClip;
+    public AudioClip deliverClip;
+    private AudioSource aSource;
+
     [HideInInspector]
     public List<House> houses;
 
@@ -30,7 +35,7 @@ public class GameState : MonoBehaviour
     [HideInInspector]
     public int playerScore;
     [HideInInspector]
-    public float maxTime = 300f;
+    public float maxTime = 120f;
     [HideInInspector]
     public float timer;
 
@@ -43,7 +48,7 @@ public class GameState : MonoBehaviour
         if (hasPackage)
         {
             timer -= Time.deltaTime;
-            timerTMP.text = $"Time left = {timer}";
+            timerTMP.text = $"Time left = {(int)timer}";
         }
     }
 
@@ -52,6 +57,9 @@ public class GameState : MonoBehaviour
     {
         hasPackage = true;
         timer = maxTime;
+
+        aSource.clip = pickupClip;
+        aSource.Play();
 
         missionTMP.text = $"Deliver the package to {targetAdress}!";
     }
@@ -112,10 +120,15 @@ public class GameState : MonoBehaviour
         GetHouses();
 
         SpawnPackage();
+
+        aSource = GetComponent<AudioSource>();
     }
 
     void GiveScore()
     {
+        aSource.clip = deliverClip;
+        aSource.Play();
+
         if (timer >= 0.8 * maxTime)
         {
             playerScore += 5;
