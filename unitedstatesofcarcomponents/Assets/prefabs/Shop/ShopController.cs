@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
+    public Animator anim;
+
     public RectTransform itemHolder;
     public RectTransform shopItem;
     private CarPartFactory factory;
@@ -26,9 +28,11 @@ public class ShopController : MonoBehaviour
 
     private void updateMoneyUI(){
         this.moneyText.text = "Money: "+this.money.ToString()+" $";
+        anim.SetTrigger("money");
     }
 
     public void changeMoney(int deltaMoney){
+        anim.SetTrigger("money");
         this.money += deltaMoney;
         updateMoneyUI();
     }
