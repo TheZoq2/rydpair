@@ -26,7 +26,7 @@ public class CarPartFactory : MonoBehaviour {
 	public Sprite imageWheelsVolvimus;
 
 	Dictionary<PartTypes, Dictionary<Manufacturers, Action<Car>>> callbacks = new Dictionary<PartTypes, Dictionary<Manufacturers, Action<Car>>>();
-	Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>> sprites = new Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>>();
+	public Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>> sprites = new Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>>();
 
 	private bool TryGetEquipped(Car c, PartTypes type, out CarPart part)
 	{

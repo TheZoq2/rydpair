@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.22627417"
-     inkscape:cx="365.97773"
-     inkscape:cy="938.15325"
+     inkscape:zoom="0.64"
+     inkscape:cx="2035.3033"
+     inkscape:cy="-326.92949"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2732,7 +2732,7 @@
     </g>
     <g
        id="g6562"
-       transform="translate(737.70177,-30.201816)">
+       transform="translate(736.46154,-6.6373628)">
       <rect
          transform="rotate(-10.809387)"
          ry="1.3456259"
@@ -2907,7 +2907,7 @@
        y="188.106" />
     <g
        id="g6718"
-       transform="translate(752.35413,33.491122)">
+       transform="translate(736.64449,42.586174)">
       <rect
          style="opacity:1;fill:#f69e2a;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect6564"
@@ -3218,7 +3218,10 @@
        sodipodi:type="star" />
     <g
        id="g7029"
-       transform="matrix(1.24327,0,0,1.24327,82.100792,-4.2704859)">
+       transform="matrix(1.24327,0,0,1.24327,45.852362,21.454206)"
+       inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/engine_room.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <rect
          y="17.586113"
          x="-621.07831"
