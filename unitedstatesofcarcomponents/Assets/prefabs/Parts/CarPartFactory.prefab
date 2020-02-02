@@ -57,9 +57,9 @@ MonoBehaviour:
   imageExhaustSM: {fileID: 21300000, guid: 7cbb4dd66a418434e9d1d069bc2dee88, type: 3}
   imageExhaustVolvimus: {fileID: 21300000, guid: 80fe9ebb11bf27349b203e8b20fb100e,
     type: 3}
-  imageGearNiiSan: {fileID: 0}
-  imageGearSM: {fileID: 0}
-  imageGearVolvimus: {fileID: 0}
+  imageGearNiiSan: {fileID: 21300000, guid: a033c14be05fd2542a5c42f6a99d537e, type: 3}
+  imageGearSM: {fileID: 21300000, guid: 0b8110db249899543a4689022ea9edab, type: 3}
+  imageGearVolvimus: {fileID: 21300000, guid: 4aff4c63aacee6d4ba37cd29e775bf57, type: 3}
   imageSteeringNiiSan: {fileID: 21300000, guid: 362c60a3a86bf714cb4653a7fffd8d2c,
     type: 3}
   imageSteeringSM: {fileID: 21300000, guid: 6729bc9ee51b47746809db2bee6ef211, type: 3}
