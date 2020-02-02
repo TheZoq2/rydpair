@@ -46,7 +46,7 @@ MonoBehaviour:
   type: 0
   manufacturer: 0
   sprite: {fileID: 0}
-  defaultMaxHealth: 0
+  defaultMaxHealth: 100
   maxHealth: 100
   currentHealth: 100
   healthDecay: 0.1

@@ -28,7 +28,8 @@ public class InteractiveSlot : PartSlot
 
     void Update() {
         if(GetPart() != null) {
-            hpBar.fillAmount = GetPart().maxHealth / GetPart().currentHealth;
+            Debug.Log($"Current: {GetPart().currentHealth}, max: {GetPart().maxHealth}");
+            hpBar.fillAmount = GetPart().currentHealth / GetPart().maxHealth;
         }
     }
 
@@ -40,11 +41,13 @@ public class InteractiveSlot : PartSlot
 			{
 				partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				emptySprite.enabled = true;
+                hpBar.enabled = false;
 			}
 			else
 			{
 				partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
 				emptySprite.enabled = true;
+                hpBar.enabled = false;
 			}
 		}
 		else
@@ -53,6 +56,7 @@ public class InteractiveSlot : PartSlot
 			partSprite.sprite = newPart.sprite;
 			partSprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 			emptySprite.enabled = false;
+            hpBar.enabled = true;
 		}
 	}
 
@@ -60,6 +64,7 @@ public class InteractiveSlot : PartSlot
 	{
 		partSprite.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 		emptySprite.enabled = true;
+        hpBar.enabled = false;
 	}
 
 	public void OnPointerClick(PointerEventData eventData)

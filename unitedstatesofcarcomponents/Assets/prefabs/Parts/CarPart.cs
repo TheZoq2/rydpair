@@ -13,7 +13,6 @@ public class CarPart : MonoBehaviour {
 #pragma warning disable IDE0044 // Add readonly modifier
 #pragma warning disable CS0649 // Add readonly modifier Unity
 	[SerializeField]
-    private int defaultMaxHealth;
 #pragma warning restore IDE0044 // Add readonly modifier
 #pragma warning restore CS0649 // Add readonly modifier Unity
 
@@ -28,10 +27,6 @@ public class CarPart : MonoBehaviour {
     public bool isEquipped = false;
 
     public InteractiveSlot slot;
-
-    private void Start() {
-        currentHealth = maxHealth = defaultMaxHealth;
-    }
 
     private void Update() {
         if (!isEquipped) return;
