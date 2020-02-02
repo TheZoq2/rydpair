@@ -66,13 +66,13 @@ public class ShopController : MonoBehaviour
                 var itemSprite = manufacturerEntry.Value;
                 int cost = partCosts[partType];
 
-                string partName = manu.ToString() + "_" + partType.ToString() + "_("+cost.ToString()+"_$)";
+                string partName = Bolagsverket.GetName(manu) + makeReadable("_" + partType.ToString() + "_("+cost.ToString()+"_$)");
                 var newItem = Instantiate(shopItem) as RectTransform;
 
                 newItem.GetComponent<RectTransform>().position = new Vector3(0, itemI*(-1)*this.itemHeight, 0);
                 newItem.GetComponent<RectTransform>().sizeDelta = new Vector2(0, this.itemHeight);
                 newItem.SetParent(itemHolder, false);
-                newItem.GetComponentInChildren<Text>().text = this.makeReadable(partName);
+                newItem.GetComponentInChildren<Text>().text = partName;
                 newItem.GetComponentsInChildren<Image>()[1].sprite = itemSprite;
 
                 newItem.GetComponent<Button>().onClick.AddListener(() =>
