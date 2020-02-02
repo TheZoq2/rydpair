@@ -16,7 +16,7 @@
    id="svg8"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="part_icons.svg"
-   inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/car_parts/wheel4.png"
+   inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/car_parts/gearbox_specific.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.4424058"
-     inkscape:cx="1368.5954"
-     inkscape:cy="-308.40064"
+     inkscape:zoom="1.2513126"
+     inkscape:cx="70.302856"
+     inkscape:cy="164.56012"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1786,7 +1786,7 @@
     </g>
     <g
        id="g5780"
-       transform="translate(5.3437499e-7,2.5850312e-4)"
+       transform="translate(135.75866,208.12366)"
        inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/car_parts/wheel4.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
@@ -2371,7 +2371,7 @@
     </g>
     <g
        id="g6350"
-       transform="translate(620.87944,-30.63967)">
+       transform="translate(611.9086,-33.629949)">
       <g
          transform="matrix(0.91755469,0,0,0.91755469,9.5437044,19.066297)"
          id="g6339">
@@ -2431,7 +2431,7 @@
     </g>
     <g
        id="g6466"
-       transform="translate(643.50798,28.706676)">
+       transform="translate(613.00714,31.696955)">
       <g
          transform="translate(1.1848437,0.01127992)"
          id="g6400">
@@ -2660,5 +2660,381 @@
          id="circle6436"
          style="opacity:1;fill:#464646;fill-opacity:1;stroke:none;stroke-width:1.23875999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
+    <g
+       id="g6497"
+       transform="translate(736.50565,-55.021129)">
+      <path
+         sodipodi:nodetypes="cccsssssssscccc"
+         style="opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.85898823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 43.947857,219.42759 3.88627,21.17448 c -0.58857,2.65662 -1.96766,6.11177 -4.15182,9.28576 h -7.72881 c -6.61679,0 -11.94384,5.32705 -11.94384,11.94384 v 21.95226 c 0,6.61679 5.32705,11.94317 11.94384,11.94317 h 33.92702 c 6.61677,0 11.94316,-5.32638 11.94316,-11.94317 v -21.95225 c 0,-6.61679 -5.32639,-11.94383 -11.94316,-11.94383 h -9.191 c -2.92136,-3.10451 -5.76414,-6.32212 -7.73825,-10.79497 l -3.78943,-20.64406 c -2.318349,0.48755 -3.119844,0.6413 -5.21398,0.97877 z"
+         id="path6468"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/empty_parts/empty_gearbox.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         sodipodi:nodetypes="csssssssscc"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/empty_parts/empty_gearbox.png"
+         inkscape:connector-curvature="0"
+         id="path6470"
+         d="m 43.682307,249.88783 h -7.72881 c -6.61679,0 -11.94384,5.32705 -11.94384,11.94384 v 21.95226 c 0,6.61679 5.32705,11.94317 11.94384,11.94317 h 33.92702 c 6.61677,0 11.94316,-5.32638 11.94316,-11.94317 v -21.95225 c 0,-6.61679 -5.32639,-11.94383 -11.94316,-11.94383 h -9.191 c -6.658928,-0.0908 -8.54063,-0.0415 -17.00721,-2e-5 z"
+         style="opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.85898823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         r="15.224013"
+         cy="207.136"
+         cx="43.980484"
+         id="path6472"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.55619729;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <g
+         transform="matrix(0.45744725,-0.08567934,0.08567934,0.45744725,-1.138998,100.01463)"
+         id="g6482">
+        <circle
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path6476"
+           cx="52.916668"
+           cy="244.08331"
+           r="27.596584" />
+        <path
+           sodipodi:type="star"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:2.6982882;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path6478"
+           sodipodi:sides="5"
+           sodipodi:cx="52.931549"
+           sodipodi:cy="244.35909"
+           sodipodi:r1="27.287914"
+           sodipodi:r2="27.289438"
+           sodipodi:arg1="0.52359878"
+           sodipodi:arg2="-1.9897443"
+           inkscape:flatsided="false"
+           inkscape:rounded="-0.02"
+           inkscape:randomized="0"
+           d="m 76.563576,258.00304 c -0.519005,0.89909 -35.681744,-38.15108 -34.73336,-38.57333 0.948361,-0.42224 6.443298,51.83675 5.427857,51.62098 -1.015464,-0.21577 25.257574,-45.72469 25.952222,-44.9532 0.694632,0.77147 -47.308591,22.14638 -47.417174,21.11396 -0.108586,-1.03244 51.291783,9.89167 50.772716,10.79072 -0.519056,0.89904 -35.681615,-38.14953 -34.733282,-38.57184 0.948354,-0.42231 6.44249,51.83809 5.427041,51.62224 -1.015426,-0.21583 25.25614,-45.72408 25.950825,-44.95266 0.694701,0.77143 -47.310104,22.14602 -47.418619,21.11357 -0.108512,-1.03242 51.290768,9.8905 50.771774,10.78956 z"
+           transform="matrix(0.8975122,0.39492987,-0.39492987,0.8975122,101.91166,4.0482906)" />
+      </g>
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path6484"
+         d="m 3.6411601,245.53616 c 5.7873533,9.71848 7.9873509,17.30494 20.3855279,16.69602 l -6e-6,10.40522 C 8.6534319,272.78413 3.1211392,265.79799 3.6411601,245.53616 Z"
+         inkscape:transform-center-y="-0.0015359969"
+         inkscape:transform-center-x="4.2591457"
+         style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.83213425;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.83213425;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:transform-center-x="-4.2591458"
+         inkscape:transform-center-y="-0.0015359969"
+         d="m 102.03975,245.53616 c -5.787356,9.71848 -7.987354,17.30494 -20.385531,16.69602 l 6e-6,10.40522 c 15.37325,0.14673 20.905545,-6.83941 20.385525,-27.10124 z"
+         id="path6487"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+    </g>
+    <g
+       id="g6562"
+       transform="translate(737.70177,-30.201816)">
+      <rect
+         transform="rotate(-10.809387)"
+         ry="1.3456259"
+         y="213.53264"
+         x="3.9972472"
+         height="43.346149"
+         width="4.4403372"
+         id="rect6507"
+         style="opacity:1;fill:#d6d6d6;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/empty_parts/empty_gearbox.png"
+         inkscape:connector-curvature="0"
+         id="path6501"
+         d="m 45.345661,249.94357 h -7.72881 c -6.61679,0 -11.94384,5.32705 -11.94384,11.94384 v 21.95226 c 0,6.61679 5.32705,11.94317 11.94384,11.94317 h 33.92702 c 6.61677,0 11.94316,-5.32638 11.94316,-11.94317 v -21.95225 c 0,-6.61679 -5.32639,-11.94383 -11.94316,-11.94383 h -9.191 c -5.151942,-0.0505 -12.905009,-0.0188 -17.00721,-2e-5 z"
+         style="opacity:1;fill:#717171;fill-opacity:1;stroke:none;stroke-width:0.85898823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:nodetypes="csssssssscc" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/empty_parts/empty_gearbox.png"
+         inkscape:connector-curvature="0"
+         id="path6503"
+         d="m 49.497481,240.65781 c -0.58857,2.65662 -1.96766,6.11177 -4.15182,9.28576 4.793423,2.99751 10.853565,3.13981 17.00721,2e-5 -2.92136,-3.10451 -5.76414,-6.32212 -7.73825,-10.79497 -2.087067,1.4406 -2.460152,1.32107 -5.11714,1.50919 z"
+         style="opacity:1;fill:#9e5a2b;fill-opacity:1;stroke:none;stroke-width:0.85898823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         sodipodi:nodetypes="ccccccccccccccc"
+         style="opacity:1;fill:#9e5a2b;fill-opacity:1;stroke:none;stroke-width:0.85898823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 40.812691,192.49731 c -0.60666,0.0102 -1.17048,0.0581 -1.66849,0.14453 v 6.8e-4 c -0.26565,0.0461 -0.51329,0.10329 -0.73815,0.17142 l -5.00286,1.51726 c -3.95953,1.35515 -5.03723,7.57333 -3.42307,10.22423 9.32034,8.62809 8.60123,8.03175 11.05982,12.80632 0.86936,1.68842 2.47149,2.51629 4.33802,2.16598 l 0.23325,-0.0444 c 2.461594,-0.33837 3.21556,-0.36176 5.21398,-0.97877 l 2.3636,-0.44437 c 1.86653,-0.34995 2.5407,-2.47653 2.16465,-4.33802 l -3.24897,-16.08555 c -0.69137,-3.42297 -7.04507,-5.20976 -11.29178,-5.13934 z"
+         id="path6499"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/empty_parts/empty_gearbox.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
+         transform="matrix(0.99112482,-0.1329345,0.15584736,0.98778115,0,0)"
+         ry="0.41556475"
+         y="206.45044"
+         x="-1.7243495"
+         height="0.83112949"
+         width="4.1560383"
+         id="rect6511"
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:1.95162225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:1.95162225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6515"
+         width="4.1560383"
+         height="0.83112949"
+         x="-7.3307681"
+         y="206.70486"
+         ry="0.41556475"
+         transform="matrix(0.98300897,-0.18355751,0.20626888,0.97849535,0,0)" />
+      <rect
+         transform="matrix(0.96730199,-0.25362742,0.27595633,0.96117017,0,0)"
+         ry="0.41556475"
+         y="206.20763"
+         x="-17.222834"
+         height="0.83112949"
+         width="4.1560383"
+         id="rect6517"
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:1.95162225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:1.95162225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6519"
+         width="4.1560383"
+         height="0.83112949"
+         x="-35.4846"
+         y="204.10051"
+         ry="0.41556475"
+         transform="matrix(0.93289531,-0.36014767,0.38165138,0.92430635,0,0)" />
+      <path
+         id="rect6521"
+         transform="matrix(0.26458333,0,0,0.26458333,0,191.16665)"
+         d="m 196.88086,24.222656 c -0.004,0.0032 -0.009,0.0046 -0.0137,0.0078 L 186.7988,31.75194 c -0.69705,0.520818 -0.82588,1.490975 -0.28906,2.175781 0.53681,0.684807 1.53146,0.81574 2.22851,0.294922 l 8.83399,-6.601562 z"
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:7.37522125;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <rect
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:1.95162225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6528"
+         width="4.1560383"
+         height="0.83112949"
+         x="207.62634"
+         y="-9.1126404"
+         ry="0.41556475"
+         transform="matrix(0.16636044,0.98606501,-0.98194875,0.18914719,0,0)" />
+      <rect
+         transform="matrix(0.16636044,0.98606501,-0.98194875,0.18914719,0,0)"
+         ry="0.41556475"
+         y="-9.1633406"
+         x="212.72885"
+         height="0.83112949"
+         width="4.1560383"
+         id="rect6530"
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:1.95162225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:1.95162225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6532"
+         width="4.1560383"
+         height="0.83112949"
+         x="217.57175"
+         y="-9.2580223"
+         ry="0.41556475"
+         transform="matrix(0.16636044,0.98606501,-0.98194875,0.18914719,0,0)" />
+      <path
+         sodipodi:nodetypes="scccccs"
+         inkscape:connector-curvature="0"
+         id="rect6534"
+         transform="matrix(0.26458333,0,0,0.26458333,0,191.16665)"
+         d="m 173.13086,100.57031 c -0.10405,-0.001 -0.2096,0.009 -0.31641,0.0293 -0.85442,0.16458 -1.426,0.98769 -1.28125,1.8457 l 0.76453,4.60803 3.17118,-0.4139 -0.84977,-4.78788 c -0.12666,-0.75075 -0.75994,-1.27292 -1.48828,-1.28125 z"
+         style="opacity:1;fill:#d38e5f;fill-opacity:1;stroke:none;stroke-width:7.37522125;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect6539"
+         d="m 40.977751,259.93836 c -0.889458,0 -1.605731,0.71628 -1.605731,1.60573 v 22.61102 c 0,0.88945 0.716273,1.60573 1.605731,1.60573 h 0.08894 c 0.889458,0 1.60573,-0.71628 1.60573,-1.60573 V 274.4998 H 52.88535 v 9.65531 c 0,0.88945 0.715834,1.60573 1.605295,1.60573 h 0.08938 c 0.889458,0 1.605293,-0.71628 1.605293,-1.60573 v -9.65531 h 10.302307 v 9.65531 c 0,0.88945 0.71627,1.60573 1.60573,1.60573 h 0.08894 c 0.889461,0 1.605731,-0.71628 1.605731,-1.60573 v -22.61102 c 0,-0.88945 -0.71627,-1.60573 -1.605731,-1.60573 h -0.08894 c -0.88946,0 -1.60573,0.71628 -1.60573,1.60573 v 9.65531 h -10.30231 v -9.65531 c 0,-0.88945 -0.715835,-1.60573 -1.605293,-1.60573 h -0.08938 c -0.889461,0 -1.605295,0.71628 -1.605295,1.60573 v 9.65531 H 42.672422 v -9.65531 c 0,-0.88945 -0.716272,-1.60573 -1.60573,-1.60573 z"
+         style="opacity:1;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:2.23223901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <rect
+       style="opacity:1;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:2.13004088;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6629"
+       width="47.62019"
+       height="20.333897"
+       x="-70.645332"
+       y="165.87627" />
+    <path
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -266.12109 -27.951172 L -266.12109 86.804688 C -266.12109 107.12862 -249.75948 123.49023 -229.43555 123.49023 L -122.19531 123.49023 C -101.87138 123.49023 -85.509766 107.12862 -85.509766 86.804688 L -85.509766 -27.951172 L -266.12109 -27.951172 z "
+       transform="matrix(0.26458333,0,0,0.26458333,0,191.16665)"
+       id="rect6610" />
+    <rect
+       style="opacity:1;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6617"
+       width="13.955345"
+       height="13.955345"
+       x="-40.491653"
+       y="175.10216" />
+    <rect
+       y="190.74905"
+       x="-85.952248"
+       height="13.955345"
+       width="13.955345"
+       id="rect6619"
+       style="opacity:1;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6621"
+       width="13.955345"
+       height="13.955345"
+       x="-20.087242"
+       y="190.32617" />
+    <rect
+       y="200.15834"
+       x="-41.44315"
+       height="13.955345"
+       width="13.955345"
+       id="rect6623"
+       style="opacity:1;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       y="206.29024"
+       x="-64.913506"
+       height="13.955345"
+       width="13.955345"
+       id="rect6625"
+       style="opacity:1;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6627"
+       width="13.955345"
+       height="13.955345"
+       x="-65.547836"
+       y="188.106" />
+    <g
+       id="g6718">
+      <rect
+         style="opacity:1;fill:#f69e2a;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6564"
+         width="4.4403372"
+         height="43.346149"
+         x="2.3738604"
+         y="213.16594"
+         ry="1.3456259"
+         transform="rotate(-10.809387)" />
+      <path
+         sodipodi:nodetypes="csssssssscc"
+         style="opacity:1;fill:#f69e2a;fill-opacity:1;stroke:none;stroke-width:0.85898823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 43.682307,249.88783 h -7.72881 c -6.61679,0 -11.94384,5.32705 -11.94384,11.94384 v 21.95226 c 0,6.61679 5.32705,11.94317 11.94384,11.94317 h 33.92702 c 6.61677,0 11.94316,-5.32638 11.94316,-11.94317 v -21.95225 c 0,-6.61679 -5.32639,-11.94383 -11.94316,-11.94383 h -9.191 c -5.151942,-0.0505 -12.905009,-0.0188 -17.00721,-2e-5 z"
+         id="path6566"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/empty_parts/empty_gearbox.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         style="opacity:1;fill:#7e7e7e;fill-opacity:1;stroke:none;stroke-width:0.85898823;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 47.834127,240.60207 c -0.58857,2.65662 -1.96766,6.11177 -4.15182,9.28576 4.793423,2.99751 10.853565,3.13981 17.00721,2e-5 -2.92136,-3.10451 -5.76414,-6.32212 -7.73825,-10.79497 -2.087067,1.4406 -2.460152,1.32107 -5.11714,1.50919 z"
+         id="path6568"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/joel/repos/rydpair/unitedstatesofcarcomponents/Assets/Sprites/empty_parts/empty_gearbox.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         style="opacity:1;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.79355621;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 63.290573,261.86472 c 0,-0.71466 -0.575515,-1.29017 -1.290169,-1.29017 h -18.16747 c -0.714654,0 -1.290169,0.57551 -1.290169,1.29017 v 0.0714 c 0,0.71466 0.575515,1.29017 1.290169,1.29017 h 7.757835 v 8.20587 h -7.757835 c -0.714654,0 -1.290169,0.57516 -1.290169,1.28982 v 0.0718 c 0,0.71466 0.575515,1.28981 1.290169,1.28981 h 7.757835 v 8.27769 h -7.757835 c -0.714654,0 -1.290169,0.57551 -1.290169,1.29017 v 0.0714 c 0,0.71466 0.575515,1.29017 1.290169,1.29017 h 18.16747 c 0.714654,0 1.290169,-0.57551 1.290169,-1.29017 v -0.0714 c 0,-0.71466 -0.575515,-1.29017 -1.290169,-1.29017 h -7.757835 v -8.27769 h 7.757835 c 0.714654,0 1.290169,-0.57515 1.290169,-1.28981 v -0.0718 c 0,-0.71466 -0.575515,-1.28983 -1.290169,-1.28983 h -7.757835 v -8.20586 h 7.757835 c 0.714654,0 1.290169,-0.57551 1.290169,-1.29017 z"
+         id="path6590"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:transform-center-x="0.50029328"
+         transform="matrix(0.69537296,-0.11566411,0.11566411,0.69537296,-8.3848477,68.807407)"
+         inkscape:transform-center-y="-0.45364481"
+         d="m 41.459843,189.01828 13.312235,9.67191 -5.084822,15.64947 -16.454828,0 -5.084821,-15.64947 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="true"
+         sodipodi:arg2="-0.9424778"
+         sodipodi:arg1="-1.5707963"
+         sodipodi:r2="11.324064"
+         sodipodi:r1="13.997313"
+         sodipodi:cy="203.01559"
+         sodipodi:cx="41.459843"
+         sodipodi:sides="5"
+         id="path6608"
+         style="opacity:1;fill:#4d4d4d;fill-opacity:1;stroke:#7e7e7e;stroke-width:2.94299781;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="star" />
+      <flowRoot
+         transform="matrix(0.22602932,0,0,0.22602932,7.9619204,220.98599)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+         id="flowRoot6633"
+         xml:space="preserve"><flowRegion
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"
+           id="flowRegion6635"><rect
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"
+             y="259.74728"
+             x="129.46405"
+             height="48.948601"
+             width="32.965385"
+             id="rect6637" /></flowRegion><flowPara
+           id="flowPara6639">1</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot6655"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+         transform="matrix(0.22602932,0,0,0.22602932,35.390383,210.12669)"><flowRegion
+           id="flowRegion6651"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"><rect
+             id="rect6649"
+             width="32.965385"
+             height="48.948601"
+             x="129.46405"
+             y="259.74728"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1" /></flowRegion><flowPara
+           id="flowPara6653">2</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.22602932,0,0,0.22602932,35.390383,199.29863)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+         id="flowRoot6663"
+         xml:space="preserve"><flowRegion
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"
+           id="flowRegion6659"><rect
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"
+             y="259.74728"
+             x="129.46405"
+             height="48.948601"
+             width="32.965385"
+             id="rect6657" /></flowRegion><flowPara
+           id="flowPara6661">3</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot6671"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+         transform="matrix(0.22602932,0,0,0.22602932,7.6002735,210.07245)"><flowRegion
+           id="flowRegion6667"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"><rect
+             id="rect6665"
+             width="32.965385"
+             height="48.948601"
+             x="129.46405"
+             y="259.74728"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1" /></flowRegion><flowPara
+           id="flowPara6669">4</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.22602932,0,0,0.22602932,7.6075064,199.24438)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+         id="flowRoot6679"
+         xml:space="preserve"><flowRegion
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"
+           id="flowRegion6675"><rect
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"
+             y="259.74728"
+             x="129.46405"
+             height="48.948601"
+             width="32.965385"
+             id="rect6673" /></flowRegion><flowPara
+           id="flowPara6677">5</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot6687"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+         transform="matrix(0.22602932,0,0,0.22602932,35.368684,221.00769)"><flowRegion
+           id="flowRegion6683"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1"><rect
+             id="rect6681"
+             width="32.965385"
+             height="48.948601"
+             x="129.46405"
+             y="259.74728"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold';fill:#4d4d4d;fill-opacity:1" /></flowRegion><flowPara
+           id="flowPara6685">6</flowPara></flowRoot>    </g>
   </g>
 </svg>
