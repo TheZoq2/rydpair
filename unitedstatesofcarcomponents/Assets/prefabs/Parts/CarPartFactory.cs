@@ -146,7 +146,7 @@ public class CarPartFactory : MonoBehaviour {
 			c => {
 				if (TryGetEquipped(c, PartTypes.STEERING_WHEEL, out CarPart steering) && steering.manufacturer == Manufacturers.SM)
 				{
-					//randomly accelerate, not listen to accelerate
+                    c.randomAcceleration = true;
 				}
             };
 		sprites[PartTypes.EXHAUST_SYSTEM][Manufacturers.SM] = imageExhaustSM;

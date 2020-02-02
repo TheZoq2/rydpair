@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Random;
 
 public class Car : MonoBehaviour {
 	[HideInInspector]
@@ -13,6 +14,7 @@ public class Car : MonoBehaviour {
     public bool sinusSteering = false;
     public float sinusAmp = 1f;
     public float freqModifier = 3.0f;
+    public bool randomAcceleration = false;
 
 	[HideInInspector]
 	public float steeringWheelMultiplier;
@@ -167,6 +169,7 @@ public class Car : MonoBehaviour {
 
         flippedSteering = false;
         sinusSteering = false;
+        randomAcceleration = false;
 
         // Clear smoke colour
         engineSmoke.GetComponentInChildren<ParticleSystemRenderer>().material.color = defaultSmokeColour;
@@ -219,10 +222,23 @@ public class Car : MonoBehaviour {
         );
     }
 
+    [SerializeField]
+    private readonly float randomAccelerationInterval = 3.0f;
+    private float randomAccelerationTimer = 0.0f;
+    private float randomAccelerationAmount;
     private void UpdateInput()
 	{
-		deltaVelocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
-		deltaVelocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
+        if (randomAcceleration) {
+            randomAccelerationTimer -= Time.deltaTime;
+            if (randomAccelerationTimer <= 0) {
+                randomAccelerationTimer = randomAccelerationInterval;
+                randomAccelerationAmount = UnityEngine.Random.Range(-1.0f, 1.0f);
+            }
+            deltaVelocity += acceleration * randomAccelerationAmount * Time.deltaTime;
+        } else {
+            deltaVelocity += acceleration * Input.GetAxis("Accelerate") * Time.deltaTime;
+            deltaVelocity -= acceleration * Input.GetAxis("Reverse") * Time.deltaTime;
+        }
 
         if (velocity > maxVelocity) {
             velocity = maxVelocity;
