@@ -53,7 +53,6 @@ public class Car : MonoBehaviour {
 
     private float fuel;
 
-    private Inventory inventory;
     private GameState gState;
 
     public void flipSteering(){
@@ -62,7 +61,6 @@ public class Car : MonoBehaviour {
 
     private void Awake() {
         engineSmoke = gameObject.GetComponent<ParticleSystem>();
-        inventory = FindObjectOfType<Inventory>();
 
         gState = FindObjectOfType<GameState>();
         engineSmoke.Play();
@@ -101,6 +99,7 @@ public class Car : MonoBehaviour {
 		CarPart removedPart = equippedParts[type];
         equippedParts[type] = null;
 		UpdateComponentEffects();
+        removedPart.isEquipped = false;
 		return removedPart;
     }
 
@@ -108,6 +107,7 @@ public class Car : MonoBehaviour {
     public void AddPart(PartTypes type, CarPart newPart) {
         if (newPart.type != type) Debug.Log($"Equipped {newPart.type}-slot part in {type} slot (probably shouldn't happen).");
         equippedParts[type] = newPart;
+        newPart.isEquipped = true;
         UpdateComponentEffects();
     }
 

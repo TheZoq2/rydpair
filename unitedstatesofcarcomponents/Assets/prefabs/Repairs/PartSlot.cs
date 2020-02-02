@@ -60,4 +60,11 @@ public class PartSlot : MonoBehaviour
 			return false;
 		}
 	}
+
+    /// <summary>
+    /// Remove any item from this slot.
+    /// </summary>
+    public void Remove() {
+        ForceSet(null, null, null);
+    }
 }

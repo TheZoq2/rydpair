@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8912026492260419497}
   - component: {fileID: 482364372096662713}
   m_Layer: 0
-  m_Name: CarPartPrefabContainer
+  m_Name: CarPartPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  manufacturer: 0
+  sprite: {fileID: 0}
   defaultMaxHealth: 0
-  currentHealth: 0
-  healthDecay: 0
+  maxHealth: 100
+  currentHealth: 100
+  healthDecay: 0.1
   maxSpeedMult: 1
+  isEquipped: 0
+  slot: {fileID: 0}

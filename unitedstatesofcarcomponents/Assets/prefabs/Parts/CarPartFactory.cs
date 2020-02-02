@@ -195,7 +195,9 @@ public class CarPartFactory : MonoBehaviour {
         newPart.manufacturer = manufacturer;
 		newPart.sprite = sprite;
 		newPart.UpdateEffect = setPartsDelegate ?? (_ => throw new System.NotImplementedException($"The part equipped in slot {type} is not implemented"));
-
+        newPart.maxHealth = 100;
+        newPart.currentHealth = 100;
+        newPart.healthDecay = 1;
         //TODO: Set other stuff
 
         return newPart;

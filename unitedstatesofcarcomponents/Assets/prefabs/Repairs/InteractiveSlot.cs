@@ -10,6 +10,7 @@ public class InteractiveSlot : PartSlot
 	private Image sprite;
 	private Image partSprite;
 	private Image emptySprite;
+    private Image hpBar;
 	private PartSlot hand;
 
 	protected void Awake()
@@ -17,12 +18,19 @@ public class InteractiveSlot : PartSlot
 		sprite = GetComponent<Image>();
 		partSprite = transform.Find("PartSprite").GetComponent<Image>();
 		emptySprite = transform.Find("EmptySprite").GetComponent<Image>();
+		hpBar = transform.Find("HpBar").GetComponent<Image>();
 		hand = FindObjectOfType<Hand>();
 
-		onPartSet = OnPartSet;
+        onPartSet = OnPartSet;
 		ForceSet(null, null, null);
 		sprite.color = Color.grey;
 	}
+
+    void Update() {
+        if(GetPart() != null) {
+            hpBar.fillAmount = GetPart().maxHealth / GetPart().currentHealth;
+        }
+    }
 
 	protected void OnPartSet(CarPart newPart, PartSlot previousSlot, PartSlot nextSlot)
 	{
@@ -41,6 +49,7 @@ public class InteractiveSlot : PartSlot
 		}
 		else
 		{
+            newPart.slot = this;
 			partSprite.sprite = newPart.sprite;
 			partSprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 			emptySprite.enabled = false;
