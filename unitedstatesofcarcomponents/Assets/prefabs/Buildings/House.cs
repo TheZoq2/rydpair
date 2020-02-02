@@ -17,11 +17,20 @@ public class House : MonoBehaviour
     public string adress = "";
     public Transform pickupPoint;
 
+    CarPartFactory cpf;
+
     int randomIndex;
     
     private void OnEnable()
     {
-        if (!ignoreColorChange)
+        ChangeTexture();
+        
+        cpf = FindObjectOfType<CarPartFactory>();
+    }
+
+    private void FixedUpdate()
+    {
+        if (cpf.psychadellic)
         {
             ChangeTexture();
         }
@@ -29,8 +38,11 @@ public class House : MonoBehaviour
 
     public void ChangeTexture()
     {
-        randomIndex = Random.Range(0, sprites.Count);
+        if (!ignoreColorChange)
+        {
+            randomIndex = Random.Range(0, sprites.Count);
 
-        meshRenderer.material.SetTexture("_MainTex", sprites[randomIndex].texture);
+            meshRenderer.material.SetTexture("_MainTex", sprites[randomIndex].texture);
+        }
     }
 }

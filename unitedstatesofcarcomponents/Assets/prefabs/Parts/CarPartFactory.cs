@@ -25,6 +25,9 @@ public class CarPartFactory : MonoBehaviour {
 	public Sprite imageWheelsSM;
 	public Sprite imageWheelsVolvimus;
 
+    [HideInInspector]
+    public bool psychadellic;
+
 	Dictionary<PartTypes, Dictionary<Manufacturers, Action<Car>>> callbacks = new Dictionary<PartTypes, Dictionary<Manufacturers, Action<Car>>>();
 	public Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>> sprites = new Dictionary<PartTypes, Dictionary<Manufacturers, Sprite>>();
 
@@ -158,7 +161,11 @@ public class CarPartFactory : MonoBehaviour {
 		callbacks[PartTypes.BRAKES][Manufacturers.NII_SAN] =
 			c => {
                 if (TryGetEquipped(c, PartTypes.EXHAUST_SYSTEM, out CarPart exhaust) && exhaust.manufacturer == Manufacturers.VOLVIMUS) {
-                    //TODO
+                    psychadellic = true;
+                }
+                else
+                {
+                    psychadellic = false;
                 }
             };
 		sprites[PartTypes.BRAKES][Manufacturers.VOLVIMUS] = imageBrakesVolvimus;
